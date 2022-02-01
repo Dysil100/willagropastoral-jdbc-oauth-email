@@ -1,0 +1,60 @@
+willagropastoral:
+  admins: silatsamdylan@gmail.com
+  leaders: dylan, willfried
+
+spring:
+  profiles:
+    active: google
+  datasource:
+    username: willagropastoral
+    password: iamgroot
+    url: jdbc:postgresql://localhost:15000/willagropastoral
+
+  flyway:
+    create-schemas: true
+    url: jdbc:postgresql://localhost:15000/willagropastoral
+    user: willagropastoral
+    password: iamgroot
+
+  mail:
+    host: localhost
+    #port: 1025
+    port: 8080
+    username: willagropastoral
+    password: feuilledecalcul
+
+    properties:
+      mail:
+        smtp:
+          ssl:
+            trust: "*"
+          auth: true
+          starttls:
+            enable: true
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+
+logging:
+  level:
+    root: debug
+
+amigos.Yml: >
+  server:
+    error:
+      include-message: always
+      include-binding-errors: always
+
+  spring:
+    datasource:
+      password:
+      url: jdbc:postgresql://localhost:5432/registration
+      username:
+    jpa:
+      hibernate:
+        ddl-auto: create-drop
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format_sql: true
+      show-sql: true
