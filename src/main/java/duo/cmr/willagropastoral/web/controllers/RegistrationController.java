@@ -1,7 +1,7 @@
 package duo.cmr.willagropastoral.web.controllers;
 
-import duo.cmr.willagropastoral.domain.service.registration.RegistrationService;
-import duo.cmr.willagropastoral.web.forms.RegistrationRequest;
+import duo.cmr.willagropastoral.domain.model.RegistrationRequest;
+import duo.cmr.willagropastoral.web.services.RegistrationService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
