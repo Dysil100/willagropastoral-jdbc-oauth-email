@@ -7,7 +7,7 @@ import lombok.ToString;
 @ToString
 public class ResultatEnergetique implements Resultat {
     final String nom;
-    private Double valeur;
+    private final Double valeur;
     private String appreciation;
 
     public void setAppreciation(String appreciation) {

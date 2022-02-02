@@ -13,22 +13,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 @AllArgsConstructor
 public class WillAgropastoralController {
-    ServiceAgro serviceAgro;
+    Formular formular;
 
     @GetMapping("/analyse")
     public String index(Model model) {
-        Formular formular = new Formular();
-        formular.setIngredients(serviceAgro.alleIngredients());
-        formular.setStandards(serviceAgro.alleStandards());
         model.addAttribute("form", formular);
         return "analyse";
     }
 
     @PostMapping("/analyse")
-    public String indexpost(Model model, @ModelAttribute("form") Formular formular) {
-        formular.setIngredients(serviceAgro.alleIngredients());
-        formular.setStandards(serviceAgro.alleStandards());
-        model.addAttribute("form", formular);
+    public String indexpost(Model model, @ModelAttribute("form") Formular form) {
+        form.setServiceAgro(formular.getServiceAgro());
+        model.addAttribute("form", form);
         return "analyse";
     }
 }

@@ -1,18 +1,18 @@
 package duo.cmr.willagropastoral.persistence.analysealimentaire.ingredient;
-import duo.cmr.willagropastoral.domain.model.ingredients.IngredientImpl;
+import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
-
+@Getter
 @Table("ingredient")
 public class IngredientEntity {
     @Id
     Long id;
     private String name;
-    private Double lysine;
-    private Double methyonine;
-    private Double proteineBrute;
-    private Double energieMetabolisable;
+    private final Double lysine;
+    private final Double methyonine;
+    private final Double proteineBrute;
+    private final Double energieMetabolisable;
 
     public IngredientEntity(String name, Double lysine, Double methyonine, Double proteineBrute, Double energieMetabolisable) {
         this.name = name;
@@ -20,10 +20,6 @@ public class IngredientEntity {
         this.methyonine = methyonine;
         this.proteineBrute = proteineBrute;
         this.energieMetabolisable = energieMetabolisable;
-    }
-
-    public IngredientEntity() {
-        this(null, .0, .0, .0, .0);
     }
 
     @Id
@@ -35,15 +31,7 @@ public class IngredientEntity {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
-    }
-
-    public IngredientImpl toIngredient() {
-        return new IngredientImpl(name, lysine, methyonine, proteineBrute, energieMetabolisable);
     }
 }

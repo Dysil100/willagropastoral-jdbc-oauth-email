@@ -2,6 +2,7 @@ package duo.cmr.willagropastoral.persistence.analysealimentaire.ingredient;
 
 import duo.cmr.willagropastoral.domain.model.ingredients.IngredientImpl;
 import duo.cmr.willagropastoral.web.services.interfaces.repositories.IngredientRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -10,16 +11,13 @@ import java.util.Optional;
 
 // TODO: 22.01.22 Implement a toIngredient method
 @Repository
+@AllArgsConstructor
 public class IngredientRepositoryImpl implements IngredientRepository {
     final IngredientDAO ingredientDAO;
 
-    public IngredientRepositoryImpl(IngredientDAO ingredientDAO) {
-        this.ingredientDAO = ingredientDAO;
-    }
-
     @Override
     public IngredientImpl findByName(String name) {
-        return ingredientDAO.findByName(name).orElse(getOther()).toIngredient(); // TODO: 22.01.22 implements all methods
+        return toIngredient(ingredientDAO.findByName(name).orElse(getOther())); // TODO: 22.01.22 implements all methods
     }
 
     private IngredientEntity getOther() {
@@ -28,13 +26,12 @@ public class IngredientRepositoryImpl implements IngredientRepository {
 
     @Override
     public IngredientImpl findById(Long id) {
-        return ingredientDAO.findById(id).orElse(getOther()).toIngredient();
+        return toIngredient(ingredientDAO.findById(id).orElse(getOther()));
     }
 
     @Override
     public void save(IngredientImpl ingredientImpl) {
-        ingredientDAO.save(new IngredientEntity(ingredientImpl.getName(), ingredientImpl.getLysine(), ingredientImpl.getMethyonine(),
-                ingredientImpl.getProteineBrute(), ingredientImpl.getEnergieMetabolisable()));
+        ingredientDAO.save(toEntity(ingredientImpl));
     }
 
     @Override
@@ -47,7 +44,15 @@ public class IngredientRepositoryImpl implements IngredientRepository {
     public List<IngredientImpl> findAll() {
         List<IngredientImpl> alleIngredientImpls = new ArrayList<>();
         Iterable<IngredientEntity> all = ingredientDAO.findAll();
-        all.forEach(ingredientEntity -> alleIngredientImpls.add(ingredientEntity.toIngredient()));
+        all.forEach(ingredientEntity -> alleIngredientImpls.add(toIngredient(ingredientEntity)));
         return alleIngredientImpls;
+    }
+
+    public IngredientImpl toIngredient(IngredientEntity e) {
+        return new IngredientImpl(e.getName(), e.getLysine(), e.getMethyonine(), e.getProteineBrute(), e.getEnergieMetabolisable());
+    }
+
+    public IngredientEntity toEntity(IngredientImpl i) {
+        return new IngredientEntity(i.getName(), i.getLysine(), i.getMethyonine(), i.getProteineBrute(), i.getEnergieMetabolisable());
     }
 }

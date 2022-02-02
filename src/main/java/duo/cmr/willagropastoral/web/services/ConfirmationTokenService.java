@@ -5,6 +5,8 @@ import duo.cmr.willagropastoral.persistence.registration.token.ConfirmationToken
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -24,6 +26,14 @@ public class ConfirmationTokenService {
     }
 
     public void setConfirmedAt(String token) {
-        confirmationTokenRepository.updateConfirmedAt(token, LocalDateTime.now());
+        confirmationTokenRepository.updateConfirmedAt(Date.valueOf(LocalDate.now()), token);
+    }
+
+    public Optional<ConfirmationTokenEntity> findByUsername(String email) {
+        return confirmationTokenRepository.findByUsername(email);
+    }
+
+    public void deleteByUsername(String email) {
+        confirmationTokenRepository.deleteByUsername(email);
     }
 }

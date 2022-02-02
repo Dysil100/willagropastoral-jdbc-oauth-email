@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class SomebodyController {
 
 
-    @GetMapping("/")
+    @GetMapping("/somebody")
     public String sombody(){
         return "somebody";
     }

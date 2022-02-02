@@ -1,10 +1,8 @@
 package duo.cmr.willagropastoral.persistence.registration.appuser;
 
 import duo.cmr.willagropastoral.domain.model.appsuer.AppUser;
-import duo.cmr.willagropastoral.web.services.ConfirmationTokenService;
 import duo.cmr.willagropastoral.web.services.interfaces.repositories.AppUserRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -12,15 +10,12 @@ import java.util.Optional;
 @Repository
 @AllArgsConstructor
 public class AppUserRepositoryImpl implements AppUserRepository {
-    private static final String USER_NOT_FOUND_MSG = "user with email %s not found";
     private final DaoAppUserRepository daoAppUserRepository;
-    private final ConfirmationTokenService confirmationTokenService;
 
     @Override
-    public AppUser findByEmail(String email) {
+    public Optional<AppUser> findByEmail(String email) {
         Optional<AppUserEntity> byEmail = daoAppUserRepository.findByEmail(email);
-        if (byEmail.isPresent()) return toAppUser(byEmail.get());
-        else throw new UsernameNotFoundException (String.format(USER_NOT_FOUND_MSG, email));
+        return byEmail.map(this::toAppUser);
     }
 
     @Override
@@ -31,10 +26,13 @@ public class AppUserRepositoryImpl implements AppUserRepository {
 
     @Override
     public void enableAppUser(String email) {
-        AppUser byEmail = findByEmail(email);
-        if (byEmail.getEnabled()) return;
-        byEmail.setEnabled(true);
-        save(byEmail);
+        daoAppUserRepository.updateEnabledUser(email);
+    }
+
+    @Override
+    public void deleteByEmail(String username) {
+        Optional<AppUserEntity> byEmail = daoAppUserRepository.findByEmail(username);
+        byEmail.ifPresent(daoAppUserRepository::delete);
     }
 
     public AppUser toAppUser(AppUserEntity entity) {
@@ -44,7 +42,7 @@ public class AppUserRepositoryImpl implements AppUserRepository {
         return appUser;
     }
 
-    public AppUserEntity toEntity(AppUser user){
-        return new AppUserEntity(user.getFirstName(), user.getLastName(), user.getEmail(), user.getPassword(), user.getRole());
+    public AppUserEntity toEntity(AppUser user) {
+        return new AppUserEntity(user.getFirstName(), user.getLastName(), user.getUsername(), user.getPassword(), user.getRole());
     }
 }

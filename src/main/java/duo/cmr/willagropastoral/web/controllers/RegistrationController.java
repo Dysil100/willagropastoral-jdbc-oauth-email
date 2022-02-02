@@ -13,6 +13,15 @@ public class RegistrationController {
 
     private final RegistrationService registrationService;
 
+    @GetMapping("/")
+    public String loginOrResgister(){
+        return "loginorregister";
+    }
+
+// TODO: 02.02.22 Implement password recuperation;
+
+
+
     @GetMapping("/registration")
     public String registerForm(Model model, @ModelAttribute("formular") RegistrationRequest request){
         model.addAttribute("form", request);
@@ -22,14 +31,15 @@ public class RegistrationController {
     @PostMapping("/registration")
     public String register(@ModelAttribute("form") RegistrationRequest request) {
         System.out.println(request);
-        return registrationService.register(request);
+        System.out.println(registrationService.register(request));
+        return "redirect:/somebody";
     }
 
-    @GetMapping(path = "confirm")
+    @GetMapping("/registration/confirm")
     public String confirm(@RequestParam("token") String token) {
-        return registrationService.confirmToken(token);
+        System.out.println(registrationService.confirmToken(token));
+        return "login";
     }
-
     @ModelAttribute("formular")
     RegistrationRequest request(){
         return new RegistrationRequest(null, null, null, null);

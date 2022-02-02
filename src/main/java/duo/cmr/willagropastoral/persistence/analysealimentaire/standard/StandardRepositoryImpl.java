@@ -1,26 +1,23 @@
 package duo.cmr.willagropastoral.persistence.analysealimentaire.standard;
 
-import duo.cmr.willagropastoral.domain.model.apportNutritifs.Standard;
+import duo.cmr.willagropastoral.domain.model.apportNutritifs.*;
 import duo.cmr.willagropastoral.web.services.interfaces.repositories.StandardRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-// TODO: 22.01.22 Implement a toStandard method
 @Repository
+@AllArgsConstructor
 public class StandardRepositoryImpl implements StandardRepository {
 
     final StandardDAO standardDAO;
 
-    public StandardRepositoryImpl(StandardDAO standardDAO) {
-        this.standardDAO = standardDAO;
-    }
-
     @Override
     public Standard findByDescription(String description) {
-        return standardDAO.findByDescription(description).orElse(getOther()).toStandard(); // TODO: 22.01.22 Implements these methods
+        return toStandard(standardDAO.findByDescription(description).orElse(getOther())); // TODO: 22.01.22 Implements these methods
     }
 
     private StandardEntity getOther() {
@@ -29,14 +26,13 @@ public class StandardRepositoryImpl implements StandardRepository {
 
     @Override
     public Standard findById(Long id) {
-        return standardDAO.findById(id).orElse(getOther()).toStandard();
+        return toStandard(standardDAO.findById(id).orElse(getOther()));
 
     }
 
     @Override
     public void save(Standard standard) {
-        standardDAO.save(new StandardEntity(standard.description(), standard.lysine().getValeur(),
-                standard.methyonine().getValeur(), standard.proteineBrute().getValeur(), standard.energieMethabolisable().getValeur()));
+        standardDAO.save(toEntity(standard));
     }
 
     @Override
@@ -49,7 +45,18 @@ public class StandardRepositoryImpl implements StandardRepository {
     public List<Standard> alle() {
         Iterable<StandardEntity> all = standardDAO.findAll();
         List<Standard> alle = new ArrayList<>();
-        all.forEach(s -> alle.add(s.toStandard()));
+        all.forEach(s -> alle.add(toStandard(s)));
         return alle;
+    }
+
+    public Standard toStandard(StandardEntity e) {
+        String standard = "standard";
+        return new Standard(e.getDescription(), new Lysine(e.getLysine(), standard), new Methyonine(e.getMethyonine(), standard),
+                new ProteineBrute(e.getProteineBrute(), standard), new EnergieMethabolisable(e.getEnergieMetabolisable(), standard));
+    }
+
+    public StandardEntity toEntity(Standard s) {
+        return new StandardEntity(s.description(), s.lysine().getValeur(), s.methyonine().getValeur(),
+                s.proteineBrute().getValeur(), s.energieMethabolisable().getValeur());
     }
 }

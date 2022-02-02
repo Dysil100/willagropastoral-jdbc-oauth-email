@@ -2,6 +2,7 @@ package duo.cmr.willagropastoral.web.services.interfaces.repositories;
 
 import duo.cmr.willagropastoral.persistence.registration.token.ConfirmationTokenEntity;
 
+import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
@@ -10,5 +11,9 @@ public interface ConfirmationTokenRepository {
 
     Optional<ConfirmationTokenEntity> findByToken(String token);
 
-    void updateConfirmedAt(String token, LocalDateTime now);
+    void updateConfirmedAt(Date now, String token);
+
+    Optional<ConfirmationTokenEntity> findByUsername(String username);
+
+    void deleteByUsername(String email);
 }

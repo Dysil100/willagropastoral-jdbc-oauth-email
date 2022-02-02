@@ -2,15 +2,12 @@ package duo.cmr.willagropastoral.domain;
 
 import duo.cmr.willagropastoral.domain.model.apportNutritifs.*;
 import duo.cmr.willagropastoral.domain.model.ingredients.IngredientImpl;
+import duo.cmr.willagropastoral.web.services.ServiceAgro;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Stream;
 
 // TODO: 22.01.22 Anwendung neue Schreiben
@@ -21,6 +18,7 @@ import java.util.stream.Stream;
 @Setter
 public class Formular {
 
+    ServiceAgro serviceAgro;
     private String type;
     private Double mais;
     private Double sonDeBle;
@@ -42,8 +40,6 @@ public class Formular {
 
     private List<ResultatEnergetique> resultats;
     private Set<ResultatEnergetique> resultatsStandards;
-    private List<IngredientImpl> ingredients;
-    private List<Standard> standards;
     boolean zeigen;
 
     public Formular() {
@@ -73,32 +69,10 @@ public class Formular {
         this.type = "Porcins: Prédémarrage Porc (de 5 à 10 Jours)";
     }
 
-    public Standard getTypeObj() {
-        return getMapStandards().get(getType());
-    }
-
-    public void setStandards(List<Standard> standards){
-        this.standards = standards;
-    }
-
-    public void setIngredients(List<IngredientImpl> ingredients) {
-        this.ingredients = ingredients;
-    }
-
-    public HashMap<String, IngredientImpl> getMapIngredients() {
-        HashMap<String, IngredientImpl> mapIngredients = new HashMap<>();
-        ingredients.forEach(i -> mapIngredients.put(i.getName(), i));
-        return mapIngredients;
-    }
-
     public HashMap<String, Standard> getMapStandards() {
         HashMap<String, Standard> mapStandards = new HashMap<>();
-        standards.forEach(s -> mapStandards.put(s.description(), s));
+        serviceAgro.alleStandards().forEach(s -> mapStandards.put(s.description(), s));
         return mapStandards;
-    }
-
-    public LocalDateTime dateActuel() {
-        return LocalDateTime.now();
     }
 
     public Standard getStandard() {
@@ -128,7 +102,7 @@ public class Formular {
     }
 
     public String error() {
-        String errorText = (hasValeurNull() || hasNegativeValeur() ? " décimal " : "") + ((hasNegativeValeur() != null) && (hasNegativeValeur() == true) ? " superieur ou egal a 0 " : "");
+        String errorText = (hasValeurNull() || hasNegativeValeur() ? " décimal " : "") + ((hasNegativeValeur()) ? " superieur ou egal a 0 " : "");
         return !"".equals(errorText) ? "Entrez une Valeur " + errorText + "dans chaque champ" : null;
     }
 
@@ -136,7 +110,7 @@ public class Formular {
     public List<ResultatEnergetique> getResultats() {
         Double summe1 = summe();
         System.out.println(summe1);
-        Double summe = summe1 <= 0 ? 1 : summe1; //afin que le denominateur ne soit jamais null (pour eviter tout operation illegal)
+        double summe = summe1 <= 0 ? 1 : summe1; //afin que le denominateur ne soit jamais null (pour eviter tout operation illegal)
         List<IngredientImpl> ingredientswhithValues = getIngredientswhithValues();
         ingredientswhithValues.forEach(System.out::println);
         Double lysineFinal = ingredientswhithValues.stream().map(ing -> ing.getQuantite() * ing.getLysine() / (summe)).reduce(Double::sum).orElse(.0);
@@ -165,44 +139,11 @@ public class Formular {
 
     // TODO: 22.01.22 Database umstrukturieren damit die Daten vernünftiger geladen werden
     public List<IngredientImpl> getIngredientswhithValues() {
-        HashMap<String, IngredientImpl> mapIngredients1 = getMapIngredients();
-        IngredientImpl tourteau_de_coton = mapIngredients1.get("tourteau de coton");
-        tourteau_de_coton.setQuantite(tourteauDeCoton);
-
-        IngredientImpl belgofoxsIng = mapIngredients1.get("belgofoxs");
-        belgofoxsIng.setQuantite(belgofoxs);
-
-        IngredientImpl belgoporcs = mapIngredients1.get("belgoporcs");
-        belgoporcs.setQuantite(belgoPorcs);
-
-        IngredientImpl belgotoxIng = mapIngredients1.get("belgotox");
-        belgotoxIng.setQuantite(belgotox);
-
-        IngredientImpl coquille_de_mer = mapIngredients1.get("coquille de mer");
-        coquille_de_mer.setQuantite(coquilleDeMer);
-
-        IngredientImpl farine_de_soja = mapIngredients1.get("farine de soja");
-        farine_de_soja.setQuantite(farineDeSoja);
-
-        IngredientImpl son_de_ble = mapIngredients1.get("son de blé");
-        son_de_ble.setQuantite(sonDeBle);
-
-        IngredientImpl sulfate_de_fer = mapIngredients1.get("sulfate de fer");
-        sulfate_de_fer.setQuantite(sulfateDeFer);
-
-        IngredientImpl tourteau_darachide = mapIngredients1.get("tourteau d`arachide");
-        tourteau_darachide.setQuantite(tourteauDarachide);
-
-        IngredientImpl tourteau_de_palmiste = mapIngredients1.get("tourteau de palmiste");
-        tourteau_de_palmiste.setQuantite(tourteauDePalmiste);
-
-        IngredientImpl maisIng = mapIngredients1.get("mais");
-        maisIng.setQuantite(mais);
-
-        IngredientImpl farine_de_poisson = mapIngredients1.get("farine de poisson");
-        farine_de_poisson.setQuantite(farineDePoisson);
-
-        return List.of(farine_de_soja, farine_de_poisson, maisIng, belgofoxsIng, belgoporcs, belgotoxIng,
-                tourteau_darachide, tourteau_de_palmiste, tourteau_de_coton, coquille_de_mer, sulfate_de_fer, son_de_ble);
+        Map<String, Double> namesValuse = new HashMap<>(Map.of("mais", mais, "tourteau de coton", tourteauDeCoton,
+                "belgofoxs", belgofoxs, "belgotox", belgotox, "belgoporcs", belgoPorcs, "coquille de mer", coquilleDeMer,
+                "farine de soja", farineDeSoja, "son de blé", sonDeBle, "sulfate de fer", sulfateDeFer,
+                "tourteau d`arachide", tourteauDarachide));
+        namesValuse.putAll(Map.of("tourteau de palmiste", tourteauDePalmiste, "farine de poisson", farineDePoisson));
+        return serviceAgro.loadIngredientsWithValues(namesValuse);
     }
 }

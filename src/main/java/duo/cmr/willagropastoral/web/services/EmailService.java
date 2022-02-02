@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -17,11 +16,10 @@ import javax.mail.internet.MimeMessage;
 @AllArgsConstructor
 public class EmailService implements EmailSender {
 
-    private final static Logger LOGGER = LoggerFactory
-            .getLogger(EmailService.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(EmailService.class);
 
     // TODO: 31.01.22 Create in configuration a bean of typ java mail sender
-    private final JavaMailSender mailSender = new JavaMailSenderImpl();
+    private final JavaMailSender mailSender;
 
 
     @Override
@@ -34,7 +32,7 @@ public class EmailService implements EmailSender {
             helper.setText(email, true);
             helper.setTo(to);
             helper.setSubject("Confirm your email");
-            helper.setFrom("silatsamdylan@gmail.com");
+            helper.setFrom("willagropastoral@gmail.com");
             mailSender.send(mimeMessage);
         } catch (MessagingException e) {
             LOGGER.error("failed to send email", e);

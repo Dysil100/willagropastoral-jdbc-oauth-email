@@ -1,3 +1,5 @@
+#email: willagropastoral@gmail.com
+#password: duo.cmr.willagropastoral
 willagropastoral:
   admins: silatsamdylan@gmail.com
   leaders: dylan, willfried
@@ -17,12 +19,14 @@ spring:
     password: iamgroot
 
   mail:
-    host: localhost
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    #host: localhost
     #port: 1025
-    port: 8080
-    username: willagropastoral
-    password: feuilledecalcul
-
+    port: 587
+    username: willagropastoral@gmail.com
+    password: duo.cmr.willagropastoral
+    protocol: smtp
     properties:
       mail:
         smtp:

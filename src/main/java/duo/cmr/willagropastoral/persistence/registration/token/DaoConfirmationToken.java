@@ -1,10 +1,12 @@
 package duo.cmr.willagropastoral.persistence.registration.token;
 
+import org.springframework.data.jdbc.repository.query.Modifying;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
+import java.sql.Date;
 import java.util.Optional;
 
 
@@ -13,11 +15,10 @@ public interface DaoConfirmationToken extends CrudRepository<ConfirmationTokenEn
 
     Optional<ConfirmationTokenEntity> findByToken(String token);
 
+    Optional<ConfirmationTokenEntity> findByUsername(String email);
+
     @Transactional
-    @Query("""
-           UPDATE confirmation_token c
-           SET c.confirmed_at = ?2
-           WHERE c.token = ?1
-           """)
-    void updateConfirmedAt(String token, LocalDateTime confirmedAt);
+    @Modifying
+    @Query("UPDATE confirmation_token  SET confirmed_at = :confirmedAt WHERE token = :token")
+    void updateConfirmedAt(@Param("confirmedAt") Date confirmedAt, @Param("token") String token);
 }

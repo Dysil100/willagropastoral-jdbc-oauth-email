@@ -7,7 +7,9 @@ import duo.cmr.willagropastoral.web.services.interfaces.repositories.StandardRep
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 @AllArgsConstructor
@@ -15,6 +17,17 @@ import java.util.List;
 public class ServiceAgro {
     final IngredientRepository ingredientRepository;
     final StandardRepository standardRepository;
+
+    public List<IngredientImpl> loadIngredientsWithValues(Map<String, Double> namesValues){
+        List<IngredientImpl> ingredientsWithvalues = new ArrayList<>();
+        namesValues.forEach((n, v) -> {
+            IngredientImpl byName = ingredientRepository.findByName(n);
+            byName.setQuantite(v);
+            ingredientsWithvalues.add(byName);
+        });
+        return ingredientsWithvalues;
+    }
+
     public List<IngredientImpl> alleIngredients() {
         return ingredientRepository.findAll();
     }

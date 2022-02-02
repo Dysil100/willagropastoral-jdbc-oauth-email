@@ -4,7 +4,7 @@ import duo.cmr.willagropastoral.web.services.interfaces.repositories.Confirmatio
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDateTime;
+import java.sql.Date;
 import java.util.Optional;
 
 @Repository
@@ -23,7 +23,18 @@ public class ConfirmationTokenRepositoryImpl implements ConfirmationTokenReposit
     }
 
     @Override
-    public void updateConfirmedAt(String token, LocalDateTime now) {
-        daoConfirmationToken.updateConfirmedAt(token, now);
+    public void updateConfirmedAt(Date now, String token) {
+        daoConfirmationToken.updateConfirmedAt(now, token);
+    }
+
+    @Override
+    public Optional<ConfirmationTokenEntity> findByUsername(String email) {
+        return daoConfirmationToken.findByUsername(email);
+    }
+
+    @Override
+    public void deleteByUsername(String email) {
+        Optional<ConfirmationTokenEntity> byUsername = daoConfirmationToken.findByUsername(email);
+        byUsername.ifPresent(daoConfirmationToken::delete);
     }
 }

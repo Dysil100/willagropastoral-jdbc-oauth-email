@@ -1,4 +1,4 @@
-package duo.cmr.willagropastoral.web.security.config;
+package duo.cmr.willagropastoral.web.configurations.securyty;
 
 import duo.cmr.willagropastoral.web.services.AppUserService;
 import lombok.AllArgsConstructor;
@@ -11,6 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+
 @Configuration
 @AllArgsConstructor
 @EnableWebSecurity
@@ -21,10 +22,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .csrf().disable()
-                .authorizeRequests()
-                    .antMatchers("/analyse", "/api/v*/registration/**", "/", "/registration", "/homepage")
+        http.authorizeRequests()
+                    .antMatchers( "/", "/registration", "/registration/*", "/registration/confirm/*")
                     .permitAll()
                 .anyRequest()
                 .authenticated().and()

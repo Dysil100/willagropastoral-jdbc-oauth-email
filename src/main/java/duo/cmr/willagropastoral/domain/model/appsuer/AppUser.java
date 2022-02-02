@@ -3,6 +3,7 @@ package duo.cmr.willagropastoral.domain.model.appsuer;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,6 +14,7 @@ import java.util.Collections;
 @Getter
 @Setter
 @EqualsAndHashCode
+@ToString
 public class AppUser  implements UserDetails  {
     private String firstName;
     private String lastName;
