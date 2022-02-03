@@ -2,7 +2,8 @@ HELP.md
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
+###!**/src/main/**/build/ ich will doch nicht ignorieren###
+###!**/src/main/**/build/###
 !**/src/test/**/build/
 
 ### STS ###
