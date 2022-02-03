@@ -1,6 +1,7 @@
 package duo.cmr.willagropastoral.web.services;
 
 import duo.cmr.willagropastoral.domain.model.appsuer.AppUser;
+import duo.cmr.willagropastoral.domain.model.appsuer.AppUserRole;
 import duo.cmr.willagropastoral.persistence.registration.token.ConfirmationTokenEntity;
 import duo.cmr.willagropastoral.web.services.interfaces.domaininterfaces.EmailSender;
 import duo.cmr.willagropastoral.web.services.interfaces.repositories.AppUserRepository;
@@ -32,33 +33,41 @@ public class AppUserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email)
             throws UsernameNotFoundException {
-        return appUserRepository.findByEmail(email)
-                .orElseThrow(() -> new UsernameNotFoundException(String.format(USER_NOT_FOUND_MSG, email)));
+        //throw new UsernameNotFoundException(String.format(USER_NOT_FOUND_MSG, email));
+        return appUserRepository.findByEmail(email).orElseGet(() -> new AppUser(
+                "Not found", "Not found", "Not found", "Not found",
+                AppUserRole.USER));
     }
 
     public String signUpUser(AppUser appUser) {
-        String returnValue = "";
-        String token = "";
+        String returnValue;
         boolean userExists = appUserRepository.findByEmail(appUser.getUsername()).isPresent();
         if (userExists) {
             ConfirmationTokenEntity tokenEntity = confirmationTokenService.findByUsername(appUser.getUsername())
-                    .orElseThrow(() -> new IllegalStateException("Token for email" + appUser.getUsername() + " does not exist"));
-            System.out.println(token);
+                    .orElseThrow(() -> new IllegalStateException("Token for email" + appUser.getUsername()
+                                                                 + " does not exist"));
             if (!appUser.getEnabled()) {
                 String bodyMsg = "Your actually have an account, Please click on the below link to activate your it:";
                 if (stringToDate(tokenEntity.getExpiredAt()).isBefore(LocalDateTime.now())) {
                     String newtoken = UUID.randomUUID().toString();
-                    String newLink = "http://localhost:8080/registration/confirm?token=" + newtoken;
-                    ConfirmationTokenEntity confirmationTokenEntity = new ConfirmationTokenEntity(newtoken, dateToString(LocalDateTime.now()), dateToString(LocalDateTime.now().plusMinutes(15)), appUser.getUsername());
+                    String newLink = getLinkConfirmRegistration(newtoken);
+                    ConfirmationTokenEntity confirmationTokenEntity = new ConfirmationTokenEntity(newtoken,
+                            dateToString(LocalDateTime.now()), dateToString(LocalDateTime.now().plusMinutes(15)),
+                            appUser.getUsername()
+                    );
                     confirmationTokenService.deleteByUsername(appUser.getUsername());
                     confirmationTokenService.saveConfirmationToken(confirmationTokenEntity);
-                    emailSender.buildAndSend(appUser.getFirstName(), newLink, appUser.getUsername(), "Confirm your Email", bodyMsg);
+                    emailSender.buildAndSend(
+                            appUser.getFirstName(), newLink, appUser.getUsername(), "Confirm your Email",
+                            bodyMsg
+                    );
                     returnValue = "new token for user " + appUser.getFirstName()
                                   + " created please confirms your email to enable your account";
                 } else {
-                    token = tokenEntity.getToken();
-                    String link = "http://localhost:8080/registration/confirm?token=" + token;
-                    emailSender.buildAndSend(appUser.getFirstName(), link, appUser.getUsername(), "Confirm your Email", bodyMsg);
+                     String token = tokenEntity.getToken();
+                    String link = getLinkConfirmRegistration(token);
+                    emailSender.buildAndSend(appUser.getFirstName(), link, appUser.getUsername(),
+                            "Confirm your Email", bodyMsg);
                     returnValue = "Please confirms your email to enable your account before the link expire";
                 }
             } else {
@@ -71,15 +80,15 @@ public class AppUserService implements UserDetailsService {
                     .encode(appUser.getPassword());
             appUser.setPassword(encodedPassword);
             appUserRepository.save(appUser);
-            token = UUID.randomUUID().toString();
-            String link = "http://localhost:8080/registration/confirm?token=" + token;
+            String token = UUID.randomUUID().toString();
             ConfirmationTokenEntity confirmationTokenEntity = new ConfirmationTokenEntity(
                     token, dateToString(LocalDateTime.now()),
                     dateToString(LocalDateTime.now().plusMinutes(15)), appUser.getUsername()
             );
             confirmationTokenService.saveConfirmationToken(confirmationTokenEntity);
             String bodyMsg = "Thank you for registering. Please click on the below link to activate your account:";
-            emailSender.buildAndSend(appUser.getFirstName(), link, appUser.getUsername(), "Confirm your Email", bodyMsg);
+            emailSender.buildAndSend(appUser.getFirstName(), getLinkConfirmRegistration(token), appUser.getUsername(),
+                     "Confirm your Email", bodyMsg);
 
             //TODO: SEND EMAIL
             // TODO if email not confirmed send confirmation email.
@@ -102,11 +111,11 @@ public class AppUserService implements UserDetailsService {
             Optional<ConfirmationTokenEntity> byUsername = confirmationTokenService.findByUsername(email);
             String token = "";
             if (byUsername.isPresent()) token += byUsername.get().getToken();
-            String link = getLinkDeleteWith(token);
             String name = byEmail.get().getFirstName();
             String bodyMsg = """
                     We don't still yet implemented an effizient way for recovering password, so that you may
-                    delete your account an make another registration to marks your new password.<br> Click on the below link to register again
+                    delete your account an make another registration to marks your new password.<br> 
+                    Click on the below link to register again
                     """;
             emailSender.buildAndSend(name, getLinkDeleteWith(token), email, "Password recovery", bodyMsg);
             return "ready for a deleting the account a register another";
@@ -116,5 +125,9 @@ public class AppUserService implements UserDetailsService {
 
     private String getLinkDeleteWith(String token) {
         return "http://localhost:8080/delete/confirm?token=" + token;
+    }
+
+    private String getLinkConfirmRegistration(String token) {
+        return "http://localhost:8080/registration/confirm?token=" + token;
     }
 }

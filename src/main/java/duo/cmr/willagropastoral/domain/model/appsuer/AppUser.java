@@ -16,6 +16,7 @@ import java.util.Collections;
 @EqualsAndHashCode
 @ToString
 public class AppUser  implements UserDetails  {
+
     private String firstName;
     private String lastName;
     private String email;
@@ -23,6 +24,7 @@ public class AppUser  implements UserDetails  {
     private AppUserRole role;
     private Boolean locked = false;
     private Boolean enabled = false;
+
     public AppUser(String firstName, String lastName, String email, String password, AppUserRole role) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -30,7 +32,6 @@ public class AppUser  implements UserDetails  {
         this.password = password;
         this.role = role;
     }
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -47,14 +48,6 @@ public class AppUser  implements UserDetails  {
     @Override
     public String getUsername() {
         return email;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
     }
 
     @Override

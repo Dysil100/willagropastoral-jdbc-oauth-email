@@ -1,4 +1,4 @@
-package duo.cmr.willagropastoral.web.configurations.securyty;
+package duo.cmr.willagropastoral.web.configurations.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
