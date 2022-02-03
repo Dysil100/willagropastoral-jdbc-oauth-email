@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mail eingabe</title>
+</head>
+<body>
+<div class="container-fluid">
+<form th:action="@{/maileingabe}" method="post" style="max-width: 400px; margin: 0 auto;">
+    <h2>Registration</h2>
+    <div class="border border-secondary rounded p-3">
+        <div>
+            <p><input type="email" name="email" required class="form-control" placeholder="E-mail"/>
+            </p>
+        </div>
+        <div class="btn btn-primary" >
+            <p><input type="submit" value="Send Mail" class="btn btn-primary"/></p>
+        </div>
+    </div>
+</form>
+</div>
+</body>
+</html>

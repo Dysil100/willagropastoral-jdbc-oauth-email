@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WillAgropastoral</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        p, h4, h3, h2, table {
+            border: #005cbf;
+            margin-left: 10%;
+        }
+
+        .container-fluid {
+            border: #005cbf;
+            margin-right: 10%;
+        }
+
+        html, body {
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        .block {
+            float: left;
+            width: 50%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div th:object="${form}" class="container-fluid">
+        <div class="row">
+            <h1 class="title form-text">Verification de Proportions Alimentaires pour <span th:text="${form.getType()}"> Type d'alimenation</span>
+            <p class="alert alert-warning" th:if="${form.error()} != null" th:text="${form.error()}">Entrez exactement une valeur supperieur ou egal a Zero dans chaque Champ, pour une meilleure experience utilisateur</p>
+            </h1> <br>
+            <div class="block">
+                <form method="post"  th:action="@{/analyse}">
+                    <div class="mb-3">
+                        <h2><label class="form-select" for="type">Choisir le type d'elévage</label></h2>
+                        <select class="form-select form-select-lg" aria-label="Default select example" id="type"
+                                name="type" th:field="*{type}" onchange="this.form.submit()">
+                            <option selected th:each="typ : ${form.getMapStandards()}" th:text="${typ.getKey()}"  th:value="${typ.getKey()}">Choisir
+                                le type d'elévage
+                            </option>
+                        </select>
+                    </div>
+
+                    <h2>entrer les valeurs alimentaire disposnible (en Kg)</h2>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="mais">Maïs</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="mais" th:field="*{mais}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="sonDeBle">Son de blé</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="sonDeBle" th:field="*{sonDeBle}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="farineDeSoja">Farine de soja 49%</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="farineDeSoja" th:field="*{farineDeSoja}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="farineDePoisson">Farine de poisson 65%</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any"
+                                   id="farineDePoisson" th:field="*{farineDePoisson}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="tourteauDePalmiste">Tourteau de palmiste </label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="tourteauDePalmiste" th:field="*{tourteauDePalmiste}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="tourteauDeCoton">Tourteau de coton</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="tourteauDeCoton" th:field="*{tourteauDeCoton}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="tourteauDarachide">Tourteau d'arachide</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="tourteauDarachide" th:field="*{tourteauDarachide}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="sulfateDeFer">Sulfate de fer</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any"  id="sulfateDeFer" th:field="*{sulfateDeFer}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="belgotox">Belgotoxs (Anti-toxines)</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any"  id="belgotox" th:field="*{belgotox}">
+                        </div>
+                    </div>
+
+                    <!--div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="belgofoxs">Belgofoxs (Phosphate bicalcique)</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any"  id="belgofoxs" th:field="*{belgofoxs}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="coquilleDeMer">Coquille de mer</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any"  id="coquilleDeMer" th:field="*{coquilleDeMer}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="belgoPorcs">Belgo-Porcs 10%</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any"  id="belgoPorcs" th:field="*{belgoPorcs}">
+                        </div>
+                    </div-->
+
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="Calcul Analytique"> <br><br>
+
+                    <div class="form-radio">
+                        <input class="form-check-label" type="checkbox" id="zeigen" name="zeigen"
+                               onchange="this.form.submit()"
+                               th:checked="*{zeigen}">
+                        <label for="zeigen">Afficher Le Resultat</label>
+                    </div>
+                </form>
+            </div>
+            <div class="block" th:if="*{isZeigen()}">
+                <h2>Resultat du Calcul analytique:</h2>
+                <!-- die 2 tabelle mit thymeleaf fragment lösen-->
+                <form>
+                    <table class="table table-hover">
+                        <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Apport nutritif</th>
+                            <th scope="col">Valeur</th>
+                            <th scope="col"></th>
+                            <th scope="col">Appreciation</th>
+                        </tr>
+                        </thead>
+                        <tbody th:remove="all-but-first">
+                        <tr th:each="ergebnis :${form.getResultats()}">
+                            <td th:text="${ergebnis.getNom()}">Nom</td>
+                            <td th:text="${#numbers.formatDecimal(ergebnis.getValeur(), 1, 3)}">Valeur</td>
+                            <td th:text="${ergebnis.getUnite()}">Unité</td>
+                            <td th:text="${ergebnis.getAppreciation()}">Appreciation</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <h4>Resultat Standard Pour :<span th:text="${form.getType()}"> type d'élévage</span></h4>
+                    <table class="table table-hover">
+                        <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Apport nutritif</th>
+                            <th scope="col">Valeur</th>
+                            <th scope="col"></th>
+                            <th scope="col">Appreciation</th>
+                        </tr>
+                        </thead>
+                        <tbody th:remove="all-but-first">
+                        <tr th:each="ergebnis :${form.getResultatsStandards()}">
+                            <td th:text="${ergebnis.getNom()}">Nom</td>
+                            <td th:text="${#numbers.formatDecimal(ergebnis.getValeur(), 1, 3)}">Valeur</td>
+                            <td th:text="${ergebnis.getUnite()}">Unité</td>
+                            <td th:text="${ergebnis.getAppreciation()}">Appreciation</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <h3>Note:</h3>
+                    <p>L'appreciation 'OK' admet une marge d'erreur de plus ou moins 10% de la valeur standard</p>
+                </form>
+            </div>
+        </div>
+        <h3>Note:</h3>
+        <p>Un service de la Structure agricole WillAgropastoral.</p>
+    </div>
+</div>
+</body>
+</html>
