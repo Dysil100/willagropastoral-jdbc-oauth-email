@@ -1,0 +1,84 @@
+I - App Starten
+
+        ##IP-Server: 95.179.219.29
+        ##Gihub-servertoken: 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
+    1) zum virtuallen machinen des ServerProvider Vultr  mit den Folgenden Commandos login:
+        ssh root@95.179.219.29
+        ##IP-Server: 95.179.219.29
+        und mit following credential:
+        username:root
+        password:[Js4m[B}QP#(D9XU
+
+    2) navigate to hom and start the jarFile with following command
+        cd ../home/java-apps/WillAgropastoralApp/
+
+        und:  gradle build && java -jar build/libs/WillAgropastoral-0.0.1-SNAPSHOT.jar
+        oder das Folgende
+        java -jar ../home/spring-apps/WillAgropastoralApp/build/libs/WillAgropastoral-0.0.1-SNAPSHOT.jar  server.port=80
+
+II - App aktualisieren
+
+    1-login to aapanel with following credential:
+        username: jwvjhekj
+        password: 952a993c
+
+        oder folgende URL im Browser eingeben:
+            http://95.179.219.29:7800/f3a59635 (damit man direct zu seinem persönlichen übersicht landet)
+
+
+        (aaPanel Internet Address: http://95.179.219.29:7800/f3a59635
+        aaPanel Internal Address: http://95.179.219.29:7800/f3a59635
+        username: jwvjhekj
+        password: 952a993c)
+
+    2)- zum Ordner naviegieren und Datei uploaden:
+        a)  dann (links) unter Files nach dem Ordner ../home/java-spring-app/ suchen
+        b) sein jar datei uploaden (bzw: sein Project uploaden)
+
+    3) -App direct laufen lassen
+        navigate with cd to code-source  (../home/willApp-code-source/WillAgropastoralApp/) Ordner
+        and run:
+            gradle build
+            an then run:
+            java -jar build/libs/WillAgropastoral-0.0.1-SNAPSHOT.jar server.port=80
+
+III- app starten und stoppen;
+      1) - programm starten und ein Timeout verhindert mit folgenden:
+     nohup java -jar ../home/java-spring-app/WillAgropastoral-0.0.1-SNAPSHOT.jar  server.port=80 > myLogsOutput.txt &
+      2) - programm stoppen:
+        killall -9 java : um alle laufenden programm runterzubringen
+        killall -9 PID : um ein Programm mit diesem PIP zu stoppem,
+        ps -ef : um das PID eines Programm rauszufinden:
+
+
+IV- Anbieter:
+  1)paypal email: silatsamdylan@gmail.com
+  2)Domain name Anbieter (unter https://www.namesilo.com):
+    username: silatsam
+    password: Programmierung2.0
+
+  3)DNS (Domain Namen service) ; routing meiner Server-Ip-Adrese (unter https://dash.cloudflare.com):
+        username: silatsamdylan@gmail.com
+        password: programmierung2.0
+  4) Server provider(unter https://my.vultr.com):
+        username: silatsamdylan@gmail.com
+        password: Programmierung2.0
+
+  5) Heroku: server, heberger, appBuilder und deployer:
+        username: silatsamdylan@gmail.com
+        password: programmierung2.0
+
+  6) Google account:
+        username: Silatsamdylan@gmail.com
+        password: programmierung2.0
+
+        username: willagropastoral@gmail.com
+        password: feuille de calculs
+
+  7)cloudd provider ( Cloud66 ) mit Folgenden:
+    * name: calculAnalytique
+    * password: XITLQHGOSPYUYS7XE73N53W2NPUEGLKTPQ5A
+
+    sorry bro deutsh und Englsich vermisch: muss du bloß mit rauskommen.
+    Note: Port 80 ist der Default Port wo man seine
+    Note: lieber manual per Hand bauern 'mit gradle build'
