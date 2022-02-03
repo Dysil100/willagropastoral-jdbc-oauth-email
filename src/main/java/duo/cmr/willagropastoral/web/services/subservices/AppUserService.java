@@ -64,9 +64,8 @@ public class AppUserService implements UserDetailsService {
                     returnValue = "new token for user " + appUser.getFirstName()
                                   + " created please confirms your email to enable your account";
                 } else {
-                     String token = tokenEntity.getToken();
-                    String link = getLinkConfirmRegistration(token);
-                    emailSender.buildAndSend(appUser.getFirstName(), link, appUser.getUsername(),
+                    String token = tokenEntity.getToken();
+                    emailSender.buildAndSend(appUser.getFirstName(), getLinkConfirmRegistration(token), appUser.getUsername(),
                             "Confirm your Email", bodyMsg);
                     returnValue = "Please confirms your email to enable your account before the link expire";
                 }
@@ -88,7 +87,7 @@ public class AppUserService implements UserDetailsService {
             confirmationTokenService.saveConfirmationToken(confirmationTokenEntity);
             String bodyMsg = "Thank you for registering. Please click on the below link to activate your account:";
             emailSender.buildAndSend(appUser.getFirstName(), getLinkConfirmRegistration(token), appUser.getUsername(),
-                     "Confirm your Email", bodyMsg);
+                    "Confirm your Email", bodyMsg);
 
             //TODO: SEND EMAIL
             // TODO if email not confirmed send confirmation email.
@@ -123,11 +122,19 @@ public class AppUserService implements UserDetailsService {
         return "Account with email " + email + " does not exist";
     }
 
+
+    /**
+     * @param token
+     * @return link for building email
+     * change adresse for produktion
+     */
     private String getLinkDeleteWith(String token) {
-        return "http://localhost:8080/delete/confirm?token=" + token;
+        //return "http://localhost:8080/delete/confirm?token=" + token;
+        return "https://willagropastoral.top/delete/confirm?token=" + token;
     }
 
     private String getLinkConfirmRegistration(String token) {
-        return "http://localhost:8080/registration/confirm?token=" + token;
+        //return "http://localhost:8080/registration/confirm?token=" + token;
+        return "https://willagropastoral.top//registration/confirm?token=" + token;
     }
 }
