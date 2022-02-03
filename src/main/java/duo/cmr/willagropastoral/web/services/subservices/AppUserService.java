@@ -122,19 +122,20 @@ public class AppUserService implements UserDetailsService {
         return "Account with email " + email + " does not exist";
     }
 
-
     /**
-     * @param token
      * @return link for building email
-     * change adresse for produktion
+     * ps: change adresse for produktion
      */
     private String getLinkDeleteWith(String token) {
-        //return "http://localhost:8080/delete/confirm?token=" + token;
-        return "https://willagropastoral.top/delete/confirm?token=" + token;
+        return "/delete/confirm?token=" + token;
+        //return "http://localhost:80/delete/confirm?token=" + token;
+        //return "https://willagropastoral.top/delete/confirm?token=" + token;
     }
 
     private String getLinkConfirmRegistration(String token) {
-        //return "http://localhost:8080/registration/confirm?token=" + token;
-        return "https://willagropastoral.top//registration/confirm?token=" + token;
+        return "/registration/confirm?token=" + token; //solve the problem of
+        // devellopement and productions url
+        //return "http://localhost:80/registration/confirm?token=" + token;
+        //return "https://willagropastoral.top//registration/confirm?token=" + token;
     }
 }

@@ -22,7 +22,7 @@ public class RecoveryPasswordController {
         String notifications = registrationService.recoverPassword(email);
         System.out.println(notifications);
         model.addAttribute("text", notifications);
-        return "notifications";
+        return "registration";
     }
 
     @GetMapping("/delete/confirm")
