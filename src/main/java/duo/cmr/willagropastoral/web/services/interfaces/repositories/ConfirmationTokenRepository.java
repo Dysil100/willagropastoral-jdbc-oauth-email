@@ -1,9 +1,8 @@
 package duo.cmr.willagropastoral.web.services.interfaces.repositories;
 
-import duo.cmr.willagropastoral.persistence.registration.token.ConfirmationTokenEntity;
+import duo.cmr.willagropastoral.persistence.database.registration.token.ConfirmationTokenEntity;
 
 import java.sql.Date;
-import java.time.LocalDateTime;
 import java.util.Optional;
 
 public interface ConfirmationTokenRepository {

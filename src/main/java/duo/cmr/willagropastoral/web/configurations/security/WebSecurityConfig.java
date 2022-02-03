@@ -1,6 +1,6 @@
 package duo.cmr.willagropastoral.web.configurations.security;
 
-import duo.cmr.willagropastoral.web.services.AppUserService;
+import duo.cmr.willagropastoral.web.services.subservices.AppUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

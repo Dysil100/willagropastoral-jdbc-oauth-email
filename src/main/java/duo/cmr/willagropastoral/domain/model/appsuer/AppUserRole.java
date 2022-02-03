@@ -4,8 +4,4 @@ public enum AppUserRole {
     USER,
     ADMIN,
     LEADER;
-
-    public String getName() {
-        return "ROLE_" + this.name();
-    }
 }

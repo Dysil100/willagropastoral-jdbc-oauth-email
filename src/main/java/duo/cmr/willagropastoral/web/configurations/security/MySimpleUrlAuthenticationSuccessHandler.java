@@ -23,6 +23,14 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
 
     private final RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
 
+
+    @Override
+    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
+                                        Authentication authentication) throws IOException, ServletException {
+        handle(request, response, authentication);
+        clearAuthenticationAttributes(request);
+    }
+
     private void clearAuthenticationAttributes(HttpServletRequest request) {
         HttpSession session = request.getSession(false);
         if (session == null) {
@@ -45,7 +53,7 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
 
     private String determineTargetUrl(Authentication authentication) {
         Map<String, String> roleTargetUrlMap = new HashMap<>(Map.of("ADMIN", "/adminindex","USER",
-                "/homepage.html","LEADER", "/leaderindex")); // Better save the more valuable Authorities
+                "/index","LEADER", "/leaderindex")); // Better save the more valuable Authorities
         // so that the highe authority for a user may be found first
 
         final Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
@@ -56,11 +64,5 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
             }
         }
         throw new IllegalStateException();
-    }
-
-    @Override
-    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
-        handle(request, response, authentication);
-        clearAuthenticationAttributes(request);
     }
 }
