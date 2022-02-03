@@ -20,7 +20,15 @@ public class RegistrationController {
 
 // TODO: 02.02.22 Implement password recuperation;
 
+    @GetMapping("/maileingabe")
+    public String maileingabe(){
+        return "maileingabe";
+    }
 
+    @GetMapping("/notifications")
+    public String notifications(){
+        return "notifications";
+    }
 
     @GetMapping("/registration")
     public String registerForm(Model model, @ModelAttribute("formular") RegistrationRequest request){
@@ -29,16 +37,35 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String register(@ModelAttribute("form") RegistrationRequest request) {
-        System.out.println(request);
-        System.out.println(registrationService.register(request));
-        return "redirect:/somebody";
+    public String register(Model model, @ModelAttribute("form") RegistrationRequest request) {
+        String register = registrationService.register(request);
+        model.addAttribute("text", register);
+        return "notifications";
     }
 
     @GetMapping("/registration/confirm")
-    public String confirm(@RequestParam("token") String token) {
-        System.out.println(registrationService.confirmToken(token));
-        return "login";
+    public String confirm(Model model, @RequestParam("token") String token) {
+        String notif = registrationService.confirmToken(token);
+        System.out.println(notif);
+        model.addAttribute("text", notif);
+        return "notifications";
+    }
+
+    @PostMapping("/maileingabe")
+    public String maileingabePost(Model model, String email){
+        String notifications = registrationService.recoverPassword(email);
+        System.out.println(notifications);
+        model.addAttribute("text", notifications);
+        return "notifications";
+    }
+
+    @GetMapping("/delete/confirm")
+    public String deleteAccount(Model model, @RequestParam("token") String token) {
+        System.out.println("ready for a new registration");
+        String notif = registrationService.deleteTokenAndUser(token);
+        System.out.println(notif);
+        model.addAttribute("text", notif);
+        return "notifications";
     }
     @ModelAttribute("formular")
     RegistrationRequest request(){

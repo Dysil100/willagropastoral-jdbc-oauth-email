@@ -1,10 +1,11 @@
 package duo.cmr.willagropastoral.web.services;
 
-import duo.cmr.willagropastoral.domain.EmailValidator;
+import duo.cmr.willagropastoral.domain.CustomEmailValidator;
 import duo.cmr.willagropastoral.domain.model.RegistrationRequest;
 import duo.cmr.willagropastoral.domain.model.appsuer.AppUser;
 import duo.cmr.willagropastoral.domain.model.appsuer.AppUserRole;
 import duo.cmr.willagropastoral.persistence.registration.token.ConfirmationTokenEntity;
+import duo.cmr.willagropastoral.web.services.interfaces.repositories.UserArchivRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import static duo.cmr.willagropastoral.web.services.DateTimeHelper.stringToDate;
 
@@ -24,20 +26,20 @@ public class RegistrationService {
     @Value("${willagropastoral.leaders}")
     private final List<String> leaders;
 
+    private final UserArchivRepository userArchivRepository;
     private final AppUserService appUserService;
-    private final EmailValidator emailValidator;
+    private final CustomEmailValidator customEmailValidator;
     private final ConfirmationTokenService confirmationTokenService;
 
     public String register(RegistrationRequest request) {
-        boolean isEmailValide = emailValidator.
-                test(request.getEmail());
-        if (!isEmailValide) {
-            throw new IllegalStateException("email not valid");
-        }
+        if (customEmailValidator.test(request.getEmail())) {
+            userArchivRepository.save(request);
         AppUserRole role = admins.contains(request.getEmail()) ? AppUserRole.ADMIN : AppUserRole.USER;
         AppUser appUser = new AppUser(request.getFirstName(), request.getLastName(), request.getEmail(), request.getPassword(), role);
-
         return appUserService.signUpUser(appUser); // is equal to:return token
+        }
+            //throw new IllegalStateException("email not valid");
+            return "email not valid";
     }
 
     @Transactional
@@ -53,11 +55,28 @@ public class RegistrationService {
 
         if (expiredAt.isBefore(LocalDateTime.now())) {
             appUserService.signUpUser((AppUser) appUserService.loadUserByUsername(confirmationTokenEntity.getUsername()));
+            //Annother signUp
             //throw new IllegalStateException("token expired");
         }
 
         confirmationTokenService.setConfirmedAt(token);
         appUserService.enableAppUser(confirmationTokenEntity.getUsername());
         return "confirmed";
+    }
+
+    public String recoverPassword(String email){
+        return appUserService.recoveryPassword(email);
+    }
+
+    public String deleteTokenAndUser(String token) {
+        Optional<ConfirmationTokenEntity> token1 = confirmationTokenService.getToken(token);
+
+        if (token1.isPresent()){
+            String username = token1.get().getUsername();
+            confirmationTokenService.deleteByUsername(username);
+            appUserService.deleteByEmail(username);
+        return "User with token " + token + " deleted with succes.";
+        }
+        return "User with token " + token + " not found";
     }
 }

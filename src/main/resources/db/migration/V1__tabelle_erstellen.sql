@@ -10,6 +10,15 @@ create table if not exists users
     role       varchar(40)        not null
 );
 
+create table if not exists archiv
+(
+    id         serial primary key,
+    first_name varchar(60) unique not null,
+    last_name  varchar(60) unique not null,
+    email      varchar(100)       not null,
+    password   varchar(200)       not null
+);
+
 create table if not exists confirmation_token
 (
     id             serial primary key,
@@ -39,3 +48,4 @@ create table if not exists standard
     proteine_brute        decimal,
     energie_metabolisable decimal
 );
+

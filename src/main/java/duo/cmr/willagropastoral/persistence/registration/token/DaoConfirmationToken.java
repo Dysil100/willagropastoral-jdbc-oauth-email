@@ -17,8 +17,11 @@ public interface DaoConfirmationToken extends CrudRepository<ConfirmationTokenEn
 
     Optional<ConfirmationTokenEntity> findByUsername(String email);
 
-    @Transactional
-    @Modifying
+    @Modifying @Transactional
+    @Query("DELETE FROM confirmation_token WHERE username = :mail;")
+    void deleteByUsername(@Param("mail")String email);
+
+    @Transactional @Modifying
     @Query("UPDATE confirmation_token  SET confirmed_at = :confirmedAt WHERE token = :token")
     void updateConfirmedAt(@Param("confirmedAt") Date confirmedAt, @Param("token") String token);
 }

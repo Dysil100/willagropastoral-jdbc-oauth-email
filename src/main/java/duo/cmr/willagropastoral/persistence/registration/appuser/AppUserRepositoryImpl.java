@@ -14,8 +14,7 @@ public class AppUserRepositoryImpl implements AppUserRepository {
 
     @Override
     public Optional<AppUser> findByEmail(String email) {
-        Optional<AppUserEntity> byEmail = daoAppUserRepository.findByEmail(email);
-        return byEmail.map(this::toAppUser);
+        return daoAppUserRepository.findByEmail(email).map(this::toAppUser);
     }
 
     @Override
@@ -31,8 +30,10 @@ public class AppUserRepositoryImpl implements AppUserRepository {
 
     @Override
     public void deleteByEmail(String username) {
-        Optional<AppUserEntity> byEmail = daoAppUserRepository.findByEmail(username);
-        byEmail.ifPresent(daoAppUserRepository::delete);
+        //Optional<AppUserEntity> byEmail = daoAppUserRepository.findByEmail(username);
+        //byEmail.ifPresent(daoAppUserRepository::delete);
+        daoAppUserRepository.deleteByEmail(username);
+
     }
 
     public AppUser toAppUser(AppUserEntity entity) {

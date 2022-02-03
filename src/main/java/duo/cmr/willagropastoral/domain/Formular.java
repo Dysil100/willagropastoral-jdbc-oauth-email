@@ -7,12 +7,10 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.text.DecimalFormat;
 import java.util.*;
 import java.util.stream.Stream;
 
-// TODO: 22.01.22 Anwendung neue Schreiben
-//  richtig von anfang an modelieren und,
-//  modularisieren richtig schneiden und etc... .
 @ToString
 @Getter
 @Setter
@@ -43,12 +41,13 @@ public class Formular {
     boolean zeigen;
 
     public Formular() {
-        this(0.0, 0.0, 0.0,
-                0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                0.0, 0.0);
+        this(0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
     }
 
-    public Formular(Double mais, Double sonDeBle, Double farineDeSoja, Double farineDePoisson, Double tourteauDePalmiste, Double tourteauDeCoton, Double tourteauDarachide, Double sulfateDeFer, Double belgotox, Double belgofoxs, Double coquilleDeMer, Double belgoPorcs) {
+    public Formular(Double mais, Double sonDeBle, Double farineDeSoja, Double farineDePoisson,
+                    Double tourteauDePalmiste, Double tourteauDeCoton, Double tourteauDarachide,
+                    Double sulfateDeFer, Double belgotox, Double belgofoxs, Double coquilleDeMer, Double belgoPorcs) {
         this.mais = mais;
         this.sonDeBle = sonDeBle;
         this.farineDeSoja = farineDeSoja;
@@ -106,20 +105,16 @@ public class Formular {
         return !"".equals(errorText) ? "Entrez une Valeur " + errorText + "dans chaque champ" : null;
     }
 
-
     public List<ResultatEnergetique> getResultats() {
         Double summe1 = summe();
-        System.out.println(summe1);
         double summe = summe1 <= 0 ? 1 : summe1; //afin que le denominateur ne soit jamais null (pour eviter tout operation illegal)
         List<IngredientImpl> ingredientswhithValues = getIngredientswhithValues();
-        ingredientswhithValues.forEach(System.out::println);
         Double lysineFinal = ingredientswhithValues.stream().map(ing -> ing.getQuantite() * ing.getLysine() / (summe)).reduce(Double::sum).orElse(.0);
         Double methionineFinal = ingredientswhithValues.stream().map(ing -> ing.getQuantite() * ing.getMethyonine() / (summe)).reduce(Double::sum).orElse(.0);
         Double proteineBruteFinal = ingredientswhithValues.stream().map(ing -> ing.getQuantite() * ing.getProteineBrute() / (summe)).reduce(Double::sum).orElse(.0);
         Double energieMetabolisableFinal = ingredientswhithValues.stream().map(ing -> ing.getQuantite() * ing.getEnergieMetabolisable() / (summe)).reduce(Double::sum).orElse(.0);
 
         Lysine e1 = new Lysine(lysineFinal, getAppreciation(lysineFinal, getStandard().lysine().getValeur()));
-        System.out.println(e1);
         return List.of(e1,
                 new Methyonine(methionineFinal, getAppreciation(methionineFinal, getStandard().methyonine().getValeur())),
                 new ProteineBrute(proteineBruteFinal, getAppreciation(proteineBruteFinal, getStandard().proteineBrute().getValeur())),
@@ -133,11 +128,10 @@ public class Formular {
         if (actuel < standard - marge) appreciation = "deficit";
         if (actuel > standard + marge) appreciation = "exces";
         if (actuel >= standard - marge && actuel <= standard + marge)
-            appreciation = "OK! :-) \n avec une marge de " + Math.abs(standard - actuel);
+            appreciation = "OK! :-) \n avec une marge de " + new DecimalFormat("#0.00").format(standard - actuel);
         return appreciation;
     }
 
-    // TODO: 22.01.22 Database umstrukturieren damit die Daten vernünftiger geladen werden
     public List<IngredientImpl> getIngredientswhithValues() {
         Map<String, Double> namesValuse = new HashMap<>(Map.of("mais", mais, "tourteau de coton", tourteauDeCoton,
                 "belgofoxs", belgofoxs, "belgotox", belgotox, "belgoporcs", belgoPorcs, "coquille de mer", coquilleDeMer,

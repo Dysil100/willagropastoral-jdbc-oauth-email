@@ -3,10 +3,12 @@ package duo.cmr.willagropastoral.web.services.interfaces.domaininterfaces;
 import org.springframework.scheduling.annotation.Async;
 
 public interface EmailSender {
-    void send(String to, String email);
+    @Async
+    void send(String to, String email, String subject);
 
     @Async
-    String buildEmail(String name, String link);
+    String buildEmail(String name, String link, String subject, String bodyMsg);
 
-    void buildAndSend(String name, String link, String to);
+    @Async
+    void buildAndSend(String name, String link, String to, String subject, String bodyMsg);
 }

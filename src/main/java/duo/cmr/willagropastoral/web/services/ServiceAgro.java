@@ -28,10 +28,6 @@ public class ServiceAgro {
         return ingredientsWithvalues;
     }
 
-    public List<IngredientImpl> alleIngredients() {
-        return ingredientRepository.findAll();
-    }
-
     public List<Standard> alleStandards() {
         return standardRepository.alle();
     }

@@ -1,8 +1,10 @@
 package duo.cmr.willagropastoral.persistence.analysealimentaire.ingredient;
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
+@Setter
 @Getter
 @Table("ingredient")
 public class IngredientEntity {
@@ -20,18 +22,5 @@ public class IngredientEntity {
         this.methyonine = methyonine;
         this.proteineBrute = proteineBrute;
         this.energieMetabolisable = energieMetabolisable;
-    }
-
-    @Id
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

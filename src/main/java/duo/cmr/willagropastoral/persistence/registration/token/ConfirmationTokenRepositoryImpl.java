@@ -34,7 +34,6 @@ public class ConfirmationTokenRepositoryImpl implements ConfirmationTokenReposit
 
     @Override
     public void deleteByUsername(String email) {
-        Optional<ConfirmationTokenEntity> byUsername = daoConfirmationToken.findByUsername(email);
-        byUsername.ifPresent(daoConfirmationToken::delete);
+        daoConfirmationToken.deleteByUsername(email);
     }
 }
