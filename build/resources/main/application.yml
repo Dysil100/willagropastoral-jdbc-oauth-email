@@ -43,6 +43,9 @@ logging:
   level:
     root: debug
 
+server:
+  port: 80
+
 amigos.Yml: >
   server:
     error:
