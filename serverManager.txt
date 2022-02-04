@@ -74,11 +74,25 @@ IV- Anbieter:
 
         username: willagropastoral@gmail.com
         password: feuille de calculs
+  7) Bitte 'sudo docker-compose up' nicht vergessen, wenn die neue version mit datenbank gestartet wird
 
-  7)cloudd provider ( Cloud66 ) mit Folgenden:
+
+  8)cloudd provider ( Cloud66 ) mit Folgenden:
     * name: calculAnalytique
     * password: XITLQHGOSPYUYS7XE73N53W2NPUEGLKTPQ5A
 
     sorry bro deutsh und Englsich vermisch: muss du bloß mit rauskommen.
     Note: Port 80 ist der Default Port wo man seine
     Note: lieber manual per Hand bauern 'mit gradle build'
+    Note: also man can zwischen durch ein 'sudo' vor dem commando schreiben wenn das system sich beschwert, von rechten; wie hier zum beispiel eine typische Fehler
+
+    """
+        Failed to execute process '/usr/local/bin/flyway'. Reason:
+        exec: Exec format error
+        The file '/usr/local/bin/flyway' is marked as an executable but could not be run by the operating system.
+    """
+
+    wenn man flyway --help zum beispiel startet, auch ähnlich Meldungen mit 'docker compose up' bekommt man manchmal.
+
+    Note: Flyway Usage Example
+              flyway -user=myuser -password=s3cr3t -url=jdbc:h2:mem -placeholders.abc=def migrate
