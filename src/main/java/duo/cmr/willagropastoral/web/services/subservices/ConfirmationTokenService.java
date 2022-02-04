@@ -35,4 +35,5 @@ public class ConfirmationTokenService {
     public void deleteByUsername(String email) {
         confirmationTokenRepository.deleteByUsername(email);
     }
+
 }

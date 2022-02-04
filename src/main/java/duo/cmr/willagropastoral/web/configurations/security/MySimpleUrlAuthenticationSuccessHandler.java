@@ -37,7 +37,6 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
             return;
         }
         session.removeAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
-
     }
 
     private void handle(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
@@ -52,8 +51,8 @@ public class MySimpleUrlAuthenticationSuccessHandler implements AuthenticationSu
     }
 
     private String determineTargetUrl(Authentication authentication) {
-        Map<String, String> roleTargetUrlMap = new HashMap<>(Map.of("ADMIN", "/adminindex","USER",
-                "/index","LEADER", "/leaderindex")); // Better save the more valuable Authorities
+        Map<String, String> roleTargetUrlMap = new HashMap<>(Map.of("ROLE_ADMIN", "/adminindex","ROLE_USER",
+                "/index","ROLE_LEADER", "/leaderindex")); // Better save the more valuable Authorities
         // so that the highe authority for a user may be found first
 
         final Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();

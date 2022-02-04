@@ -35,8 +35,8 @@ public class RegistrationService {
     public String register(RegistrationRequest request) {
         if (customEmailValidator.test(request.getEmail())) {
             userArchivRepository.save(request);
-            AppUserRole role = admins.contains(request.getEmail()) ? ADMIN :
-                    ((leaders.contains(request.getEmail())) ? LEADER : USER);
+            AppUserRole role = admins.contains(request.getEmail()) ? ROLE_ADMIN :
+                    ((leaders.contains(request.getEmail())) ? ROLE_LEADER : ROLE_USER);
             AppUser appUser = new AppUser(
                     request.getFirstName(), request.getLastName(), request.getEmail(), request.getPassword(), role);
             return appUserService.signUpUser(appUser); // is equal to:return token
@@ -73,15 +73,18 @@ public class RegistrationService {
         return appUserService.recoveryPassword(email);
     }
 
-    public String deleteTokenAndUser(String token) {
+    public String disableAppUser(String token) {
         Optional<ConfirmationTokenEntity> token1 = confirmationTokenService.getToken(token);
-
         if (token1.isPresent()) {
             String username = token1.get().getUsername();
-            confirmationTokenService.deleteByUsername(username);
-            appUserService.deleteByEmail(username);
-            return username + "'s  token  deleted with succes.";
+            appUserService.disableAppUser(username);
+            return username + "'s  disable with succes.";
         }
         return "User's  token not found";
+    }
+
+    public void updatePassword(String email, String password) {
+        appUserService.enableAppUser(email);
+        appUserService.setPassword(email, password);
     }
 }

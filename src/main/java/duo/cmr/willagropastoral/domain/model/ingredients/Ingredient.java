@@ -7,7 +7,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class IngredientImpl {
+public class Ingredient {
      String name;
      double quantite;
      double lysine;
@@ -15,7 +15,7 @@ public class IngredientImpl {
      double proteineBrute;
      double energieMetabolisable;
 
-     public IngredientImpl(String name, Double lysine, Double methyonine, Double proteineBrute, Double energieMetabolisable) {
+     public Ingredient(String name, Double lysine, Double methyonine, Double proteineBrute, Double energieMetabolisable) {
           this.name = name;
           this.lysine = lysine;
           this.methyonine = methyonine;

@@ -1,7 +1,7 @@
 package duo.cmr.willagropastoral.web.services.subservices;
 
 import duo.cmr.willagropastoral.domain.model.apportNutritifs.Standard;
-import duo.cmr.willagropastoral.domain.model.ingredients.IngredientImpl;
+import duo.cmr.willagropastoral.domain.model.ingredients.Ingredient;
 import duo.cmr.willagropastoral.web.services.interfaces.repositories.IngredientRepository;
 import duo.cmr.willagropastoral.web.services.interfaces.repositories.StandardRepository;
 import lombok.AllArgsConstructor;
@@ -18,10 +18,10 @@ public class AnalyseAlimentaireService {
     final IngredientRepository ingredientRepository;
     final StandardRepository standardRepository;
 
-    public List<IngredientImpl> loadIngredientsWithValues(Map<String, Double> namesValues){
-        List<IngredientImpl> ingredientsWithvalues = new ArrayList<>();
+    public List<Ingredient> loadIngredientsWithValues(Map<String, Double> namesValues){
+        List<Ingredient> ingredientsWithvalues = new ArrayList<>();
         namesValues.forEach((n, v) -> {
-            IngredientImpl byName = ingredientRepository.findByName(n);
+            Ingredient byName = ingredientRepository.findByName(n);
             byName.setQuantite(v);
             ingredientsWithvalues.add(byName);
         });

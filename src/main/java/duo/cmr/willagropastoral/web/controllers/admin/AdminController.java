@@ -1,35 +1,32 @@
-package duo.cmr.willagropastoral.web.controllers;
+package duo.cmr.willagropastoral.web.controllers.admin;
 
+import duo.cmr.willagropastoral.persistence.annotations.AdminOnly;
 import duo.cmr.willagropastoral.web.services.ServiceSupreme;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
 
 @Controller
 @AllArgsConstructor
-public class DetermineURLController {
+@RequestMapping("/adminindex")
+@AdminOnly
+public class AdminController {
     ServiceSupreme serviceSupreme;
 
-    @GetMapping("/adminindex")
+    @GetMapping("")
     public String adminindex(Model model, @ModelAttribute("name") String name){
         model.addAttribute("name", name);
         return "adminindex";
     }
 
-    @GetMapping("/leaderindex")
-    public String leaderindex(Model model, @ModelAttribute("name") String name){
-        model.addAttribute("name", name);
-        return "leaderindex";
-    }
-
-    @GetMapping("/index")
-    public String userindex(Model model, @ModelAttribute("name") String name){
-        model.addAttribute("name", name);
-        return "userindex";
+    @GetMapping("/home")
+    public String home(){
+        return "home";
     }
 
     @ModelAttribute("name")

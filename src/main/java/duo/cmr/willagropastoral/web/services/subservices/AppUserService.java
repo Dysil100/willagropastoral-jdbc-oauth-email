@@ -1,7 +1,6 @@
 package duo.cmr.willagropastoral.web.services.subservices;
 
 import duo.cmr.willagropastoral.domain.model.appsuer.AppUser;
-import duo.cmr.willagropastoral.domain.model.appsuer.AppUserRole;
 import duo.cmr.willagropastoral.persistence.database.registration.token.ConfirmationTokenEntity;
 import duo.cmr.willagropastoral.web.services.interfaces.domaininterfaces.EmailSender;
 import duo.cmr.willagropastoral.web.services.interfaces.repositories.AppUserRepository;
@@ -16,8 +15,10 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.UUID;
 
+import static duo.cmr.willagropastoral.domain.model.appsuer.AppUserRole.ROLE_USER;
 import static duo.cmr.willagropastoral.web.services.subservices.DateTimeHelper.dateToString;
 import static duo.cmr.willagropastoral.web.services.subservices.DateTimeHelper.stringToDate;
+// TODO: 04.02.22 Whatsapp automatisieren
 
 // TODO: 02.02.22 Implement password recuperation;
 @Service
@@ -36,7 +37,7 @@ public class AppUserService implements UserDetailsService {
         //throw new UsernameNotFoundException(String.format(USER_NOT_FOUND_MSG, email));
         return appUserRepository.findByEmail(email).orElseGet(() -> new AppUser(
                 "Not found", "Not found", "Not found", "Not found",
-                AppUserRole.USER));
+                ROLE_USER));
     }
 
     public String signUpUser(AppUser appUser) {
@@ -50,7 +51,6 @@ public class AppUserService implements UserDetailsService {
                 String bodyMsg = "Your actually have an account, Please click on the below link to activate your it:";
                 if (stringToDate(tokenEntity.getExpiredAt()).isBefore(LocalDateTime.now())) {
                     String newtoken = UUID.randomUUID().toString();
-                    String newLink = getLinkConfirmRegistration(newtoken);
                     ConfirmationTokenEntity confirmationTokenEntity = new ConfirmationTokenEntity(newtoken,
                             dateToString(LocalDateTime.now()), dateToString(LocalDateTime.now().plusMinutes(15)),
                             appUser.getUsername()
@@ -58,8 +58,7 @@ public class AppUserService implements UserDetailsService {
                     confirmationTokenService.deleteByUsername(appUser.getUsername());
                     confirmationTokenService.saveConfirmationToken(confirmationTokenEntity);
                     emailSender.buildAndSend(
-                            appUser.getFirstName(), newLink, appUser.getUsername(), "Confirm your Email",
-                            bodyMsg
+                            appUser.getFirstName(), getLinkConfirmRegistration(newtoken), appUser.getUsername(), "Confirm your Email", bodyMsg
                     );
                     returnValue = "new token for user " + appUser.getFirstName()
                                   + " created please confirms your email to enable your account";
@@ -88,7 +87,6 @@ public class AppUserService implements UserDetailsService {
             String bodyMsg = "Thank you for registering. Please click on the below link to activate your account:";
             emailSender.buildAndSend(appUser.getFirstName(), getLinkConfirmRegistration(token), appUser.getUsername(),
                     "Confirm your Email", bodyMsg);
-
             //TODO: SEND EMAIL
             // TODO if email not confirmed send confirmation email.
             returnValue = "Please confirms your email to enable your account";
@@ -112,12 +110,11 @@ public class AppUserService implements UserDetailsService {
             if (byUsername.isPresent()) token += byUsername.get().getToken();
             String name = byEmail.get().getFirstName();
             String bodyMsg = """
-                    We don't still yet implemented an effizient way for recovering password, so that you may
-                    delete your account an make another registration to marks your new password.<br> 
-                    Click on the below link to register again
+                    Are you sure you want to create a new password.<br> 
+                    Click on the below link to activate the password recover.
                     """;
             emailSender.buildAndSend(name, getLinkDeleteWith(token), email, "Password recovery", bodyMsg);
-            return "ready for a deleting the account a register another";
+            return "ready for reset the password of " + email;
         }
         return "Account with email " + email + " does not exist";
     }
@@ -137,5 +134,13 @@ public class AppUserService implements UserDetailsService {
         // devellopement and productions url
         //return "http://localhost:80/registration/confirm?token=" + token;
         //return "https://willagropastoral.top//registration/confirm?token=" + token;
+    }
+
+    public void disableAppUser(String email) {
+        appUserRepository.disableAppUser(email);
+    }
+
+    public void setPassword(String password, String email) {
+        appUserRepository.setPassword(bCryptPasswordEncoder.encode(password), email);
     }
 }

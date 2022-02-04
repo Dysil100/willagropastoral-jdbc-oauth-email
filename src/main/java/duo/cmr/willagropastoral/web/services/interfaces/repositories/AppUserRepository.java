@@ -13,4 +13,8 @@ public interface AppUserRepository {
     void enableAppUser(String email);
 
     void deleteByEmail(String username);
+
+    void disableAppUser(String email);
+
+    void setPassword(String encode, String email);
 }

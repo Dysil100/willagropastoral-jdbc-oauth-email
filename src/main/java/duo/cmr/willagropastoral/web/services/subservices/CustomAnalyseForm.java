@@ -1,7 +1,7 @@
 package duo.cmr.willagropastoral.web.services.subservices;
 
 import duo.cmr.willagropastoral.domain.model.apportNutritifs.*;
-import duo.cmr.willagropastoral.domain.model.ingredients.IngredientImpl;
+import duo.cmr.willagropastoral.domain.model.ingredients.Ingredient;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -107,7 +107,7 @@ public class CustomAnalyseForm {
     public List<ResultatEnergetique> getResultats() {
         Double summe1 = summe();
         double summe = summe1 <= 0 ? 1 : summe1; //afin que le denominateur ne soit jamais null (pour eviter tout operation illegal)
-        List<IngredientImpl> ingredientswhithValues = getIngredientswhithValues();
+        List<Ingredient> ingredientswhithValues = getIngredientswhithValues();
         Double lysineFinal = ingredientswhithValues.stream().map(ing -> ing.getQuantite() * ing.getLysine() / (summe)).reduce(Double::sum).orElse(.0);
         Double methionineFinal = ingredientswhithValues.stream().map(ing -> ing.getQuantite() * ing.getMethyonine() / (summe)).reduce(Double::sum).orElse(.0);
         Double proteineBruteFinal = ingredientswhithValues.stream().map(ing -> ing.getQuantite() * ing.getProteineBrute() / (summe)).reduce(Double::sum).orElse(.0);
@@ -131,7 +131,7 @@ public class CustomAnalyseForm {
         return appreciation;
     }
 
-    public List<IngredientImpl> getIngredientswhithValues() {
+    public List<Ingredient> getIngredientswhithValues() {
         Map<String, Double> namesValuse = new HashMap<>(Map.of("mais", mais, "tourteau de coton", tourteauDeCoton,
                 "belgofoxs", belgofoxs, "belgotox", belgotox, "belgoporcs", belgoPorcs, "coquille de mer", coquilleDeMer,
                 "farine de soja", farineDeSoja, "son de blé", sonDeBle, "sulfate de fer", sulfateDeFer,

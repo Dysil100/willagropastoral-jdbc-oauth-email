@@ -12,12 +12,12 @@ public class PasswordEncoder {
         return new BCryptPasswordEncoder();
     }
 
-
     /**
      * @return a JavaMailSender wich is configured with the strings parameters
      * But we can also configue it in the application.yml file; what we also done, that is why we don't actually realy
      * need this Bean here
      */
+
     /*@Bean
     public JavaMailSender mailSender() {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();

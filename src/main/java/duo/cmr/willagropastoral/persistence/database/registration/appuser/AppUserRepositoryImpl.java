@@ -20,7 +20,6 @@ public class AppUserRepositoryImpl implements AppUserRepository {
     @Override
     public void save(AppUser appUser) {
         daoAppUserRepository.save(toEntity(appUser));
-
     }
 
     @Override
@@ -29,11 +28,18 @@ public class AppUserRepositoryImpl implements AppUserRepository {
     }
 
     @Override
-    public void deleteByEmail(String username) {
-        //Optional<AppUserEntity> byEmail = daoAppUserRepository.findByEmail(username);
-        //byEmail.ifPresent(daoAppUserRepository::delete);
-        daoAppUserRepository.deleteByEmail(username);
+    public void deleteByEmail(String email) {
+        daoAppUserRepository.deleteByEmail(email);
+    }
 
+    @Override
+    public void disableAppUser(String email) {
+        daoAppUserRepository.updateDisableUser(email);
+    }
+
+    @Override
+    public void setPassword(String encode, String email) {
+        daoAppUserRepository.setPassword(encode, email);
     }
 
     public AppUser toAppUser(AppUserEntity entity) {

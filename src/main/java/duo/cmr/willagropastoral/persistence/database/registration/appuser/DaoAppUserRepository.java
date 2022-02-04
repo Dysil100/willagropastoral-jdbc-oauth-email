@@ -23,4 +23,14 @@ public interface DaoAppUserRepository extends CrudRepository<AppUserEntity, Long
     @Transactional
     @Query("DELETE FROM users WHERE email = :mail;")
     void deleteByEmail(@Param("mail")String email);
+
+    @Transactional
+    @Modifying
+    @Query("UPDATE users  Set enabled = false  WHERE email = :mail;")
+    void updateDisableUser(@Param("mail")String email);
+
+    @Transactional
+    @Modifying
+    @Query("UPDATE users  Set password = :encoded  WHERE email = :mail;")
+    void setPassword(@Param("encoded")String encode, @Param("mail")String email);
 }
