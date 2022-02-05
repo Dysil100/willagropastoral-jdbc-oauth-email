@@ -7,6 +7,6 @@ import java.lang.annotation.*;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@Secured({"ROLE_ADMIN"})
+@Secured("ROLE_ADMIN")
 public @interface AdminOnly {
 }

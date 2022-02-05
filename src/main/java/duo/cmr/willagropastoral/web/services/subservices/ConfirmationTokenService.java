@@ -7,7 +7,11 @@ import org.springframework.stereotype.Service;
 
 import java.sql.Date;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Optional;
+import java.util.UUID;
+
+import static duo.cmr.willagropastoral.web.services.subservices.DateTimeHelper.dateToString;
 
 
 @Service
@@ -36,4 +40,13 @@ public class ConfirmationTokenService {
         confirmationTokenRepository.deleteByUsername(email);
     }
 
+    public void resetTokenFor(String email) {
+        deleteByUsername(email);
+        saveConfirmationToken(
+                new ConfirmationTokenEntity(
+                        UUID.randomUUID().toString(), dateToString(LocalDateTime.now()),
+                        dateToString(LocalDateTime.now().plusMinutes(15)), email
+                )
+        );
+    }
 }

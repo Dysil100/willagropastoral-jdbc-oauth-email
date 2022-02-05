@@ -1,5 +1,6 @@
 package duo.cmr.willagropastoral.web.controllers.admin;
 
+import duo.cmr.willagropastoral.domain.model.appsuer.AppUser;
 import duo.cmr.willagropastoral.persistence.annotations.AdminOnly;
 import duo.cmr.willagropastoral.web.services.ServiceSupreme;
 import lombok.AllArgsConstructor;
@@ -19,18 +20,20 @@ public class AdminController {
     ServiceSupreme serviceSupreme;
 
     @GetMapping("")
-    public String adminindex(Model model, @ModelAttribute("name") String name){
+    public String adminindex(Model model, @ModelAttribute("name") String name) {
         model.addAttribute("name", name);
         return "adminindex";
     }
 
     @GetMapping("/home")
-    public String home(){
+    public String home() {
         return "home";
     }
 
     @ModelAttribute("name")
     String handle(Principal user) {
-        return serviceSupreme.getUserByEmail(user.getName()).getFirstName();
+        AppUser userByEmail = serviceSupreme.getUserByEmail(user.getName());
+        System.out.println(userByEmail.getRole());
+        return userByEmail.getFirstName();
     }
 }

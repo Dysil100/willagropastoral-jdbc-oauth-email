@@ -39,6 +39,7 @@ public class AppUserRepositoryImpl implements AppUserRepository {
 
     @Override
     public void setPassword(String encode, String email) {
+        System.out.println("AppUserrepoImpl.updatePasword( " + email + ", " + encode + ")");
         daoAppUserRepository.setPassword(encode, email);
     }
 

@@ -95,6 +95,7 @@ public class AppUserService implements UserDetailsService {
     }
 
     public void enableAppUser(String email) {
+        System.out.println("AppUserService.enableUser( " + email + ")");
         appUserRepository.enableAppUser(email);
     }
 
@@ -103,6 +104,7 @@ public class AppUserService implements UserDetailsService {
     }
 
     public String recoveryPassword(String email) {
+        confirmationTokenService.resetTokenFor(email);
         Optional<AppUser> byEmail = appUserRepository.findByEmail(email);
         if (byEmail.isPresent()) {
             Optional<ConfirmationTokenEntity> byUsername = confirmationTokenService.findByUsername(email);
@@ -141,6 +143,8 @@ public class AppUserService implements UserDetailsService {
     }
 
     public void setPassword(String password, String email) {
+        System.out.println("AppUserService.setPasword( " + email + ", " + password + ")");
+
         appUserRepository.setPassword(bCryptPasswordEncoder.encode(password), email);
     }
 }

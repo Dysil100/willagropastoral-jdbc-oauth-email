@@ -1,5 +1,6 @@
 package duo.cmr.willagropastoral.web.controllers.user;
 
+import duo.cmr.willagropastoral.domain.model.appsuer.AppUser;
 import duo.cmr.willagropastoral.persistence.annotations.User;
 import duo.cmr.willagropastoral.web.services.ServiceSupreme;
 import lombok.AllArgsConstructor;
@@ -11,8 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import java.security.Principal;
 
 @Controller
-@User
 @AllArgsConstructor
+@User
 public class UserController {
     ServiceSupreme serviceSupreme;
 
@@ -24,6 +25,7 @@ public class UserController {
 
     @ModelAttribute("name")
     String handle(Principal user) {
-        return serviceSupreme.getUserByEmail(user.getName()).getFirstName();
+        AppUser userByEmail = serviceSupreme.getUserByEmail(user.getName());
+        return userByEmail.getFirstName();
     }
 }

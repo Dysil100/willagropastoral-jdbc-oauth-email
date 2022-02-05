@@ -1,5 +1,6 @@
 package duo.cmr.willagropastoral.web.controllers.leader;
 
+import duo.cmr.willagropastoral.domain.model.appsuer.AppUser;
 import duo.cmr.willagropastoral.persistence.annotations.Leader;
 import duo.cmr.willagropastoral.web.services.ServiceSupreme;
 import lombok.AllArgsConstructor;
@@ -32,6 +33,7 @@ public class LeaderController {
 
     @ModelAttribute("name")
     String handle(Principal user) {
-        return serviceSupreme.getUserByEmail(user.getName()).getFirstName();
-    }
+        AppUser userByEmail = serviceSupreme.getUserByEmail(user.getName());
+        System.out.println(userByEmail.getRole());
+        return userByEmail.getFirstName();    }
 }

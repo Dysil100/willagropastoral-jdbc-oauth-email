@@ -29,7 +29,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 )
                 .permitAll()
                 .anyRequest()
-                .authenticated());
+                .authenticated()).userDetailsService(appUserService);
 
         security.logout().clearAuthentication(true)
                 .deleteCookies().invalidateHttpSession(true)

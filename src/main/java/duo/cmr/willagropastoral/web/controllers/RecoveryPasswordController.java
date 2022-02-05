@@ -35,8 +35,10 @@ public class RecoveryPasswordController {
     @GetMapping("/delete/confirm")
     public String deleteAccount(Model model, @RequestParam("token") String token) {
         System.out.println("ready for a new registration");
-        String notif = registrationService.disableAppUser(token);
+        //String notif = registrationService.disableAppUser(token);
+        String notif = "no call of: registrationService.disableAppUser(token)";
         System.out.println(notif);
+        registrationService.confirmToken(token);
         String email = serviceSupreme.getUserByToken(token).getUsername();
         MailPasswordPaar mailPasswordPaar = new MailPasswordPaar();
         mailPasswordPaar.setEmail(email);

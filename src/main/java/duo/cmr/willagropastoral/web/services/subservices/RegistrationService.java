@@ -84,6 +84,7 @@ public class RegistrationService {
     }
 
     public void updatePassword(String email, String password) {
+        System.out.println("Registration.updatePasword( " + email + ", " + password + ")");
         appUserService.enableAppUser(email);
         appUserService.setPassword(email, password);
     }
