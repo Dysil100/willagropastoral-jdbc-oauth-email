@@ -6,7 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.Date;
 import java.util.Optional;
 
 
@@ -23,5 +22,5 @@ public interface DaoConfirmationToken extends CrudRepository<ConfirmationTokenEn
 
     @Transactional @Modifying
     @Query("UPDATE confirmation_token  SET confirmed_at = :confirmedAt WHERE token = :token")
-    void updateConfirmedAt(@Param("confirmedAt") Date confirmedAt, @Param("token") String token);
+    void updateConfirmedAt(@Param("confirmedAt") String confirmedAt, @Param("token") String token);
 }

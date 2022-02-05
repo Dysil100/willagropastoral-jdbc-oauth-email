@@ -4,7 +4,6 @@ import duo.cmr.willagropastoral.web.services.interfaces.repositories.Confirmatio
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Date;
 import java.util.Optional;
 
 @Repository
@@ -23,7 +22,7 @@ public class ConfirmationTokenRepositoryImpl implements ConfirmationTokenReposit
     }
 
     @Override
-    public void updateConfirmedAt(Date now, String token) {
+    public void updateConfirmedAt(String now, String token) {
         daoConfirmationToken.updateConfirmedAt(now, token);
     }
 

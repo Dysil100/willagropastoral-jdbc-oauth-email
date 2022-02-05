@@ -1,12 +1,10 @@
 package duo.cmr.willagropastoral.web.services.subservices;
 
-import duo.cmr.willagropastoral.web.services.interfaces.repositories.ConfirmationTokenRepository;
 import duo.cmr.willagropastoral.persistence.database.registration.token.ConfirmationTokenEntity;
+import duo.cmr.willagropastoral.web.services.interfaces.repositories.ConfirmationTokenRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.UUID;
@@ -29,7 +27,7 @@ public class ConfirmationTokenService {
     }
 
     public void setConfirmedAt(String token) {
-        confirmationTokenRepository.updateConfirmedAt(Date.valueOf(LocalDate.now()), token);
+        confirmationTokenRepository.updateConfirmedAt(dateToString(LocalDateTime.now()), token);
     }
 
     public Optional<ConfirmationTokenEntity> findByUsername(String email) {

@@ -2,7 +2,6 @@ package duo.cmr.willagropastoral.web.services.interfaces.repositories;
 
 import duo.cmr.willagropastoral.persistence.database.registration.token.ConfirmationTokenEntity;
 
-import java.sql.Date;
 import java.util.Optional;
 
 public interface ConfirmationTokenRepository {
@@ -10,7 +9,7 @@ public interface ConfirmationTokenRepository {
 
     Optional<ConfirmationTokenEntity> findByToken(String token);
 
-    void updateConfirmedAt(Date now, String token);
+    void updateConfirmedAt(String now, String token);
 
     Optional<ConfirmationTokenEntity> findByUsername(String username);
 
