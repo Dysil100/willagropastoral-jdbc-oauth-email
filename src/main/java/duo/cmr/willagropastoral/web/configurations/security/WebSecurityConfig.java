@@ -24,7 +24,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         HttpSecurity security = http.authorizeRequests(a -> a.antMatchers(
-                        "/maileingabe", "/notifications", "/", "/registration", "/registration/*",
+                        "/maileingabe", "/passwordeingabe", "/notifications", "/", "/registration", "/registration/*",
                         "/registration/confirm/*", "/delete/confirm"
                 )
                 .permitAll()

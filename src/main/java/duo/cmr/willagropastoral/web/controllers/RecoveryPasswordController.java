@@ -3,10 +3,12 @@ package duo.cmr.willagropastoral.web.controllers;
 import duo.cmr.willagropastoral.web.services.ServiceSupreme;
 import duo.cmr.willagropastoral.web.services.subservices.RegistrationService;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -23,6 +25,7 @@ public class RecoveryPasswordController {
 
     @PostMapping("/maileingabe")
     public String maileingabePost(Model model, String email){
+        System.out.println("Getmapping password eingabe");
         String notifications = registrationService.recoverPassword(email);
         System.out.println(notifications);
         model.addAttribute("text", notifications);
@@ -34,25 +37,37 @@ public class RecoveryPasswordController {
         System.out.println("ready for a new registration");
         String notif = registrationService.disableAppUser(token);
         System.out.println(notif);
-        model.addAttribute("text", notif);
         String email = serviceSupreme.getUserByToken(token).getUsername();
-        model.addAttribute("hiddenEmail", email);
-        System.out.println(email);
+        MailPasswordPaar mailPasswordPaar = new MailPasswordPaar();
+        mailPasswordPaar.setEmail(email);
+        model.addAttribute("form", mailPasswordPaar);
         return "passwordeingabe";
     }
 
     @GetMapping("/passwordeingabe")
-    public String passwordeingabe(Model model,@ModelAttribute("hiddenEmail") String hiddenEmail) {
-        System.out.println(hiddenEmail);
-        model.addAttribute("hiddenEmail", hiddenEmail);
+    public String passwordeingabe(Model model, MailPasswordPaar mailPasswordPaar) {
+        System.out.println("Getmapping password eingabe");
+        System.out.println(mailPasswordPaar);
+        model.addAttribute("form", mailPasswordPaar);
         return "passwordeingabe";
     }
 
     @PostMapping("/passwordeingabe")
-    public String passwordeingabePost(Model model, @ModelAttribute("hiddenEmail") String email, String password){
+    public String passwordeingabePost(Model model, MailPasswordPaar mailPasswordPaar){
+        System.out.println("Postmapping password eingabe");
+        String email = mailPasswordPaar.getEmail();
+        String password = mailPasswordPaar.getPassword();
+        System.out.println("eamil: " + email + " Password: " + password);
         registrationService.updatePassword(password, email);
-        System.out.println("eamil: "+ email + " Password: " + password);
         model.addAttribute("text", "Okay");
         return "notifications";
+    }
+
+    @Getter
+    @Setter
+    @ToString
+    private static class MailPasswordPaar {
+        private String email;
+        private String password;
     }
 }
