@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 import static duo.cmr.willagropastoral.boundedContexts.dasandere.domain.model.appsuer.AppUserRole.*;
 import static duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.subservices.DateTimeHelper.stringToDate;
@@ -73,7 +72,7 @@ public class RegistrationService {
         return appUserService.recoveryPassword(email);
     }
 
-    public String disableAppUser(String token) {
+    /*public String disableAppUser(String token) {
         Optional<ConfirmationTokenEntity> token1 = confirmationTokenService.getToken(token);
         if (token1.isPresent()) {
             String username = token1.get().getUsername();
@@ -81,10 +80,9 @@ public class RegistrationService {
             return username + "'s  disable with succes.";
         }
         return "User's  token not found";
-    }
+    }*/
 
     public void updatePassword(String email, String password) {
-        System.out.println("Registration.updatePasword( " + email + ", " + password + ")");
         appUserService.enableAppUser(email);
         appUserService.setPassword(email, password);
     }

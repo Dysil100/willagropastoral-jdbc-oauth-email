@@ -25,42 +25,28 @@ public class RecoveryPasswordController {
 
     @PostMapping("/maileingabe")
     public String maileingabePost(Model model, String email){
-        System.out.println("Getmapping password eingabe");
-        String notifications = registrationService.recoverPassword(email);
-        System.out.println(notifications);
-        model.addAttribute("text", notifications);
+        model.addAttribute("text", registrationService.recoverPassword(email));
         return "notifications";
     }
 
     @GetMapping("/delete/confirm")
     public String deleteAccount(Model model, @RequestParam("token") String token) {
-        System.out.println("ready for a new registration");
-        //String notif = registrationService.disableAppUser(token);
-        String notif = "no call of: registrationService.disableAppUser(token)";
-        System.out.println(notif);
         registrationService.confirmToken(token);
-        String email = serviceSupreme.getUserByToken(token).getUsername();
         MailPasswordPaar mailPasswordPaar = new MailPasswordPaar();
-        mailPasswordPaar.setEmail(email);
+        mailPasswordPaar.setEmail(serviceSupreme.getUserByToken(token).getUsername());
         model.addAttribute("form", mailPasswordPaar);
         return "passwordeingabe";
     }
 
     @GetMapping("/passwordeingabe")
     public String passwordeingabe(Model model, MailPasswordPaar mailPasswordPaar) {
-        System.out.println("Getmapping password eingabe");
-        System.out.println(mailPasswordPaar);
         model.addAttribute("form", mailPasswordPaar);
         return "passwordeingabe";
     }
 
     @PostMapping("/passwordeingabe")
     public String passwordeingabePost(Model model, MailPasswordPaar mailPasswordPaar){
-        System.out.println("Postmapping password eingabe");
-        String email = mailPasswordPaar.getEmail();
-        String password = mailPasswordPaar.getPassword();
-        System.out.println("eamil: " + email + " Password: " + password);
-        registrationService.updatePassword(password, email);
+        registrationService.updatePassword(mailPasswordPaar.getPassword(), mailPasswordPaar.getEmail());
         model.addAttribute("text", "Okay");
         return "notifications";
     }
