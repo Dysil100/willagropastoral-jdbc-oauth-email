@@ -143,8 +143,6 @@ public class AppUserService implements UserDetailsService {
     }
 
     public void setPassword(String password, String email) {
-        System.out.println("AppUserService.setPasword( " + email + ", " + password + ")");
-
         appUserRepository.setPassword(bCryptPasswordEncoder.encode(password), email);
     }
 }
