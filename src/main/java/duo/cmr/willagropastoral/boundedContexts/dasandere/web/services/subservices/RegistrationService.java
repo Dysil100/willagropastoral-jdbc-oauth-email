@@ -83,7 +83,11 @@ public class RegistrationService {
     }*/
 
     public void updatePassword(String email, String password) {
-        appUserService.enableAppUser(email);
-        appUserService.setPassword(email, password);
+        System.out.println("Registrationsservice update password");
+        //appUserService.enableAppUser(email);
+        synchronized (this){
+            appUserService.setPassword(email, password);
+            confirmationTokenService.updateByUsername(email);
+        }
     }
 }

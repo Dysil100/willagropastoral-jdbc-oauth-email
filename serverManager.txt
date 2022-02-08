@@ -96,3 +96,11 @@ IV- Anbieter:
 
     Note: Flyway Usage Example
               flyway -user=myuser -password=s3cr3t -url=jdbc:h2:mem -placeholders.abc=def migrate
+
+image builded:
+        docker build -f Dockerfile -t willagropastoral:jdk ./
+    Successfully built 896751aa7277
+    Successfully tagged willagropastoral:jdk
+
+        docker run willagropastoral:jdk
+

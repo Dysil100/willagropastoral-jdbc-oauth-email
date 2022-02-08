@@ -35,4 +35,10 @@ public class ConfirmationTokenRepositoryImpl implements ConfirmationTokenReposit
     public void deleteByUsername(String email) {
         daoConfirmationToken.deleteByUsername(email);
     }
+
+    @Override
+    public void updateByUsername(String newToken, String email) {
+        System.out.println(newToken + " und " + email);
+        daoConfirmationToken.updateByUsername(newToken, email);
+    }
 }

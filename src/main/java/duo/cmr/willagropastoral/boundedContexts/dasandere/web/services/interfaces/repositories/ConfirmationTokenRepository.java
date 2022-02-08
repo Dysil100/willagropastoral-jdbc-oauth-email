@@ -14,4 +14,6 @@ public interface ConfirmationTokenRepository {
     Optional<ConfirmationTokenEntity> findByUsername(String username);
 
     void deleteByUsername(String email);
+
+    void updateByUsername(String newToken, String email);
 }

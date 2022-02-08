@@ -30,8 +30,8 @@ public class RecoveryPasswordController {
     }
 
     @GetMapping("/delete/confirm")
-    public String deleteAccount(Model model, @RequestParam("token") String token) {
-        registrationService.confirmToken(token);
+    public String resetpasword(Model model, @RequestParam("token") String token) {
+        //registrationService.confirmToken(token);
         MailPasswordPaar mailPasswordPaar = new MailPasswordPaar();
         mailPasswordPaar.setEmail(serviceSupreme.getUserByToken(token).getUsername());
         model.addAttribute("form", mailPasswordPaar);

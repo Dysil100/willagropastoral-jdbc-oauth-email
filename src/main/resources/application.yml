@@ -10,11 +10,11 @@ spring:
   datasource:
     username: willagropastoral
     password: iamgroot
-    url: jdbc:postgresql://localhost:15000/willagropastoral
+    url: jdbc:postgresql://localhost:5432/willagropastoral
 
   flyway:
     create-schemas: true
-    url: jdbc:postgresql://localhost:15000/willagropastoral
+    url: jdbc:postgresql://localhost:5432/willagropastoral
     user: willagropastoral
     password: iamgroot
 

@@ -47,4 +47,11 @@ public class ConfirmationTokenService {
                 )
         );
     }
+
+    public void updateByUsername(String email) {
+        String newToken = UUID.randomUUID().toString();
+        System.out.println(newToken);
+        confirmationTokenRepository.updateByUsername(newToken, email);
+
+    }
 }
