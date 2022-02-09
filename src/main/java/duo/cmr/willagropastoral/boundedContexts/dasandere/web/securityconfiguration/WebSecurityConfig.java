@@ -28,8 +28,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         "/registration/confirm/*", "/delete/confirm"
                 )
                 .permitAll()
-                .anyRequest().permitAll());
-                //.authenticated()).userDetailsService(appUserService);
+                .anyRequest()
+                .authenticated()).userDetailsService(appUserService);
 
         security.logout().clearAuthentication(true)
                 .deleteCookies().invalidateHttpSession(true)
