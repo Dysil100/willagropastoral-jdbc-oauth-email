@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-02-08T22:47:28" hostname="MacBooknmacbook" time="1.716">
+<testsuite name="duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-02-09T12:55:40" hostname="MacBook-von-macbook.local" time="0.773">
   <properties/>
-  <testcase name="contextLoads()" classname="duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests" time="1.716"/>
-  <system-out><![CDATA[23:47:17.046 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-23:47:17.085 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-23:47:17.286 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-23:47:17.307 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests], using SpringBootContextLoader
-23:47:17.312 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests]: class path resource [duo/cmr/willagropastoral/WillagropastoralJdbcOauthEmailApplicationTests-context.xml] does not exist
-23:47:17.313 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests]: class path resource [duo/cmr/willagropastoral/WillagropastoralJdbcOauthEmailApplicationTestsContext.groovy] does not exist
-23:47:17.313 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-23:47:17.315 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests]: WillagropastoralJdbcOauthEmailApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-23:47:17.419 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests]
-23:47:17.546 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/admin/Desktop/SprungInsMacAigain/HardCodes/willagropastoral-jdbc-oauth-email/build/classes/java/main/duo/cmr/willagropastoral/WillagropastoralJdbcOauthEmailApplication.class]
-23:47:17.548 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplication for test class duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests
-23:47:17.792 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests]: using defaults.
-23:47:17.793 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-23:47:17.840 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@a4b2d8f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@dcfda20, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6d304f9d, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@f73dcd6, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5c87bfe2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2fea7088, org.springframework.test.context.transaction.TransactionalTestExecutionListener@40499e4f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@51cd7ffc, org.springframework.test.context.event.EventPublishingTestExecutionListener@30d4b288, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4cc6fa2a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@40f1be1b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7a791b66, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6f2cb653, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@14c01636, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@590c73d3]
-23:47:17.849 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@12bfd80d testClass = WillagropastoralJdbcOauthEmailApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@41925502 testClass = WillagropastoralJdbcOauthEmailApplicationTests, locations = '{}', classes = '{class duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@457c9034, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@7e5c856f, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3bd323e9, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4ff8d125, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@58ce9668, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@37271612], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+  <testcase name="contextLoads()" classname="duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests" time="0.773"/>
+  <system-out><![CDATA[13:55:33.841 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+13:55:33.859 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+13:55:33.922 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+13:55:33.943 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests], using SpringBootContextLoader
+13:55:33.948 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests]: class path resource [duo/cmr/willagropastoral/WillagropastoralJdbcOauthEmailApplicationTests-context.xml] does not exist
+13:55:33.950 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests]: class path resource [duo/cmr/willagropastoral/WillagropastoralJdbcOauthEmailApplicationTestsContext.groovy] does not exist
+13:55:33.951 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+13:55:33.952 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests]: WillagropastoralJdbcOauthEmailApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:55:34.049 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests]
+13:55:34.151 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/admin/Desktop/SprungInsMacAigain/HardCodes/willagropastoral-jdbc-oauth-email/build/classes/java/main/duo/cmr/willagropastoral/WillagropastoralJdbcOauthEmailApplication.class]
+13:55:34.153 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplication for test class duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests
+13:55:34.325 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplicationTests]: using defaults.
+13:55:34.328 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+13:55:34.355 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@a4b2d8f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@dcfda20, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6d304f9d, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@f73dcd6, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5c87bfe2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2fea7088, org.springframework.test.context.transaction.TransactionalTestExecutionListener@40499e4f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@51cd7ffc, org.springframework.test.context.event.EventPublishingTestExecutionListener@30d4b288, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4cc6fa2a, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@40f1be1b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7a791b66, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6f2cb653, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@14c01636, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@590c73d3]
+13:55:34.359 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@12bfd80d testClass = WillagropastoralJdbcOauthEmailApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@41925502 testClass = WillagropastoralJdbcOauthEmailApplicationTests, locations = '{}', classes = '{class duo.cmr.willagropastoral.WillagropastoralJdbcOauthEmailApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@457c9034, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@7e5c856f, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3bd323e9, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4ff8d125, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@58ce9668, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@37271612], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -26,391 +26,391 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v2.6.3)
 
-2022-02-08 23:47:18.611 DEBUG 35469 --- [kground-preinit] org.jboss.logging                        : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
-2022-02-08 23:47:18.627 DEBUG 35469 --- [kground-preinit] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
-2022-02-08 23:47:18.631 DEBUG 35469 --- [kground-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
-2022-02-08 23:47:18.632 DEBUG 35469 --- [kground-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-2022-02-08 23:47:18.634 DEBUG 35469 --- [kground-preinit] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
-2022-02-08 23:47:18.641 DEBUG 35469 --- [kground-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-2022-02-08 23:47:18.696 DEBUG 35469 --- [kground-preinit] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
-2022-02-08 23:47:18.703  INFO 35469 --- [    Test worker] ropastoralJdbcOauthEmailApplicationTests : Starting WillagropastoralJdbcOauthEmailApplicationTests using Java 17 on MacBooknmacbook with PID 35469 (started by admin in /Users/admin/Desktop/SprungInsMacAigain/HardCodes/willagropastoral-jdbc-oauth-email)
-2022-02-08 23:47:18.705 DEBUG 35469 --- [    Test worker] ropastoralJdbcOauthEmailApplicationTests : Running with Spring Boot v2.6.3, Spring v5.3.15
-2022-02-08 23:47:18.705  INFO 35469 --- [    Test worker] ropastoralJdbcOauthEmailApplicationTests : The following profiles are active: production
-2022-02-08 23:47:18.905 DEBUG 35469 --- [kground-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
-2022-02-08 23:47:18.916 DEBUG 35469 --- [kground-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
-2022-02-08 23:47:18.917 DEBUG 35469 --- [kground-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
-2022-02-08 23:47:18.918 DEBUG 35469 --- [kground-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-2022-02-08 23:47:18.919 DEBUG 35469 --- [kground-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-2022-02-08 23:47:18.920 DEBUG 35469 --- [kground-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-2022-02-08 23:47:20.488  INFO 35469 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2022-02-08 23:47:20.765  INFO 35469 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 263 ms. Found 5 JDBC repository interfaces.
-2022-02-08 23:47:21.605  INFO 35469 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityConfiguration' of type [duo.cmr.willagropastoral.boundedContexts.dasandere.web.securityconfiguration.MethodSecurityConfiguration$$EnhancerBySpringCGLIB$$5d263b96] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2022-02-08 23:47:21.781 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : Driver class org.postgresql.Driver found in Thread context class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5ffd2b27
-2022-02-08 23:47:21.953 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : HikariPool-1 - configuration:
-2022-02-08 23:47:21.957 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension................................false
-2022-02-08 23:47:21.958 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : autoCommit................................true
-2022-02-08 23:47:21.958 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : catalog................................none
-2022-02-08 23:47:21.958 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : connectionInitSql................................none
-2022-02-08 23:47:21.959 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : connectionTestQuery................................none
-2022-02-08 23:47:21.959 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : connectionTimeout................................30000
-2022-02-08 23:47:21.959 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : dataSource................................none
-2022-02-08 23:47:21.960 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : dataSourceClassName................................none
-2022-02-08 23:47:21.960 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI................................none
-2022-02-08 23:47:21.961 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : dataSourceProperties................................{password=<masked>}
-2022-02-08 23:47:21.961 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : driverClassName................................"org.postgresql.Driver"
-2022-02-08 23:47:21.962 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName................................none
-2022-02-08 23:47:21.962 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : healthCheckProperties................................{}
-2022-02-08 23:47:21.962 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry................................none
-2022-02-08 23:47:21.963 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : idleTimeout................................600000
-2022-02-08 23:47:21.963 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout................................1
-2022-02-08 23:47:21.963 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries................................false
-2022-02-08 23:47:21.964 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : jdbcUrl................................jdbc:postgresql://localhost:5432/willagropastoral
-2022-02-08 23:47:21.964 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : keepaliveTime................................0
-2022-02-08 23:47:21.965 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold................................0
-2022-02-08 23:47:21.965 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : maxLifetime................................1800000
-2022-02-08 23:47:21.965 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : maximumPoolSize................................10
-2022-02-08 23:47:21.965 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : metricRegistry................................none
-2022-02-08 23:47:21.966 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory................................none
-2022-02-08 23:47:21.967 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : minimumIdle................................10
-2022-02-08 23:47:21.967 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : password................................<masked>
-2022-02-08 23:47:21.967 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : poolName................................"HikariPool-1"
-2022-02-08 23:47:21.968 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : readOnly................................false
-2022-02-08 23:47:21.968 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : registerMbeans................................false
-2022-02-08 23:47:21.968 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : scheduledExecutor................................none
-2022-02-08 23:47:21.969 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : schema................................none
-2022-02-08 23:47:21.969 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : threadFactory................................internal
-2022-02-08 23:47:21.969 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : transactionIsolation................................default
-2022-02-08 23:47:21.970 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : username................................"willagropastoral"
-2022-02-08 23:47:21.970 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : validationTimeout................................5000
-2022-02-08 23:47:21.970  INFO 35469 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-02-08 23:47:21.993 DEBUG 35469 --- [    Test worker] org.postgresql.Driver                    : Loading driver configuration via classloader jdk.internal.loader.ClassLoaders$AppClassLoader@5ffd2b27
-2022-02-08 23:47:21.994 DEBUG 35469 --- [    Test worker] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/willagropastoral
-2022-02-08 23:47:22.006 DEBUG 35469 --- [    Test worker] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
-2022-02-08 23:47:22.016 DEBUG 35469 --- [    Test worker] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
-2022-02-08 23:47:22.017 DEBUG 35469 --- [    Test worker] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
-2022-02-08 23:47:22.028 DEBUG 35469 --- [    Test worker] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
-2022-02-08 23:47:22.048 DEBUG 35469 --- [    Test worker] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
-2022-02-08 23:47:22.049 DEBUG 35469 --- [    Test worker] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
-2022-02-08 23:47:22.346 DEBUG 35469 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@15639d09
-2022-02-08 23:47:22.348  INFO 35469 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2022-02-08 23:47:22.449 DEBUG 35469 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Pool stats (total=1, active=0, idle=1, waiting=0)
-2022-02-08 23:47:22.450 DEBUG 35469 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/willagropastoral
-2022-02-08 23:47:22.450 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
-2022-02-08 23:47:22.451 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
-2022-02-08 23:47:22.451 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
-2022-02-08 23:47:22.451 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
-2022-02-08 23:47:22.453 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
-2022-02-08 23:47:22.454 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
-2022-02-08 23:47:22.562 DEBUG 35469 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@47cca4ae
-2022-02-08 23:47:22.563 DEBUG 35469 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/willagropastoral
-2022-02-08 23:47:22.563 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
-2022-02-08 23:47:22.564 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
-2022-02-08 23:47:22.566 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
-2022-02-08 23:47:22.566 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
-2022-02-08 23:47:22.569 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
-2022-02-08 23:47:22.570 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
-2022-02-08 23:47:22.679 DEBUG 35469 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@836581c
-2022-02-08 23:47:22.680 DEBUG 35469 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/willagropastoral
-2022-02-08 23:47:22.681 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
-2022-02-08 23:47:22.683 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
-2022-02-08 23:47:22.683 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
-2022-02-08 23:47:22.684 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
-2022-02-08 23:47:22.686 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
-2022-02-08 23:47:22.687 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
-2022-02-08 23:47:22.855 DEBUG 35469 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@52d5e3ad
-2022-02-08 23:47:22.857 DEBUG 35469 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/willagropastoral
-2022-02-08 23:47:22.857 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
-2022-02-08 23:47:22.857 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
-2022-02-08 23:47:22.858 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
-2022-02-08 23:47:22.859 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
-2022-02-08 23:47:22.865 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
-2022-02-08 23:47:22.866 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
-2022-02-08 23:47:23.183 DEBUG 35469 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6819a753
-2022-02-08 23:47:23.184 DEBUG 35469 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/willagropastoral
-2022-02-08 23:47:23.192 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
-2022-02-08 23:47:23.196 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
-2022-02-08 23:47:23.202 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
-2022-02-08 23:47:23.203 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
-2022-02-08 23:47:23.216 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
-2022-02-08 23:47:23.219 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
-2022-02-08 23:47:23.440 DEBUG 35469 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@29068044
-2022-02-08 23:47:23.440 DEBUG 35469 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/willagropastoral
-2022-02-08 23:47:23.441 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
-2022-02-08 23:47:23.442 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
-2022-02-08 23:47:23.445 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
-2022-02-08 23:47:23.448 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
-2022-02-08 23:47:23.462 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
-2022-02-08 23:47:23.464 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
-2022-02-08 23:47:23.676 DEBUG 35469 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@34e4fb17
-2022-02-08 23:47:23.677 DEBUG 35469 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/willagropastoral
-2022-02-08 23:47:23.677 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
-2022-02-08 23:47:23.678 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
-2022-02-08 23:47:23.679 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
-2022-02-08 23:47:23.680 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
-2022-02-08 23:47:23.682 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
-2022-02-08 23:47:23.683 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
-2022-02-08 23:47:23.845 DEBUG 35469 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@49d1aead
-2022-02-08 23:47:23.846 DEBUG 35469 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/willagropastoral
-2022-02-08 23:47:23.846 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
-2022-02-08 23:47:23.847 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
-2022-02-08 23:47:23.847 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
-2022-02-08 23:47:23.847 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
-2022-02-08 23:47:23.857 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
-2022-02-08 23:47:23.861 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
-2022-02-08 23:47:24.029 DEBUG 35469 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6c57bbfb
-2022-02-08 23:47:24.030 DEBUG 35469 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:5432/willagropastoral
-2022-02-08 23:47:24.030 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
-2022-02-08 23:47:24.030 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
-2022-02-08 23:47:24.031 DEBUG 35469 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
-2022-02-08 23:47:24.031 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:5432
-2022-02-08 23:47:24.035 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
-2022-02-08 23:47:24.035 DEBUG 35469 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
-2022-02-08 23:47:24.219 DEBUG 35469 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@714e0295
-2022-02-08 23:47:24.226 DEBUG 35469 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=10, active=0, idle=10, waiting=0)
-2022-02-08 23:47:24.333 DEBUG 35469 --- [    Test worker] javax.activation                         : MimetypesFileTypeMap: load HOME
-2022-02-08 23:47:24.362 DEBUG 35469 --- [    Test worker] javax.activation                         : MimetypesFileTypeMap: load SYS
-2022-02-08 23:47:24.364 DEBUG 35469 --- [    Test worker] javax.activation                         : MimetypesFileTypeMap: load JAR
-2022-02-08 23:47:24.371 DEBUG 35469 --- [    Test worker] javax.activation                         : MimetypesFileTypeMap: !anyLoaded
-2022-02-08 23:47:24.372 DEBUG 35469 --- [    Test worker] javax.activation                         : MimetypesFileTypeMap: not loading mime types file: /META-INF/mime.types
-2022-02-08 23:47:24.372 DEBUG 35469 --- [    Test worker] javax.activation                         : MimetypesFileTypeMap: load DEF
-2022-02-08 23:47:24.379 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/html, html
-2022-02-08 23:47:24.379 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/html, htm
-2022-02-08 23:47:24.384 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/html, HTML
-2022-02-08 23:47:24.385 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/html, HTM
-2022-02-08 23:47:24.387 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, txt
-2022-02-08 23:47:24.393 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, text
-2022-02-08 23:47:24.407 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, TXT
-2022-02-08 23:47:24.419 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, TEXT
-2022-02-08 23:47:24.420 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/gif, gif
-2022-02-08 23:47:24.420 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/gif, GIF
-2022-02-08 23:47:24.425 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/ief, ief
-2022-02-08 23:47:24.426 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/jpeg, jpeg
-2022-02-08 23:47:24.429 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/jpeg, jpg
-2022-02-08 23:47:24.430 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/jpeg, jpe
-2022-02-08 23:47:24.434 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/jpeg, JPG
-2022-02-08 23:47:24.435 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/tiff, tiff
-2022-02-08 23:47:24.435 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/tiff, tif
-2022-02-08 23:47:24.441 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/png, png
-2022-02-08 23:47:24.441 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/png, PNG
-2022-02-08 23:47:24.442 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-xwindowdump, xwd
-2022-02-08 23:47:24.442 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, ai
-2022-02-08 23:47:24.442 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, eps
-2022-02-08 23:47:24.442 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, ps
-2022-02-08 23:47:24.442 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/rtf, rtf
-2022-02-08 23:47:24.443 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-tex, tex
-2022-02-08 23:47:24.443 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-texinfo, texinfo
-2022-02-08 23:47:24.444 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-texinfo, texi
-2022-02-08 23:47:24.444 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, t
-2022-02-08 23:47:24.447 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, tr
-2022-02-08 23:47:24.452 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, roff
-2022-02-08 23:47:24.452 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/basic, au
-2022-02-08 23:47:24.452 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/midi, midi
-2022-02-08 23:47:24.453 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/midi, mid
-2022-02-08 23:47:24.453 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aifc, aifc
-2022-02-08 23:47:24.453 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aiff, aif
-2022-02-08 23:47:24.454 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aiff, aiff
-2022-02-08 23:47:24.454 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg, mpeg
-2022-02-08 23:47:24.454 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg, mpg
-2022-02-08 23:47:24.455 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-wav, wav
-2022-02-08 23:47:24.455 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpeg
-2022-02-08 23:47:24.456 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpg
-2022-02-08 23:47:24.456 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpe
-2022-02-08 23:47:24.457 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/quicktime, qt
-2022-02-08 23:47:24.457 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/quicktime, mov
-2022-02-08 23:47:24.458 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/x-msvideo, avi
-2022-02-08 23:47:24.458 DEBUG 35469 --- [    Test worker] javax.activation                         : MimetypesFileTypeMap: successfully loaded mime types file: /META-INF/mimetypes.default
-2022-02-08 23:47:24.460 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/html, html
-2022-02-08 23:47:24.460 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/html, htm
-2022-02-08 23:47:24.462 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/html, HTML
-2022-02-08 23:47:24.463 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/html, HTM
-2022-02-08 23:47:24.464 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, txt
-2022-02-08 23:47:24.465 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, text
-2022-02-08 23:47:24.466 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, TXT
-2022-02-08 23:47:24.466 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, TEXT
-2022-02-08 23:47:24.466 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, java
-2022-02-08 23:47:24.467 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, c
-2022-02-08 23:47:24.467 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, c++
-2022-02-08 23:47:24.468 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, cpp
-2022-02-08 23:47:24.468 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, pl
-2022-02-08 23:47:24.469 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, cc
-2022-02-08 23:47:24.469 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, h
-2022-02-08 23:47:24.469 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/gif, gif
-2022-02-08 23:47:24.471 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/gif, GIF
-2022-02-08 23:47:24.471 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/ief, ief
-2022-02-08 23:47:24.471 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/jpeg, jpeg
-2022-02-08 23:47:24.472 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/jpeg, jpg
-2022-02-08 23:47:24.473 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/jpeg, jpe
-2022-02-08 23:47:24.474 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/jpeg, JPG
-2022-02-08 23:47:24.477 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/tiff, tiff
-2022-02-08 23:47:24.477 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/tiff, tif
-2022-02-08 23:47:24.477 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-xwindowdump, xwd
-2022-02-08 23:47:24.477 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, ai
-2022-02-08 23:47:24.477 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, eps
-2022-02-08 23:47:24.478 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, ps
-2022-02-08 23:47:24.478 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/rtf, rtf
-2022-02-08 23:47:24.478 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-tex, tex
-2022-02-08 23:47:24.478 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-texinfo, texinfo
-2022-02-08 23:47:24.479 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-texinfo, texi
-2022-02-08 23:47:24.479 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, t
-2022-02-08 23:47:24.486 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, tr
-2022-02-08 23:47:24.488 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, roff
-2022-02-08 23:47:24.488 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/basic, au
-2022-02-08 23:47:24.489 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/midi, midi
-2022-02-08 23:47:24.489 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/midi, mid
-2022-02-08 23:47:24.489 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aifc, aifc
-2022-02-08 23:47:24.490 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aiff, aif
-2022-02-08 23:47:24.491 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aiff, aiff
-2022-02-08 23:47:24.491 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg, mpeg
-2022-02-08 23:47:24.491 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg, mpg
-2022-02-08 23:47:24.491 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-wav, wav
-2022-02-08 23:47:24.491 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpeg
-2022-02-08 23:47:24.491 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpg
-2022-02-08 23:47:24.491 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpe
-2022-02-08 23:47:24.492 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/quicktime, qt
-2022-02-08 23:47:24.492 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/quicktime, mov
-2022-02-08 23:47:24.492 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/x-msvideo, avi
-2022-02-08 23:47:24.492 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/x-speech, talk
-2022-02-08 23:47:24.492 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/css, css
-2022-02-08 23:47:24.493 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/csv, csv
-2022-02-08 23:47:24.493 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-xbitmap, xbm
-2022-02-08 23:47:24.493 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-xpixmap, xpm
-2022-02-08 23:47:24.493 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/png, png
-2022-02-08 23:47:24.494 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/svg+xml, svg
-2022-02-08 23:47:24.494 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/ief, ief
-2022-02-08 23:47:24.494 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/rgb, rgb
-2022-02-08 23:47:24.494 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/g3fax, g3f
-2022-02-08 23:47:24.494 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-xwindowdump, xwd
-2022-02-08 23:47:24.494 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-pict, pict
-2022-02-08 23:47:24.495 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-portable-pixmap, ppm
-2022-02-08 23:47:24.495 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-portable-graymap, pgm
-2022-02-08 23:47:24.495 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-portable-bitmap, pbm
-2022-02-08 23:47:24.495 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-portable-anymap, pnm
-2022-02-08 23:47:24.496 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-ms-bmp, bmp
-2022-02-08 23:47:24.496 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-cmu-raster, ras
-2022-02-08 23:47:24.496 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-photo-cd, pcd
-2022-02-08 23:47:24.498 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/cgm, cgm
-2022-02-08 23:47:24.499 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-cals, mil
-2022-02-08 23:47:24.499 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-cals, cal
-2022-02-08 23:47:24.499 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/fif, fif
-2022-02-08 23:47:24.500 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-mgx-dsf, dsf
-2022-02-08 23:47:24.500 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-cmx, cmx
-2022-02-08 23:47:24.500 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/wavelet, wi
-2022-02-08 23:47:24.500 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/vnd.dwg, dwg
-2022-02-08 23:47:24.500 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/vnd.dxf, dxf
-2022-02-08 23:47:24.500 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/vnd.svf, svf
-2022-02-08 23:47:24.501 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/basic, au
-2022-02-08 23:47:24.501 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/basic, snd
-2022-02-08 23:47:24.501 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aiff, aif
-2022-02-08 23:47:24.501 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aiff, aiff
-2022-02-08 23:47:24.501 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aiff, aifc
-2022-02-08 23:47:24.502 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-wav, wav
-2022-02-08 23:47:24.502 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg, mpa
-2022-02-08 23:47:24.502 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg, abs
-2022-02-08 23:47:24.502 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg, mpega
-2022-02-08 23:47:24.502 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg-2, mp2a
-2022-02-08 23:47:24.503 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg-2, mpa2
-2022-02-08 23:47:24.503 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/echospeech, es
-2022-02-08 23:47:24.503 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/voxware, vox
-2022-02-08 23:47:24.503 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/fastman, lcc
-2022-02-08 23:47:24.503 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-pn-realaudio, ra
-2022-02-08 23:47:24.503 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-pn-realaudio, ram
-2022-02-08 23:47:24.503 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-music/x-midi, mmid
-2022-02-08 23:47:24.503 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/vnd.koan, skp
-2022-02-08 23:47:24.503 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/x-speech, talk
-2022-02-08 23:47:24.503 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpeg
-2022-02-08 23:47:24.503 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpg
-2022-02-08 23:47:24.503 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpe
-2022-02-08 23:47:24.504 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg-2, mpv2
-2022-02-08 23:47:24.504 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg-2, mp2v
-2022-02-08 23:47:24.504 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/quicktime, qt
-2022-02-08 23:47:24.504 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/quicktime, mov
-2022-02-08 23:47:24.505 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/x-msvideo, avi
-2022-02-08 23:47:24.506 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/x-sgi-movie, movie
-2022-02-08 23:47:24.506 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/vdo, vdo
-2022-02-08 23:47:24.506 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/vnd.vivo, viv
-2022-02-08 23:47:24.506 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-ns-proxy-autoconfig, pac
-2022-02-08 23:47:24.506 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-conference/x-cooltalk, ice
-2022-02-08 23:47:24.506 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, ai
-2022-02-08 23:47:24.506 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, eps
-2022-02-08 23:47:24.507 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, ps
-2022-02-08 23:47:24.507 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/rtf, rtf
-2022-02-08 23:47:24.507 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/pdf, pdf
-2022-02-08 23:47:24.507 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/vnd.mif, mif
-2022-02-08 23:47:24.507 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, t
-2022-02-08 23:47:24.507 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, tr
-2022-02-08 23:47:24.507 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, roff
-2022-02-08 23:47:24.507 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff-man, man
-2022-02-08 23:47:24.508 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff-me, me
-2022-02-08 23:47:24.508 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff-ms, ms
-2022-02-08 23:47:24.508 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-latex, latex
-2022-02-08 23:47:24.508 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-tex, tex
-2022-02-08 23:47:24.508 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-texinfo, texinfo
-2022-02-08 23:47:24.508 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-texinfo, texi
-2022-02-08 23:47:24.508 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-dvi, dvi
-2022-02-08 23:47:24.508 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/msword, doc
-2022-02-08 23:47:24.508 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/msword, DOC
-2022-02-08 23:47:24.508 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/oda, oda
-2022-02-08 23:47:24.508 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/envoy, evy
-2022-02-08 23:47:24.508 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-gtar, gtar
-2022-02-08 23:47:24.508 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-tar, tar
-2022-02-08 23:47:24.509 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-ustar, ustar
-2022-02-08 23:47:24.509 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-bcpio, bcpio
-2022-02-08 23:47:24.509 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-cpio, cpio
-2022-02-08 23:47:24.509 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-shar, shar
-2022-02-08 23:47:24.509 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/zip, zip
-2022-02-08 23:47:24.509 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/mac-binhex40, hqx
-2022-02-08 23:47:24.509 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-stuffit, sit
-2022-02-08 23:47:24.509 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-stuffit, sea
-2022-02-08 23:47:24.510 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/fractals, fif
-2022-02-08 23:47:24.510 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/octet-stream, bin
-2022-02-08 23:47:24.510 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/octet-stream, uu
-2022-02-08 23:47:24.510 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/octet-stream, exe
-2022-02-08 23:47:24.510 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-wais-source, src
-2022-02-08 23:47:24.510 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-wais-source, wsrc
-2022-02-08 23:47:24.510 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/hdf, hdf
-2022-02-08 23:47:24.510 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/javascript, js
-2022-02-08 23:47:24.510 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/javascript, ls
-2022-02-08 23:47:24.510 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/javascript, mocha
-2022-02-08 23:47:24.510 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-sh, sh
-2022-02-08 23:47:24.511 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-csh, csh
-2022-02-08 23:47:24.511 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-perl, pl
-2022-02-08 23:47:24.511 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-tcl, tcl
-2022-02-08 23:47:24.511 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/futuresplash, spl
-2022-02-08 23:47:24.511 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/mbedlet, mbd
-2022-02-08 23:47:24.511 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-rad-powermedia, rad
-2022-02-08 23:47:24.511 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/mspowerpoint, ppz
-2022-02-08 23:47:24.511 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-asap, asp
-2022-02-08 23:47:24.511 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/astound, asn
-2022-02-08 23:47:24.511 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-olescript, axs
-2022-02-08 23:47:24.511 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-oleobject, ods
-2022-02-08 23:47:24.511 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-form/x-openscape, opp
-2022-02-08 23:47:24.511 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-webbasic, wba
-2022-02-08 23:47:24.512 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-alpha-form, frm
-2022-02-08 23:47:24.512 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-script/x-wfxclient, wfx
-2022-02-08 23:47:24.512 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/octet-stream, exe
-2022-02-08 23:47:24.512 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/octet-stream, com
-2022-02-08 23:47:24.512 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-pcn, pcn
-2022-02-08 23:47:24.512 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/vnd.ms-excel, xls
-2022-02-08 23:47:24.512 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/vnd.ms-powerpoint, ppt
-2022-02-08 23:47:24.512 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/vnd.ms-project, mpp
-2022-02-08 23:47:24.512 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/vnd.svd, svd
-2022-02-08 23:47:24.512 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-net-install, ins
-2022-02-08 23:47:24.512 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/ccv, ccv
-2022-02-08 23:47:24.512 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: workbook/formulaone, vts
-2022-02-08 23:47:24.512 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-world/x-vrml, wrl
-2022-02-08 23:47:24.513 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-world/x-vrml, vrml
-2022-02-08 23:47:24.513 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-world/x-vream, vrw
-2022-02-08 23:47:24.513 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-p3d, p3d
-2022-02-08 23:47:24.513 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-world/x-svr, svr
-2022-02-08 23:47:24.514 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-world/x-wvr, wvr
-2022-02-08 23:47:24.523 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-world/x-3dmf, 3dmf
-2022-02-08 23:47:24.523 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/mathematica, ma
-2022-02-08 23:47:24.523 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-model/x-mesh, msh
-2022-02-08 23:47:24.523 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/vis5d, v5d
-2022-02-08 23:47:24.523 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/iges, igs
-2022-02-08 23:47:24.523 DEBUG 35469 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: drawing/x-dwf, dwf
-2022-02-08 23:47:25.905  INFO 35469 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@20a1b3ae, org.springframework.security.web.context.SecurityContextPersistenceFilter@537ca28e, org.springframework.security.web.header.HeaderWriterFilter@7606bd03, org.springframework.security.web.csrf.CsrfFilter@28367da7, org.springframework.security.web.authentication.logout.LogoutFilter@70f4f89e, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6f8667bb, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7b1a30e5, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@54567b05, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7ad889be, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@658e7ead, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3a5e2525, org.springframework.security.web.session.SessionManagementFilter@4c5da4f9, org.springframework.security.web.access.ExceptionTranslationFilter@516195cf, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4c56644f]
-2022-02-08 23:47:26.057 DEBUG 35469 --- [    Test worker] o.a.catalina.core.AprLifecycleListener   : The Apache Tomcat Native library could not be found using names [tcnative-1, libtcnative-1] on the java.library.path [/Users/admin/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]. The errors reported were [Can't load library: /Users/admin/Desktop/SprungInsMacAigain/HardCodes/willagropastoral-jdbc-oauth-email/bin/libtcnative-1.dylib, Can't load library: /Users/admin/Desktop/SprungInsMacAigain/HardCodes/willagropastoral-jdbc-oauth-email/bin/liblibtcnative-1.dylib, no tcnative-1 in java.library.path: /Users/admin/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:., no libtcnative-1 in java.library.path: /Users/admin/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+2022-02-09 13:55:34.893  INFO 37036 --- [    Test worker] ropastoralJdbcOauthEmailApplicationTests : Starting WillagropastoralJdbcOauthEmailApplicationTests using Java 17 on MacBook-von-macbook.local with PID 37036 (started by admin in /Users/admin/Desktop/SprungInsMacAigain/HardCodes/willagropastoral-jdbc-oauth-email)
+2022-02-09 13:55:34.895 DEBUG 37036 --- [    Test worker] ropastoralJdbcOauthEmailApplicationTests : Running with Spring Boot v2.6.3, Spring v5.3.15
+2022-02-09 13:55:34.895  INFO 37036 --- [    Test worker] ropastoralJdbcOauthEmailApplicationTests : The following profiles are active: production
+2022-02-09 13:55:34.909 DEBUG 37036 --- [kground-preinit] org.jboss.logging                        : Logging Provider: org.jboss.logging.Log4j2LoggerProvider
+2022-02-09 13:55:34.917 DEBUG 37036 --- [kground-preinit] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2022-02-09 13:55:34.920 DEBUG 37036 --- [kground-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2022-02-09 13:55:34.920 DEBUG 37036 --- [kground-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2022-02-09 13:55:34.921 DEBUG 37036 --- [kground-preinit] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2022-02-09 13:55:34.925 DEBUG 37036 --- [kground-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2022-02-09 13:55:34.965 DEBUG 37036 --- [kground-preinit] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2022-02-09 13:55:35.141 DEBUG 37036 --- [kground-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2022-02-09 13:55:35.151 DEBUG 37036 --- [kground-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2022-02-09 13:55:35.151 DEBUG 37036 --- [kground-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+2022-02-09 13:55:35.152 DEBUG 37036 --- [kground-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2022-02-09 13:55:35.152 DEBUG 37036 --- [kground-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2022-02-09 13:55:35.153 DEBUG 37036 --- [kground-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2022-02-09 13:55:36.148  INFO 37036 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2022-02-09 13:55:36.262  INFO 37036 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 5 JDBC repository interfaces.
+2022-02-09 13:55:36.968  INFO 37036 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityConfiguration' of type [duo.cmr.willagropastoral.boundedContexts.dasandere.web.securityconfiguration.MethodSecurityConfiguration$$EnhancerBySpringCGLIB$$a24fd8cf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-02-09 13:55:37.109 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : Driver class org.postgresql.Driver found in Thread context class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5ffd2b27
+2022-02-09 13:55:37.252 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : HikariPool-1 - configuration:
+2022-02-09 13:55:37.255 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : allowPoolSuspension................................false
+2022-02-09 13:55:37.255 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : autoCommit................................true
+2022-02-09 13:55:37.256 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : catalog................................none
+2022-02-09 13:55:37.256 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : connectionInitSql................................none
+2022-02-09 13:55:37.256 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : connectionTestQuery................................none
+2022-02-09 13:55:37.257 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : connectionTimeout................................30000
+2022-02-09 13:55:37.257 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : dataSource................................none
+2022-02-09 13:55:37.257 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : dataSourceClassName................................none
+2022-02-09 13:55:37.258 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : dataSourceJNDI................................none
+2022-02-09 13:55:37.259 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : dataSourceProperties................................{password=<masked>}
+2022-02-09 13:55:37.259 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : driverClassName................................"org.postgresql.Driver"
+2022-02-09 13:55:37.260 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : exceptionOverrideClassName................................none
+2022-02-09 13:55:37.260 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : healthCheckProperties................................{}
+2022-02-09 13:55:37.260 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : healthCheckRegistry................................none
+2022-02-09 13:55:37.261 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : idleTimeout................................600000
+2022-02-09 13:55:37.261 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : initializationFailTimeout................................1
+2022-02-09 13:55:37.262 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : isolateInternalQueries................................false
+2022-02-09 13:55:37.262 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : jdbcUrl................................jdbc:postgresql://localhost:15000/willagropastoral
+2022-02-09 13:55:37.263 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : keepaliveTime................................0
+2022-02-09 13:55:37.263 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : leakDetectionThreshold................................0
+2022-02-09 13:55:37.263 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : maxLifetime................................1800000
+2022-02-09 13:55:37.264 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : maximumPoolSize................................10
+2022-02-09 13:55:37.264 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : metricRegistry................................none
+2022-02-09 13:55:37.264 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : metricsTrackerFactory................................none
+2022-02-09 13:55:37.265 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : minimumIdle................................10
+2022-02-09 13:55:37.265 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : password................................<masked>
+2022-02-09 13:55:37.265 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : poolName................................"HikariPool-1"
+2022-02-09 13:55:37.266 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : readOnly................................false
+2022-02-09 13:55:37.267 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : registerMbeans................................false
+2022-02-09 13:55:37.267 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : scheduledExecutor................................none
+2022-02-09 13:55:37.268 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : schema................................none
+2022-02-09 13:55:37.268 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : threadFactory................................internal
+2022-02-09 13:55:37.268 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : transactionIsolation................................default
+2022-02-09 13:55:37.268 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : username................................"willagropastoral"
+2022-02-09 13:55:37.269 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.HikariConfig           : validationTimeout................................5000
+2022-02-09 13:55:37.269  INFO 37036 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-02-09 13:55:37.290 DEBUG 37036 --- [    Test worker] org.postgresql.Driver                    : Loading driver configuration via classloader jdk.internal.loader.ClassLoaders$AppClassLoader@5ffd2b27
+2022-02-09 13:55:37.291 DEBUG 37036 --- [    Test worker] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:15000/willagropastoral
+2022-02-09 13:55:37.300 DEBUG 37036 --- [    Test worker] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
+2022-02-09 13:55:37.302 DEBUG 37036 --- [    Test worker] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2022-02-09 13:55:37.302 DEBUG 37036 --- [    Test worker] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2022-02-09 13:55:37.311 DEBUG 37036 --- [    Test worker] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:15000
+2022-02-09 13:55:37.337 DEBUG 37036 --- [    Test worker] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
+2022-02-09 13:55:37.337 DEBUG 37036 --- [    Test worker] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
+2022-02-09 13:55:37.627 DEBUG 37036 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@49c099b
+2022-02-09 13:55:37.630  INFO 37036 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-02-09 13:55:37.731 DEBUG 37036 --- [l-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Pool stats (total=1, active=0, idle=1, waiting=0)
+2022-02-09 13:55:37.733 DEBUG 37036 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:15000/willagropastoral
+2022-02-09 13:55:37.733 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
+2022-02-09 13:55:37.733 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2022-02-09 13:55:37.734 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2022-02-09 13:55:37.734 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:15000
+2022-02-09 13:55:37.736 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
+2022-02-09 13:55:37.736 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
+2022-02-09 13:55:37.817 DEBUG 37036 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@593ef9d4
+2022-02-09 13:55:37.818 DEBUG 37036 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:15000/willagropastoral
+2022-02-09 13:55:37.819 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
+2022-02-09 13:55:37.820 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2022-02-09 13:55:37.820 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2022-02-09 13:55:37.821 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:15000
+2022-02-09 13:55:37.822 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
+2022-02-09 13:55:37.823 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
+2022-02-09 13:55:37.894 DEBUG 37036 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@16c406b8
+2022-02-09 13:55:37.895 DEBUG 37036 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:15000/willagropastoral
+2022-02-09 13:55:37.895 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
+2022-02-09 13:55:37.896 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2022-02-09 13:55:37.897 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2022-02-09 13:55:37.897 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:15000
+2022-02-09 13:55:37.899 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
+2022-02-09 13:55:37.901 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
+2022-02-09 13:55:37.969 DEBUG 37036 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@40acd69c
+2022-02-09 13:55:37.970 DEBUG 37036 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:15000/willagropastoral
+2022-02-09 13:55:37.970 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
+2022-02-09 13:55:37.971 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2022-02-09 13:55:37.971 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2022-02-09 13:55:37.972 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:15000
+2022-02-09 13:55:37.974 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
+2022-02-09 13:55:37.974 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
+2022-02-09 13:55:38.038 DEBUG 37036 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@76ebf9f7
+2022-02-09 13:55:38.039 DEBUG 37036 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:15000/willagropastoral
+2022-02-09 13:55:38.040 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
+2022-02-09 13:55:38.041 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2022-02-09 13:55:38.042 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2022-02-09 13:55:38.042 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:15000
+2022-02-09 13:55:38.044 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
+2022-02-09 13:55:38.045 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
+2022-02-09 13:55:38.114 DEBUG 37036 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1b735712
+2022-02-09 13:55:38.115 DEBUG 37036 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:15000/willagropastoral
+2022-02-09 13:55:38.115 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
+2022-02-09 13:55:38.116 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2022-02-09 13:55:38.116 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2022-02-09 13:55:38.116 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:15000
+2022-02-09 13:55:38.119 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
+2022-02-09 13:55:38.119 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
+2022-02-09 13:55:38.195 DEBUG 37036 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7d16bc6e
+2022-02-09 13:55:38.196 DEBUG 37036 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:15000/willagropastoral
+2022-02-09 13:55:38.196 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
+2022-02-09 13:55:38.196 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2022-02-09 13:55:38.197 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2022-02-09 13:55:38.197 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:15000
+2022-02-09 13:55:38.199 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
+2022-02-09 13:55:38.199 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
+2022-02-09 13:55:38.259 DEBUG 37036 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5ba89d66
+2022-02-09 13:55:38.260 DEBUG 37036 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:15000/willagropastoral
+2022-02-09 13:55:38.261 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
+2022-02-09 13:55:38.261 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2022-02-09 13:55:38.262 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2022-02-09 13:55:38.262 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:15000
+2022-02-09 13:55:38.264 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
+2022-02-09 13:55:38.264 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
+2022-02-09 13:55:38.347 DEBUG 37036 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@72a5e3a5
+2022-02-09 13:55:38.348 DEBUG 37036 --- [onnection adder] org.postgresql.Driver                    : Connecting with URL: jdbc:postgresql://localhost:15000/willagropastoral
+2022-02-09 13:55:38.348 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         : PostgreSQL JDBC Driver 42.3.1
+2022-02-09 13:55:38.349 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setDefaultFetchSize = 0
+2022-02-09 13:55:38.350 DEBUG 37036 --- [onnection adder] org.postgresql.jdbc.PgConnection         :   setPrepareThreshold = 5
+2022-02-09 13:55:38.350 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Trying to establish a protocol version 3 connection to localhost:15000
+2022-02-09 13:55:38.352 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Receive Buffer Size is 408.300
+2022-02-09 13:55:38.352 DEBUG 37036 --- [onnection adder] o.p.core.v3.ConnectionFactoryImpl        : Send Buffer Size is 146.988
+2022-02-09 13:55:38.418 DEBUG 37036 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@736ff124
+2022-02-09 13:55:38.419 DEBUG 37036 --- [onnection adder] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - After adding stats (total=10, active=0, idle=10, waiting=0)
+2022-02-09 13:55:38.495 DEBUG 37036 --- [    Test worker] javax.activation                         : MimetypesFileTypeMap: load HOME
+2022-02-09 13:55:38.497 DEBUG 37036 --- [    Test worker] javax.activation                         : MimetypesFileTypeMap: load SYS
+2022-02-09 13:55:38.497 DEBUG 37036 --- [    Test worker] javax.activation                         : MimetypesFileTypeMap: load JAR
+2022-02-09 13:55:38.499 DEBUG 37036 --- [    Test worker] javax.activation                         : MimetypesFileTypeMap: !anyLoaded
+2022-02-09 13:55:38.499 DEBUG 37036 --- [    Test worker] javax.activation                         : MimetypesFileTypeMap: not loading mime types file: /META-INF/mime.types
+2022-02-09 13:55:38.499 DEBUG 37036 --- [    Test worker] javax.activation                         : MimetypesFileTypeMap: load DEF
+2022-02-09 13:55:38.501 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/html, html
+2022-02-09 13:55:38.501 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/html, htm
+2022-02-09 13:55:38.501 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/html, HTML
+2022-02-09 13:55:38.502 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/html, HTM
+2022-02-09 13:55:38.502 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, txt
+2022-02-09 13:55:38.502 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, text
+2022-02-09 13:55:38.503 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, TXT
+2022-02-09 13:55:38.503 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, TEXT
+2022-02-09 13:55:38.503 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/gif, gif
+2022-02-09 13:55:38.504 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/gif, GIF
+2022-02-09 13:55:38.505 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/ief, ief
+2022-02-09 13:55:38.505 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/jpeg, jpeg
+2022-02-09 13:55:38.505 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/jpeg, jpg
+2022-02-09 13:55:38.506 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/jpeg, jpe
+2022-02-09 13:55:38.506 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/jpeg, JPG
+2022-02-09 13:55:38.506 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/tiff, tiff
+2022-02-09 13:55:38.506 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/tiff, tif
+2022-02-09 13:55:38.507 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/png, png
+2022-02-09 13:55:38.507 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/png, PNG
+2022-02-09 13:55:38.507 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-xwindowdump, xwd
+2022-02-09 13:55:38.507 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, ai
+2022-02-09 13:55:38.508 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, eps
+2022-02-09 13:55:38.508 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, ps
+2022-02-09 13:55:38.508 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/rtf, rtf
+2022-02-09 13:55:38.508 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-tex, tex
+2022-02-09 13:55:38.509 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-texinfo, texinfo
+2022-02-09 13:55:38.509 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-texinfo, texi
+2022-02-09 13:55:38.510 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, t
+2022-02-09 13:55:38.510 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, tr
+2022-02-09 13:55:38.510 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, roff
+2022-02-09 13:55:38.510 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/basic, au
+2022-02-09 13:55:38.510 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/midi, midi
+2022-02-09 13:55:38.511 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/midi, mid
+2022-02-09 13:55:38.511 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aifc, aifc
+2022-02-09 13:55:38.511 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aiff, aif
+2022-02-09 13:55:38.512 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aiff, aiff
+2022-02-09 13:55:38.512 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg, mpeg
+2022-02-09 13:55:38.512 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg, mpg
+2022-02-09 13:55:38.512 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-wav, wav
+2022-02-09 13:55:38.513 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpeg
+2022-02-09 13:55:38.513 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpg
+2022-02-09 13:55:38.513 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpe
+2022-02-09 13:55:38.513 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/quicktime, qt
+2022-02-09 13:55:38.513 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/quicktime, mov
+2022-02-09 13:55:38.514 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/x-msvideo, avi
+2022-02-09 13:55:38.514 DEBUG 37036 --- [    Test worker] javax.activation                         : MimetypesFileTypeMap: successfully loaded mime types file: /META-INF/mimetypes.default
+2022-02-09 13:55:38.515 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/html, html
+2022-02-09 13:55:38.515 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/html, htm
+2022-02-09 13:55:38.515 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/html, HTML
+2022-02-09 13:55:38.516 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/html, HTM
+2022-02-09 13:55:38.516 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, txt
+2022-02-09 13:55:38.516 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, text
+2022-02-09 13:55:38.517 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, TXT
+2022-02-09 13:55:38.517 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, TEXT
+2022-02-09 13:55:38.517 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, java
+2022-02-09 13:55:38.517 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, c
+2022-02-09 13:55:38.518 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, c++
+2022-02-09 13:55:38.518 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, cpp
+2022-02-09 13:55:38.518 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, pl
+2022-02-09 13:55:38.518 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, cc
+2022-02-09 13:55:38.519 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/plain, h
+2022-02-09 13:55:38.519 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/gif, gif
+2022-02-09 13:55:38.519 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/gif, GIF
+2022-02-09 13:55:38.519 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/ief, ief
+2022-02-09 13:55:38.520 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/jpeg, jpeg
+2022-02-09 13:55:38.520 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/jpeg, jpg
+2022-02-09 13:55:38.520 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/jpeg, jpe
+2022-02-09 13:55:38.520 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/jpeg, JPG
+2022-02-09 13:55:38.521 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/tiff, tiff
+2022-02-09 13:55:38.521 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/tiff, tif
+2022-02-09 13:55:38.521 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-xwindowdump, xwd
+2022-02-09 13:55:38.522 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, ai
+2022-02-09 13:55:38.522 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, eps
+2022-02-09 13:55:38.522 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, ps
+2022-02-09 13:55:38.523 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/rtf, rtf
+2022-02-09 13:55:38.523 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-tex, tex
+2022-02-09 13:55:38.524 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-texinfo, texinfo
+2022-02-09 13:55:38.524 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-texinfo, texi
+2022-02-09 13:55:38.525 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, t
+2022-02-09 13:55:38.525 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, tr
+2022-02-09 13:55:38.525 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, roff
+2022-02-09 13:55:38.526 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/basic, au
+2022-02-09 13:55:38.526 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/midi, midi
+2022-02-09 13:55:38.526 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/midi, mid
+2022-02-09 13:55:38.527 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aifc, aifc
+2022-02-09 13:55:38.527 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aiff, aif
+2022-02-09 13:55:38.528 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aiff, aiff
+2022-02-09 13:55:38.528 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg, mpeg
+2022-02-09 13:55:38.529 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg, mpg
+2022-02-09 13:55:38.529 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-wav, wav
+2022-02-09 13:55:38.529 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpeg
+2022-02-09 13:55:38.530 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpg
+2022-02-09 13:55:38.530 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpe
+2022-02-09 13:55:38.530 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/quicktime, qt
+2022-02-09 13:55:38.531 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/quicktime, mov
+2022-02-09 13:55:38.531 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/x-msvideo, avi
+2022-02-09 13:55:38.532 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/x-speech, talk
+2022-02-09 13:55:38.532 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/css, css
+2022-02-09 13:55:38.532 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/csv, csv
+2022-02-09 13:55:38.532 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-xbitmap, xbm
+2022-02-09 13:55:38.533 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-xpixmap, xpm
+2022-02-09 13:55:38.533 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/png, png
+2022-02-09 13:55:38.533 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/svg+xml, svg
+2022-02-09 13:55:38.533 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/ief, ief
+2022-02-09 13:55:38.534 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/rgb, rgb
+2022-02-09 13:55:38.534 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/g3fax, g3f
+2022-02-09 13:55:38.535 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-xwindowdump, xwd
+2022-02-09 13:55:38.535 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-pict, pict
+2022-02-09 13:55:38.535 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-portable-pixmap, ppm
+2022-02-09 13:55:38.536 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-portable-graymap, pgm
+2022-02-09 13:55:38.536 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-portable-bitmap, pbm
+2022-02-09 13:55:38.536 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-portable-anymap, pnm
+2022-02-09 13:55:38.537 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-ms-bmp, bmp
+2022-02-09 13:55:38.537 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-cmu-raster, ras
+2022-02-09 13:55:38.537 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-photo-cd, pcd
+2022-02-09 13:55:38.537 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/cgm, cgm
+2022-02-09 13:55:38.538 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-cals, mil
+2022-02-09 13:55:38.542 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-cals, cal
+2022-02-09 13:55:38.542 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/fif, fif
+2022-02-09 13:55:38.542 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-mgx-dsf, dsf
+2022-02-09 13:55:38.543 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/x-cmx, cmx
+2022-02-09 13:55:38.543 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/wavelet, wi
+2022-02-09 13:55:38.544 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/vnd.dwg, dwg
+2022-02-09 13:55:38.544 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/vnd.dxf, dxf
+2022-02-09 13:55:38.544 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: image/vnd.svf, svf
+2022-02-09 13:55:38.544 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/basic, au
+2022-02-09 13:55:38.545 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/basic, snd
+2022-02-09 13:55:38.545 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aiff, aif
+2022-02-09 13:55:38.545 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aiff, aiff
+2022-02-09 13:55:38.545 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-aiff, aifc
+2022-02-09 13:55:38.546 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-wav, wav
+2022-02-09 13:55:38.546 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg, mpa
+2022-02-09 13:55:38.546 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg, abs
+2022-02-09 13:55:38.546 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg, mpega
+2022-02-09 13:55:38.547 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg-2, mp2a
+2022-02-09 13:55:38.547 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/x-mpeg-2, mpa2
+2022-02-09 13:55:38.547 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/echospeech, es
+2022-02-09 13:55:38.547 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: audio/voxware, vox
+2022-02-09 13:55:38.547 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/fastman, lcc
+2022-02-09 13:55:38.548 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-pn-realaudio, ra
+2022-02-09 13:55:38.548 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-pn-realaudio, ram
+2022-02-09 13:55:38.548 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-music/x-midi, mmid
+2022-02-09 13:55:38.548 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/vnd.koan, skp
+2022-02-09 13:55:38.549 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/x-speech, talk
+2022-02-09 13:55:38.549 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpeg
+2022-02-09 13:55:38.549 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpg
+2022-02-09 13:55:38.549 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg, mpe
+2022-02-09 13:55:38.549 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg-2, mpv2
+2022-02-09 13:55:38.550 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/mpeg-2, mp2v
+2022-02-09 13:55:38.550 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/quicktime, qt
+2022-02-09 13:55:38.550 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/quicktime, mov
+2022-02-09 13:55:38.550 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/x-msvideo, avi
+2022-02-09 13:55:38.550 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/x-sgi-movie, movie
+2022-02-09 13:55:38.550 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/vdo, vdo
+2022-02-09 13:55:38.551 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: video/vnd.vivo, viv
+2022-02-09 13:55:38.551 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-ns-proxy-autoconfig, pac
+2022-02-09 13:55:38.551 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-conference/x-cooltalk, ice
+2022-02-09 13:55:38.551 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, ai
+2022-02-09 13:55:38.551 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, eps
+2022-02-09 13:55:38.552 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/postscript, ps
+2022-02-09 13:55:38.552 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/rtf, rtf
+2022-02-09 13:55:38.552 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/pdf, pdf
+2022-02-09 13:55:38.552 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/vnd.mif, mif
+2022-02-09 13:55:38.553 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, t
+2022-02-09 13:55:38.553 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, tr
+2022-02-09 13:55:38.553 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff, roff
+2022-02-09 13:55:38.553 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff-man, man
+2022-02-09 13:55:38.553 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff-me, me
+2022-02-09 13:55:38.554 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-troff-ms, ms
+2022-02-09 13:55:38.554 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-latex, latex
+2022-02-09 13:55:38.554 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-tex, tex
+2022-02-09 13:55:38.554 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-texinfo, texinfo
+2022-02-09 13:55:38.554 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-texinfo, texi
+2022-02-09 13:55:38.555 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-dvi, dvi
+2022-02-09 13:55:38.555 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/msword, doc
+2022-02-09 13:55:38.555 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/msword, DOC
+2022-02-09 13:55:38.555 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/oda, oda
+2022-02-09 13:55:38.555 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/envoy, evy
+2022-02-09 13:55:38.556 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-gtar, gtar
+2022-02-09 13:55:38.556 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-tar, tar
+2022-02-09 13:55:38.556 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-ustar, ustar
+2022-02-09 13:55:38.556 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-bcpio, bcpio
+2022-02-09 13:55:38.556 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-cpio, cpio
+2022-02-09 13:55:38.557 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-shar, shar
+2022-02-09 13:55:38.557 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/zip, zip
+2022-02-09 13:55:38.557 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/mac-binhex40, hqx
+2022-02-09 13:55:38.557 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-stuffit, sit
+2022-02-09 13:55:38.558 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-stuffit, sea
+2022-02-09 13:55:38.558 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/fractals, fif
+2022-02-09 13:55:38.558 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/octet-stream, bin
+2022-02-09 13:55:38.558 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/octet-stream, uu
+2022-02-09 13:55:38.558 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/octet-stream, exe
+2022-02-09 13:55:38.558 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-wais-source, src
+2022-02-09 13:55:38.558 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-wais-source, wsrc
+2022-02-09 13:55:38.559 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/hdf, hdf
+2022-02-09 13:55:38.559 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/javascript, js
+2022-02-09 13:55:38.559 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/javascript, ls
+2022-02-09 13:55:38.559 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: text/javascript, mocha
+2022-02-09 13:55:38.559 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-sh, sh
+2022-02-09 13:55:38.559 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-csh, csh
+2022-02-09 13:55:38.559 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-perl, pl
+2022-02-09 13:55:38.559 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-tcl, tcl
+2022-02-09 13:55:38.560 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/futuresplash, spl
+2022-02-09 13:55:38.561 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/mbedlet, mbd
+2022-02-09 13:55:38.561 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-rad-powermedia, rad
+2022-02-09 13:55:38.562 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/mspowerpoint, ppz
+2022-02-09 13:55:38.562 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-asap, asp
+2022-02-09 13:55:38.562 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/astound, asn
+2022-02-09 13:55:38.562 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-olescript, axs
+2022-02-09 13:55:38.562 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-oleobject, ods
+2022-02-09 13:55:38.562 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-form/x-openscape, opp
+2022-02-09 13:55:38.562 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-webbasic, wba
+2022-02-09 13:55:38.562 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-alpha-form, frm
+2022-02-09 13:55:38.563 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-script/x-wfxclient, wfx
+2022-02-09 13:55:38.563 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/octet-stream, exe
+2022-02-09 13:55:38.563 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/octet-stream, com
+2022-02-09 13:55:38.563 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-pcn, pcn
+2022-02-09 13:55:38.563 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/vnd.ms-excel, xls
+2022-02-09 13:55:38.565 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/vnd.ms-powerpoint, ppt
+2022-02-09 13:55:38.567 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/vnd.ms-project, mpp
+2022-02-09 13:55:38.568 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/vnd.svd, svd
+2022-02-09 13:55:38.568 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-net-install, ins
+2022-02-09 13:55:38.568 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/ccv, ccv
+2022-02-09 13:55:38.568 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: workbook/formulaone, vts
+2022-02-09 13:55:38.568 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-world/x-vrml, wrl
+2022-02-09 13:55:38.568 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-world/x-vrml, vrml
+2022-02-09 13:55:38.568 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-world/x-vream, vrw
+2022-02-09 13:55:38.568 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/x-p3d, p3d
+2022-02-09 13:55:38.568 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-world/x-svr, svr
+2022-02-09 13:55:38.569 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-world/x-wvr, wvr
+2022-02-09 13:55:38.569 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-world/x-3dmf, 3dmf
+2022-02-09 13:55:38.569 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/mathematica, ma
+2022-02-09 13:55:38.569 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: x-model/x-mesh, msh
+2022-02-09 13:55:38.569 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/vis5d, v5d
+2022-02-09 13:55:38.569 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: application/iges, igs
+2022-02-09 13:55:38.569 DEBUG 37036 --- [    Test worker] javax.activation                         : Added: MIMETypeEntry: drawing/x-dwf, dwf
+2022-02-09 13:55:39.066  INFO 37036 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6fef75c6, org.springframework.security.web.context.SecurityContextPersistenceFilter@1152900, org.springframework.security.web.header.HeaderWriterFilter@7b1a30e5, org.springframework.security.web.csrf.CsrfFilter@591be8aa, org.springframework.security.web.authentication.logout.LogoutFilter@22b82ddf, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6546371, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7cb29ea8, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@5f61e002, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2cbe455c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1d283d1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@334540a0, org.springframework.security.web.session.SessionManagementFilter@63db743d, org.springframework.security.web.access.ExceptionTranslationFilter@18907af2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@20a1b3ae]
+2022-02-09 13:55:39.144 DEBUG 37036 --- [    Test worker] o.a.catalina.core.AprLifecycleListener   : The Apache Tomcat Native library could not be found using names [tcnative-1, libtcnative-1] on the java.library.path [/Users/admin/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]. The errors reported were [Can't load library: /Users/admin/Desktop/SprungInsMacAigain/HardCodes/willagropastoral-jdbc-oauth-email/bin/libtcnative-1.dylib, Can't load library: /Users/admin/Desktop/SprungInsMacAigain/HardCodes/willagropastoral-jdbc-oauth-email/bin/liblibtcnative-1.dylib, no tcnative-1 in java.library.path: /Users/admin/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:., no libtcnative-1 in java.library.path: /Users/admin/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
 
 org.apache.tomcat.jni.LibraryNotFoundError: Can't load library: /Users/admin/Desktop/SprungInsMacAigain/HardCodes/willagropastoral-jdbc-oauth-email/bin/libtcnative-1.dylib, Can't load library: /Users/admin/Desktop/SprungInsMacAigain/HardCodes/willagropastoral-jdbc-oauth-email/bin/liblibtcnative-1.dylib, no tcnative-1 in java.library.path: /Users/admin/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:., no libtcnative-1 in java.library.path: /Users/admin/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
 	at org.apache.tomcat.jni.Library.<init>(Library.java:93) ~[tomcat-embed-core-9.0.56.jar:9.0.56]
@@ -530,63 +530,63 @@ org.apache.tomcat.jni.LibraryNotFoundError: Can't load library: /Users/admin/Des
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69) ~[gradle-worker.jar:na]
 	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74) ~[gradle-worker.jar:na]
 
-2022-02-08 23:47:26.443 DEBUG 35469 --- [    Test worker] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
-2022-02-08 23:47:26.457 DEBUG 35469 --- [    Test worker] o.h.v.i.e.AbstractConfigurationImpl      : Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
-2022-02-08 23:47:26.461 DEBUG 35469 --- [    Test worker] o.h.v.i.e.AbstractConfigurationImpl      : Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
-2022-02-08 23:47:26.462 DEBUG 35469 --- [    Test worker] o.h.v.i.e.AbstractConfigurationImpl      : Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
-2022-02-08 23:47:26.464 DEBUG 35469 --- [    Test worker] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
-2022-02-08 23:47:26.464 DEBUG 35469 --- [    Test worker] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via user class loader
-2022-02-08 23:47:26.464 DEBUG 35469 --- [    Test worker] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
-2022-02-08 23:47:26.464 DEBUG 35469 --- [    Test worker] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
-2022-02-08 23:47:26.465 DEBUG 35469 --- [    Test worker] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
-2022-02-08 23:47:26.466 DEBUG 35469 --- [    Test worker] o.h.v.i.e.resolver.TraversableResolvers  : Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
-2022-02-08 23:47:26.469 DEBUG 35469 --- [    Test worker] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
-2022-02-08 23:47:26.470 DEBUG 35469 --- [    Test worker] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
-2022-02-08 23:47:26.470 DEBUG 35469 --- [    Test worker] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
-2022-02-08 23:47:26.471 DEBUG 35469 --- [    Test worker] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
-2022-02-08 23:47:26.471 DEBUG 35469 --- [    Test worker] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
-2022-02-08 23:47:26.471 DEBUG 35469 --- [    Test worker] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
-2022-02-08 23:47:27.335 DEBUG 35469 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
+2022-02-09 13:55:39.325 DEBUG 37036 --- [    Test worker] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2022-02-09 13:55:39.336 DEBUG 37036 --- [    Test worker] o.h.v.i.e.AbstractConfigurationImpl      : Setting custom MessageInterpolator of type org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator
+2022-02-09 13:55:39.337 DEBUG 37036 --- [    Test worker] o.h.v.i.e.AbstractConfigurationImpl      : Setting custom ConstraintValidatorFactory of type org.springframework.validation.beanvalidation.SpringConstraintValidatorFactory
+2022-02-09 13:55:39.338 DEBUG 37036 --- [    Test worker] o.h.v.i.e.AbstractConfigurationImpl      : Setting custom ParameterNameProvider of type org.springframework.validation.beanvalidation.LocalValidatorFactoryBean$1
+2022-02-09 13:55:39.340 DEBUG 37036 --- [    Test worker] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2022-02-09 13:55:39.340 DEBUG 37036 --- [    Test worker] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via user class loader
+2022-02-09 13:55:39.340 DEBUG 37036 --- [    Test worker] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2022-02-09 13:55:39.340 DEBUG 37036 --- [    Test worker] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2022-02-09 13:55:39.341 DEBUG 37036 --- [    Test worker] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2022-02-09 13:55:39.342 DEBUG 37036 --- [    Test worker] o.h.v.i.e.resolver.TraversableResolvers  : Cannot find javax.persistence.Persistence on classpath. Assuming non JPA 2 environment. All properties will per default be traversable.
+2022-02-09 13:55:39.345 DEBUG 37036 --- [    Test worker] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2022-02-09 13:55:39.345 DEBUG 37036 --- [    Test worker] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.springframework.validation.beanvalidation.LocaleContextMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2022-02-09 13:55:39.346 DEBUG 37036 --- [    Test worker] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.TraverseAllTraversableResolver as ValidatorFactory-scoped traversable resolver.
+2022-02-09 13:55:39.346 DEBUG 37036 --- [    Test worker] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2022-02-09 13:55:39.346 DEBUG 37036 --- [    Test worker] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2022-02-09 13:55:39.346 DEBUG 37036 --- [    Test worker] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2022-02-09 13:55:39.785 DEBUG 37036 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
 	d.c.w.b.WebSeiteControllerSupreme:
 	{GET [/newindex]}: index()
-2022-02-08 23:47:27.341 DEBUG 35469 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
+2022-02-09 13:55:39.787 DEBUG 37036 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
 	d.c.w.b.a.w.c.WillAgropastoralController:
 	{GET [/analyse]}: index(Model)
 	{POST [/analyse]}: indexpost(Model,CustomAnalyseForm)
-2022-02-08 23:47:27.344 DEBUG 35469 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
+2022-02-09 13:55:39.791 DEBUG 37036 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
 	d.c.w.b.d.w.c.NotificationsController:
 	{GET [/notifications]}: notifications()
-2022-02-08 23:47:27.349 DEBUG 35469 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
+2022-02-09 13:55:39.793 DEBUG 37036 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
 	d.c.w.b.d.w.c.RecoveryPasswordController:
 	{GET [/maileingabe]}: maileingabe()
 	{GET [/passwordeingabe]}: passwordeingabe(Model,MailPasswordPaar)
 	{POST [/maileingabe]}: maileingabePost(Model,String)
 	{GET [/delete/confirm]}: resetpasword(Model,String)
 	{POST [/passwordeingabe]}: passwordeingabePost(Model,MailPasswordPaar)
-2022-02-08 23:47:27.356 DEBUG 35469 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
+2022-02-09 13:55:39.796 DEBUG 37036 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
 	d.c.w.b.d.w.c.RegistrationController:
 	{POST [/registration]}: register(Model,RegistrationRequest)
 	{GET [/]}: loginOrResgister()
 	{GET [/registration]}: registerForm(Model,RegistrationRequest)
 	{GET [/registration/confirm]}: confirm(Model,String)
-2022-02-08 23:47:27.365 DEBUG 35469 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
+2022-02-09 13:55:39.802 DEBUG 37036 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
 	d.c.w.b.d.w.c.a.AdminController:
 	{GET [/adminindex/home]}: home()
 	{GET [/adminindex]}: adminindex(Model,String)
-2022-02-08 23:47:27.368 DEBUG 35469 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
+2022-02-09 13:55:39.803 DEBUG 37036 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
 	d.c.w.b.d.w.c.l.LeaderController:
 	{GET [/leaderindex/home]}: home(Model,String)
 	{GET [/leaderindex]}: leaderindex(Model,String)
-2022-02-08 23:47:27.372 DEBUG 35469 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
+2022-02-09 13:55:39.804 DEBUG 37036 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
 	d.c.w.b.d.w.c.u.UserController:
 	{GET [/index]}: userindex(Model,String)
-2022-02-08 23:47:27.378 DEBUG 35469 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
+2022-02-09 13:55:39.808 DEBUG 37036 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 
 	o.s.b.a.w.s.e.BasicErrorController:
 	{ [/error]}: error(HttpServletRequest)
 	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)
-2022-02-08 23:47:27.481 DEBUG 35469 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 'beanNameHandlerMapping' {}
-2022-02-08 23:47:27.542 DEBUG 35469 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]], /**=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]}
-2022-02-08 23:47:28.118  INFO 35469 --- [    Test worker] ropastoralJdbcOauthEmailApplicationTests : Started WillagropastoralJdbcOauthEmailApplicationTests in 10.204 seconds (JVM running for 12.523)
+2022-02-09 13:55:39.879 DEBUG 37036 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 'beanNameHandlerMapping' {}
+2022-02-09 13:55:39.914 DEBUG 37036 --- [    Test worker] _.s.web.servlet.HandlerMapping.Mappings  : 'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]], /**=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]}
+2022-02-09 13:55:40.259  INFO 37036 --- [    Test worker] ropastoralJdbcOauthEmailApplicationTests : Started WillagropastoralJdbcOauthEmailApplicationTests in 5.848 seconds (JVM running for 7.815)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
