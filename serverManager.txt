@@ -97,6 +97,29 @@ IV- Anbieter:
     Note: Flyway Usage Example
               flyway -user=myuser -password=s3cr3t -url=jdbc:h2:mem -placeholders.abc=def migrate
 
+##Auch sehr wichtig
+    1 ) start the database :
+        docker-compose -f docker-compose.yml up > mydocker-output.txt
+    2) build project in server machine:
+        ./gradlew build
+    3) run project in server machine:
+        ./gradlew run
+    4) connect to database an execute script on commandline:
+    Note: erstmal bis in ../db/migration navigieren(damit einmal in postgres eingelopgt man keine Pfads mehr eingeben zur Execution der verschiedenen Scripts)
+        #Scritte
+            (i)-  psql -h localhost -p 15000 -U willagropastoral -W -d willagropastoral
+                    der danch wegen (-w) gefragt pasword ist: 'iamgroot'
+            (ii)-  \i V1__tabelle_erstellen.sql
+            (iii)- \i V2__exampleData.sql
+
+
+    5) Postgressql status sehen:
+        service postgresql status
+
+    5) Postgressql version sehen:
+        psql -V
+        output = ungefähr (psql (PostgreSQL) 12.9 (Ubuntu 12.9-0ubuntu0.20.04.1))
+
 image builded:
         docker build -f Dockerfile -t willagropastoral:jdk ./
     Successfully built 896751aa7277
