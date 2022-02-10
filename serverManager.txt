@@ -120,6 +120,14 @@ IV- Anbieter:
         psql -V
         output = ungefähr (psql (PostgreSQL) 12.9 (Ubuntu 12.9-0ubuntu0.20.04.1))
 
+    6) database on commandline(natürlich nachdem man in der datenbak eingebunden ist) Manage:
+        (i)  database Zeigen
+            (a) - Use \l or \l+ in psql to show all databases in the current PostgreSQL server.
+            (a) - Use \dt in psql to show all table in the current PostgreSQL server.
+            (b) - Use the SELECT statement to query data from the pg_database to get all databases (for exemple: SELECT datname FROM pg_database;)
+
+        (ii) - tabellen in einer datenbank bearbeiten
+            (a) -
 image builded:
         docker build -f Dockerfile -t willagropastoral:jdk ./
     Successfully built 896751aa7277
