@@ -15,7 +15,10 @@ public class UserArchivRepositoryImpl implements UserArchivRepository {
     @Override
     public void save(RegistrationRequest request) {
         Optional<UserArchivEntity> byEmail = daoUserArchivRepository.findByEmail(request.getEmail());
-        if (byEmail.isEmpty()) daoUserArchivRepository.save(toUserArchivEntity(request));
+        if (byEmail.isEmpty()) {
+            UserArchivEntity entity = toUserArchivEntity(request);
+            daoUserArchivRepository.save(entity);
+        }
     }
 
     private UserArchivEntity toUserArchivEntity(RegistrationRequest r) {
