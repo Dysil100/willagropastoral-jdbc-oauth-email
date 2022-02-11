@@ -3,6 +3,7 @@ package duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.subservi
 import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain.apportNutritifs.*;
 import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain.ingredients.Ingredient;
 import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services.AnalyseAlimentaireService;
+import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services.interfaces.domaininterfaces.Resultat;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -31,23 +32,23 @@ public class CustomAnalyseForm {
     private Double coquilleDeMer;
     private Double belgoPorcs;
 
-    Double lysineFinal;
-    Double methionineFinal;
-    Double proteineBruteFinal;
-    Double energieMetabolisableFinal;
-
-    private List<ResultatEnergetique> resultats;
-    private Set<ResultatEnergetique> resultatsStandards;
-    boolean zeigen;
-
-    public CustomAnalyseForm() {
-        this(0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-                0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
-    }
+    private Double sorgho;
+    private Double millet;
+    private Double tourteauDeCoprah;
+    private Double sonDeRiz;
+    private Double farineDos;
+    private Double farineDeSang;
+    private Double drecheBrasserie;
+    private Double premix;
+    private Double caco3;
+    private Double CMAV;
 
     public CustomAnalyseForm(Double mais, Double sonDeBle, Double farineDeSoja, Double farineDePoisson,
                              Double tourteauDePalmiste, Double tourteauDeCoton, Double tourteauDarachide,
-                             Double sulfateDeFer, Double belgotox, Double belgofoxs, Double coquilleDeMer, Double belgoPorcs) {
+                             Double sulfateDeFer, Double belgotox, Double belgofoxs, Double coquilleDeMer,
+                             Double belgoPorcs, Double sorgho, Double millet, Double tourteauDeCoprah, Double sonDeRiz,
+                             Double farineDos, Double farineDeSang, Double drecheBrasserie, Double premix, Double caco3,
+                             Double CMAV) {
         this.mais = mais;
         this.sonDeBle = sonDeBle;
         this.farineDeSoja = farineDeSoja;
@@ -60,6 +61,17 @@ public class CustomAnalyseForm {
         this.belgofoxs = belgofoxs;
         this.coquilleDeMer = coquilleDeMer;
         this.belgoPorcs = belgoPorcs;
+        this.sorgho = sorgho;
+        this.millet = millet;
+        this.tourteauDeCoprah = tourteauDeCoprah;
+        this.sonDeRiz = sonDeRiz;
+        this.farineDos = farineDos;
+        this.farineDeSang = farineDeSang;
+        this.drecheBrasserie = drecheBrasserie;
+        this.premix = premix;
+        this.caco3 = caco3;
+        this.CMAV = CMAV;
+
         this.zeigen = false;
         this.lysineFinal = .0;
         this.methionineFinal = .0;
@@ -67,6 +79,22 @@ public class CustomAnalyseForm {
         this.energieMetabolisableFinal = .0;
         this.type = "Porcins: Prédémarrage Porc (de 5 à 10 Jours)";
     }
+
+    Double lysineFinal;
+    Double methionineFinal;
+    Double proteineBruteFinal;
+    Double energieMetabolisableFinal;
+
+    private List<ResultatEnergetique> resultats;
+    private Set<ResultatEnergetique> resultatsStandards;
+    boolean zeigen;
+
+    public CustomAnalyseForm() {
+        this(0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+                0.0, 0.0, 0.0, 0.0);
+    }
+
 
     public HashMap<String, Standard> getMapStandards() {
         HashMap<String, Standard> mapStandards = new HashMap<>();
@@ -79,8 +107,7 @@ public class CustomAnalyseForm {
     }
 
     public Double summe() {
-        return hasValeurNull() ? 0 : mais + sonDeBle + farineDeSoja + farineDePoisson + tourteauDePalmiste + tourteauDeCoton +
-                                     tourteauDarachide + sulfateDeFer + belgotox + belgofoxs + belgoPorcs + coquilleDeMer;
+        return hasValeurNull() ? 0 : getDoubleStream().reduce(Double::sum).orElse(.0);
     }
 
     public Set<ResultatEnergetique> getResultatsStandards() {
@@ -89,15 +116,19 @@ public class CustomAnalyseForm {
     }
 
     public Boolean hasValeurNull() {
-        return Stream.of(mais, sonDeBle, farineDeSoja, farineDePoisson, tourteauDePalmiste, tourteauDarachide, tourteauDeCoton,
-                sulfateDeFer, belgofoxs, belgotox, belgoPorcs, coquilleDeMer).anyMatch(Objects::isNull);
+        return getDoubleStream().anyMatch(Objects::isNull);
     }
 
     public Boolean hasNegativeValeur() {
         if (!hasValeurNull())
-            return Stream.of(mais, sonDeBle, farineDeSoja, farineDePoisson, tourteauDePalmiste, tourteauDarachide, tourteauDeCoton,
-                    sulfateDeFer, belgofoxs, belgotox, belgoPorcs, coquilleDeMer).anyMatch(d -> d < .0);
+            return getDoubleStream().anyMatch(d -> d < .0);
         else return null;
+    }
+
+    private Stream<Double> getDoubleStream() {
+        return Stream.of(mais, sonDeBle, farineDeSoja, farineDePoisson, tourteauDePalmiste, tourteauDarachide,
+                tourteauDeCoton, sulfateDeFer, belgofoxs, belgotox, belgoPorcs, coquilleDeMer, sorgho, millet,
+                tourteauDeCoprah, sonDeRiz, farineDos, farineDeSang, drecheBrasserie, premix, caco3, CMAV);
     }
 
     public String error() {
@@ -105,7 +136,7 @@ public class CustomAnalyseForm {
         return !"".equals(errorText) ? "Entrez une Valeur " + errorText + "dans chaque champ" : null;
     }
 
-    public List<ResultatEnergetique> getResultats() {
+    public List<Resultat> getResultats() {
         Double summe1 = summe();
         double summe = summe1 <= 0 ? 1 : summe1; //afin que le denominateur ne soit jamais null (pour eviter tout operation illegal)
         List<Ingredient> ingredientswhithValues = getIngredientswhithValues();
@@ -114,8 +145,7 @@ public class CustomAnalyseForm {
         Double proteineBruteFinal = ingredientswhithValues.stream().map(ing -> ing.getQuantite() * ing.getProteineBrute() / (summe)).reduce(Double::sum).orElse(.0);
         Double energieMetabolisableFinal = ingredientswhithValues.stream().map(ing -> ing.getQuantite() * ing.getEnergieMetabolisable() / (summe)).reduce(Double::sum).orElse(.0);
 
-        Lysine e1 = new Lysine(lysineFinal, getAppreciation(lysineFinal, getStandard().lysine().getValeur()));
-        return List.of(e1,
+        return List.of(new Lysine(lysineFinal, getAppreciation(lysineFinal, getStandard().lysine().getValeur())),
                 new Methyonine(methionineFinal, getAppreciation(methionineFinal, getStandard().methyonine().getValeur())),
                 new ProteineBrute(proteineBruteFinal, getAppreciation(proteineBruteFinal, getStandard().proteineBrute().getValeur())),
                 new EnergieMethabolisable(energieMetabolisableFinal, getAppreciation(energieMetabolisableFinal, getStandard().energieMethabolisable().getValeur())));
@@ -137,7 +167,10 @@ public class CustomAnalyseForm {
                 "belgofoxs", belgofoxs, "belgotox", belgotox, "belgoporcs", belgoPorcs, "coquille de mer", coquilleDeMer,
                 "farine de soja", farineDeSoja, "son de blé", sonDeBle, "sulfate de fer", sulfateDeFer,
                 "tourteau d`arachide", tourteauDarachide));
-        namesValuse.putAll(Map.of("tourteau de palmiste", tourteauDePalmiste, "farine de poisson", farineDePoisson));
+        namesValuse.putAll(Map.of("tourteau de palmiste", tourteauDePalmiste, "farine de poisson", farineDePoisson,
+                "sorgho", sorgho, "millet", millet, "tourteau de coprah", tourteauDeCoprah, "son de riz", sonDeRiz,
+                "farine d`os", farineDos, "farine de sang", farineDeSang, "drèche brasserie", drecheBrasserie));
+        namesValuse.putAll(Map.of("premix", premix, "caco3", caco3, "CMAV", CMAV));
         return analyseAlimentaireService.loadIngredientsWithValues(namesValuse);
     }
 }

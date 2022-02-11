@@ -36,15 +36,19 @@
     <div th:object="${form}" class="container-fluid">
         <div class="row">
             <h1 class="title form-text">Verification de Proportions Alimentaires pour <span th:text="${form.getType()}"> Type d'alimenation</span>
-            <p class="alert alert-warning" th:if="${form.error()} != null" th:text="${form.error()}">Entrez exactement une valeur supperieur ou egal a Zero dans chaque Champ, pour une meilleure experience utilisateur</p>
-            </h1> <br>
+                <p class="alert alert-warning" th:if="${form.error()} != null" th:text="${form.error()}">Entrez
+                    exactement une valeur supperieur ou egal a Zero dans chaque Champ, pour une meilleure experience
+                    utilisateur</p>
+            </h1>
+            <br>
             <div class="block">
-                <form method="post"  th:action="@{/analyse}">
+                <form method="post" th:action="@{/analyse}">
                     <div class="mb-3">
                         <h2><label class="form-select" for="type">Choisir le type d'elévage</label></h2>
                         <select class="form-select form-select-lg" aria-label="Default select example" id="type"
                                 name="type" th:field="*{type}" onchange="this.form.submit()">
-                            <option selected th:each="typ : ${form.getMapStandards()}" th:text="${typ.getKey()}"  th:value="${typ.getKey()}">Choisir
+                            <option selected th:each="typ : ${form.getMapStandards()}" th:text="${typ.getKey()}"
+                                    th:value="${typ.getKey()}">Choisir
                                 le type d'elévage
                             </option>
                         </select>
@@ -55,7 +59,8 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="mais">Maïs</label>
                         <div class="col-sm-10">
-                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
                                    min="0" type="number" value="0" step="any" id="mais" th:field="*{mais}">
                         </div>
                     </div>
@@ -63,7 +68,8 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="sonDeBle">Son de blé</label>
                         <div class="col-sm-10">
-                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
                                    min="0" type="number" value="0" step="any" id="sonDeBle" th:field="*{sonDeBle}">
                         </div>
                     </div>
@@ -71,15 +77,18 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="farineDeSoja">Farine de soja 49%</label>
                         <div class="col-sm-10">
-                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
-                                   min="0" type="number" value="0" step="any" id="farineDeSoja" th:field="*{farineDeSoja}">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="farineDeSoja"
+                                   th:field="*{farineDeSoja}">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="farineDePoisson">Farine de poisson 65%</label>
                         <div class="col-sm-10">
-                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
                                    min="0" type="number" value="0" step="any"
                                    id="farineDePoisson" th:field="*{farineDePoisson}">
                         </div>
@@ -88,66 +97,177 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="tourteauDePalmiste">Tourteau de palmiste </label>
                         <div class="col-sm-10">
-                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
-                                   min="0" type="number" value="0" step="any" id="tourteauDePalmiste" th:field="*{tourteauDePalmiste}">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="tourteauDePalmiste"
+                                   th:field="*{tourteauDePalmiste}">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="tourteauDeCoton">Tourteau de coton</label>
                         <div class="col-sm-10">
-                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
-                                   min="0" type="number" value="0" step="any" id="tourteauDeCoton" th:field="*{tourteauDeCoton}">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="tourteauDeCoton"
+                                   th:field="*{tourteauDeCoton}">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="tourteauDarachide">Tourteau d'arachide</label>
                         <div class="col-sm-10">
-                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
-                                   min="0" type="number" value="0" step="any" id="tourteauDarachide" th:field="*{tourteauDarachide}">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="tourteauDarachide"
+                                   th:field="*{tourteauDarachide}">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="sulfateDeFer">Sulfate de fer</label>
                         <div class="col-sm-10">
-                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
-                                   min="0" type="number" value="0" step="any"  id="sulfateDeFer" th:field="*{sulfateDeFer}">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="sulfateDeFer"
+                                   th:field="*{sulfateDeFer}">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="belgotox">Belgotoxs (Anti-toxines)</label>
                         <div class="col-sm-10">
-                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
-                                   min="0" type="number" value="0" step="any"  id="belgotox" th:field="*{belgotox}">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="belgotox" th:field="*{belgotox}">
                         </div>
                     </div>
 
-                    <!--div class="form-group row">
+                    <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="belgofoxs">Belgofoxs (Phosphate bicalcique)</label>
                         <div class="col-sm-10">
-                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
-                                   min="0" type="number" value="0" step="any"  id="belgofoxs" th:field="*{belgofoxs}">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="belgofoxs" th:field="*{belgofoxs}">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="coquilleDeMer">Coquille de mer</label>
                         <div class="col-sm-10">
-                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
-                                   min="0" type="number" value="0" step="any"  id="coquilleDeMer" th:field="*{coquilleDeMer}">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="coquilleDeMer"
+                                   th:field="*{coquilleDeMer}">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label" for="belgoPorcs">Belgo-Porcs 10%</label>
                         <div class="col-sm-10">
-                            <input class="form-control is-valid" required placeholder="Entrez une valeur superieur ou egal 0"
-                                   min="0" type="number" value="0" step="any"  id="belgoPorcs" th:field="*{belgoPorcs}">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="belgoPorcs" th:field="*{belgoPorcs}">
                         </div>
-                    </div-->
+                    </div>
+                    <!-- neuen werten-->
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="sorgho">Belgo-Porcs 10%</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="sorgho" th:field="*{sorgho}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="millet">Belgo-Porcs 10%</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="millet" th:field="*{millet}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="tourteauDeCoprah">Belgo-Porcs 10%</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="tourteauDeCoprah"
+                                   th:field="*{tourteauDeCoprah}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="sonDeRiz">Belgo-Porcs 10%</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="sonDeRiz"
+                                   th:field="*{sonDeRiz}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="farineDos">Belgo-Porcs 10%</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="farineDos"
+                                   th:field="*{farineDos}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="farineDeSang">Belgo-Porcs 10%</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="farineDeSang"
+                                   th:field="*{farineDeSang}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="drecheBrasserie">Belgo-Porcs 10%</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="drecheBrasserie"
+                                   th:field="*{drecheBrasserie}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="premix">Belgo-Porcs 10%</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="premix"
+                                   th:field="*{premix}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="caco3">Belgo-Porcs 10%</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="caco3"
+                                   th:field="*{caco3}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="CMAV">Belgo-Porcs 10%</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required
+                                   placeholder="Entrez une valeur superieur ou egal 0"
+                                   min="0" type="number" value="0" step="any" id="CMAV"
+                                   th:field="*{CMAV}">
+                        </div>
+                    </div>
 
                     <br>
                     <input class="btn btn-primary" type="submit" value="Calcul Analytique"> <br><br>
@@ -174,7 +294,7 @@
                         </tr>
                         </thead>
                         <tbody th:remove="all-but-first">
-                        <tr th:each="ergebnis :${form.getResultats()}">
+                        <tr th:each="ergebnis :${form.getResultats()}" th:object="${ergebnis}">
                             <td th:text="${ergebnis.getNom()}">Nom</td>
                             <td th:text="${#numbers.formatDecimal(ergebnis.getValeur(), 1, 3)}">Valeur</td>
                             <td th:text="${ergebnis.getUnite()}">Unité</td>

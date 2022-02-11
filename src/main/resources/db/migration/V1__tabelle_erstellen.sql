@@ -32,7 +32,7 @@ create table if not exists confirmation_token
 create table if not exists ingredient
 (
     id                    serial primary key,
-    name                  text unique not null,
+    name                  text  not null,
     lysine                decimal,
     methyonine            decimal,
     proteine_brute        decimal,

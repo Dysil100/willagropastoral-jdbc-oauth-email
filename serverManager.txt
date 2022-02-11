@@ -82,6 +82,7 @@ IV- Anbieter:
     * password: XITLQHGOSPYUYS7XE73N53W2NPUEGLKTPQ5A
 
     sorry bro deutsh und Englsich vermisch: muss du bloß mit rauskommen.
+    note: im Home verzeichnisse liegt logfile mit daten meiner account also in '.msmtprc'
     Note: Port 80 ist der Default Port wo man seine
     Note: lieber manual per Hand bauern 'mit gradle build'
     Note: also man can zwischen durch ein 'sudo' vor dem commando schreiben wenn das system sich beschwert, von rechten; wie hier zum beispiel eine typische Fehler
