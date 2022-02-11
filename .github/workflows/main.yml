@@ -12,7 +12,7 @@ jobs:
           java-version: 17
       - name: Run Gradle check In willagropastoral-jdbc-oauth-email
         run: ./gradlew check
-        working-directory: ./willagropastoral-jdbc-oauth-email
+        #working-directory: ./willagropastoral-jdbc-oauth-email
       - name: Run Gradle build In willagropastoral-jdbc-oauth-email
         run: ./gradlew build
         working-directory: ./willagropastoral-jdbc-oauth-email
