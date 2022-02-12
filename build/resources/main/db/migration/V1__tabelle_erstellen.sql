@@ -26,13 +26,13 @@ create table if not exists confirmation_token
     created_at   varchar(20)         not null,
     expired_at   varchar(20)         not null,
     confirmed_at varchar(20),
-    username     varchar(100)        not null
+    username     varchar(100) unique not null
 );
 
 create table if not exists ingredient
 (
     id                    serial primary key,
-    name                  text  not null,
+    name                  text not null,
     lysine                decimal,
     methyonine            decimal,
     proteine_brute        decimal,
