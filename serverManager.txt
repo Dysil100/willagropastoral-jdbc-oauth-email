@@ -19,10 +19,13 @@ I - App Starten
 
     2) navigate to hom and start the jarFile with following command
         cd ../home/java-apps/WillAgropastoralApp/
-
+        (wenn nötig erstmal alle sql migrationen vernünftig ausführen (zur Vermeidung von Problemen mit der Flyway Migration) )
         und:  gradle build && java -jar build/libs/WillAgropastoral-0.0.1-SNAPSHOT.jar
         oder das Folgende
         java -jar ../home/spring-apps/WillAgropastoralApp/build/libs/WillAgropastoral-0.0.1-SNAPSHOT.jar  server.port=80
+
+        Laufen lassen: ./gradlew bootRun
+            (das obige geht auch statt das jar datei laufen zu lassen)
 
 II - App aktualisieren
 
@@ -136,6 +139,10 @@ IV- Anbieter:
             (b) - Use the SELECT statement to query data from the pg_database to get all databases (for exemple: SELECT datname FROM pg_database;)
 
         (ii) - tabellen in einer datenbank bearbeiten
+        Note: tabelle löschen oder einlegen: Z.B:
+            DROP TABLE IF EXISTS flyway_schema_history;
+                oder eben
+            CREATE TABLE flyway_schema_history;
             (a) -
 image builded:
         docker build -f Dockerfile -t willagropastoral:jdk ./
