@@ -31,7 +31,7 @@
 
     </style>
 </head>
-<body>
+<body background="../static/images/willagropastoral-logo.png">
 <div class="container">
     <div th:object="${form}" class="container-fluid">
         <div class="row">
@@ -172,7 +172,7 @@
                     </div>
                     <!-- neuen werten-->
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="sorgho">Belgo-Porcs 10%</label>
+                        <label class="col-sm-2 col-form-label" for="sorgho">Sorgho</label>
                         <div class="col-sm-10">
                             <input class="form-control is-valid" required
                                    placeholder="Entrez une valeur superieur ou egal 0"
@@ -181,7 +181,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="millet">Belgo-Porcs 10%</label>
+                        <label class="col-sm-2 col-form-label" for="millet">Millet</label>
                         <div class="col-sm-10">
                             <input class="form-control is-valid" required
                                    placeholder="Entrez une valeur superieur ou egal 0"
@@ -190,7 +190,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="tourteauDeCoprah">Belgo-Porcs 10%</label>
+                        <label class="col-sm-2 col-form-label" for="tourteauDeCoprah">Tourteau de Coprah</label>
                         <div class="col-sm-10">
                             <input class="form-control is-valid" required
                                    placeholder="Entrez une valeur superieur ou egal 0"
@@ -200,7 +200,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="sonDeRiz">Belgo-Porcs 10%</label>
+                        <label class="col-sm-2 col-form-label" for="sonDeRiz">Son de Riz</label>
                         <div class="col-sm-10">
                             <input class="form-control is-valid" required
                                    placeholder="Entrez une valeur superieur ou egal 0"
@@ -210,7 +210,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="farineDos">Belgo-Porcs 10%</label>
+                        <label class="col-sm-2 col-form-label" for="farineDos">Farine d'os</label>
                         <div class="col-sm-10">
                             <input class="form-control is-valid" required
                                    placeholder="Entrez une valeur superieur ou egal 0"
@@ -220,7 +220,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="farineDeSang">Belgo-Porcs 10%</label>
+                        <label class="col-sm-2 col-form-label" for="farineDeSang">Farine de Sang</label>
                         <div class="col-sm-10">
                             <input class="form-control is-valid" required
                                    placeholder="Entrez une valeur superieur ou egal 0"
@@ -230,7 +230,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="drecheBrasserie">Belgo-Porcs 10%</label>
+                        <label class="col-sm-2 col-form-label" for="drecheBrasserie">Dréches de Brasseries</label>
                         <div class="col-sm-10">
                             <input class="form-control is-valid" required
                                    placeholder="Entrez une valeur superieur ou egal 0"
@@ -240,7 +240,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="premix">Belgo-Porcs 10%</label>
+                        <label class="col-sm-2 col-form-label" for="premix">Premix</label>
                         <div class="col-sm-10">
                             <input class="form-control is-valid" required
                                    placeholder="Entrez une valeur superieur ou egal 0"
@@ -250,7 +250,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="caco3">Belgo-Porcs 10%</label>
+                        <label class="col-sm-2 col-form-label" for="caco3">Caco3</label>
                         <div class="col-sm-10">
                             <input class="form-control is-valid" required
                                    placeholder="Entrez une valeur superieur ou egal 0"
@@ -260,7 +260,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="CMAV">Belgo-Porcs 10%</label>
+                        <label class="col-sm-2 col-form-label" for="CMAV">CMAV</label>
                         <div class="col-sm-10">
                             <input class="form-control is-valid" required
                                    placeholder="Entrez une valeur superieur ou egal 0"
@@ -282,7 +282,7 @@
             </div>
             <div class="block" th:if="*{isZeigen()}">
                 <h2>Resultat du Calcul analytique:</h2>
-                <!-- die 2 tabelle mit thymeleaf fragment lösen-->
+                <!-- die 2 tabelle mit thymeleaf fragment lösen -->
                 <form>
                     <table class="table table-hover">
                         <thead class="thead-light">
@@ -294,7 +294,7 @@
                         </tr>
                         </thead>
                         <tbody th:remove="all-but-first">
-                        <tr th:each="ergebnis :${form.getResultats()}" th:object="${ergebnis}">
+                        <tr th:each="ergebnis :${form.getResultats()}">
                             <td th:text="${ergebnis.getNom()}">Nom</td>
                             <td th:text="${#numbers.formatDecimal(ergebnis.getValeur(), 1, 3)}">Valeur</td>
                             <td th:text="${ergebnis.getUnite()}">Unité</td>

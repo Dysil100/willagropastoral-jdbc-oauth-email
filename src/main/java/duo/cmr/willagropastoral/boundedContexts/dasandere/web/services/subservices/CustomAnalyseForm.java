@@ -145,10 +145,10 @@ public class CustomAnalyseForm {
         Double proteineBruteFinal = ingredientswhithValues.stream().map(ing -> ing.getQuantite() * ing.getProteineBrute() / (summe)).reduce(Double::sum).orElse(.0);
         Double energieMetabolisableFinal = ingredientswhithValues.stream().map(ing -> ing.getQuantite() * ing.getEnergieMetabolisable() / (summe)).reduce(Double::sum).orElse(.0);
 
-        return List.of(new Lysine(lysineFinal, getAppreciation(lysineFinal, getStandard().lysine().getValeur())),
+        return new ArrayList<>(List.of(new Lysine(lysineFinal, getAppreciation(lysineFinal, getStandard().lysine().getValeur())),
                 new Methyonine(methionineFinal, getAppreciation(methionineFinal, getStandard().methyonine().getValeur())),
                 new ProteineBrute(proteineBruteFinal, getAppreciation(proteineBruteFinal, getStandard().proteineBrute().getValeur())),
-                new EnergieMethabolisable(energieMetabolisableFinal, getAppreciation(energieMetabolisableFinal, getStandard().energieMethabolisable().getValeur())));
+                new EnergieMethabolisable(energieMetabolisableFinal, getAppreciation(energieMetabolisableFinal, getStandard().energieMethabolisable().getValeur()))));
     }
 
     private String getAppreciation(Double actuel, Double standard) {
