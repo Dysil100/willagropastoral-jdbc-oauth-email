@@ -149,5 +149,6 @@ image builded:
     Successfully built 896751aa7277
     Successfully tagged willagropastoral:jdk
 
+
         docker run willagropastoral:jdk
 
