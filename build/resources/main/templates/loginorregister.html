@@ -1,12 +1,35 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Inscription/Connection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--title>Inscription/Connection</title-->
+    <title>WillAgropastoral</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-image: url('http://localhost/images/willagropastoral-logo.png');
+            margin:0;
+        }
+
+        .visible-space {
+            margin: 30px;
+            background-color: #ffffff;
+            border: 1px solid black;
+            opacity: 0.6;
+        }
+        .write-space {
+            margin: 5%;
+            font-weight: bold;
+            color: #000000;
+        }
+    </style>
 </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid visible-space">
     <!--h1 class="alert-warning">Inscrivez ou connectez-vous pour acceder a nos ressources</h1>
     <ul class="block-list">
         <li> Ete-vous déjà utilisateur de  <strong class="btn-primary">Willagropastoral.top</strong> ? <a th:href="@{/login}">Connectez vous</a></li>
@@ -14,7 +37,17 @@
         <li> Mot de passe oublié ?<a th:href="@{/maileingabe}"> recuperez-le</a></li>
 
     </ul-->
-        <h1> Notre premier Service gratuit: <a class="btn btn-primary" th:href="@{/analyse}"> Analyse alimentaire</a></h1>
+    <div class="form-group write-space">
+        <h1> Bienvenue chez <strong>WillAgropastoral</strong></h1>
+        <br>
+        <div class="callout-info">
+            <h2> Notre premier Service gratuit:
+                <strong><a class="badge badge-pill badge-info text-center" th:href="@{/analyse}">
+                    Analyse alimentaire</a>
+                </strong>
+            </h2>
+        </div>
+    </div>
 </div>
 </body>
 </html>

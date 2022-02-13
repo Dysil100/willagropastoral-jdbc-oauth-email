@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="fr" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,32 +12,40 @@
             border: #005cbf;
             margin-left: 10%;
         }
-
         .container-fluid {
             border: #005cbf;
             margin-right: 10%;
         }
-
         html, body {
             margin: 0;
             height: 100%;
             width: 100%;
         }
-
         .block {
             float: left;
             width: 50%;
         }
         body {
-            background-image: url('../static/images/willagropastoral-logo.png');
+            background-image: url('http://localhost/images/willagropastoral-logo.png');
             margin:0;
+            border: 2px solid black;
         }
-
+        .visible-space {
+            margin: 30px;
+            background-color: #ffffff;
+            border: 1px solid black;
+            opacity: 0.6;
+        }
+        .write-space {
+            margin: 5%;
+            font-weight: bold;
+            color: #000000;
+        }
     </style>
 </head>
-<body background="../static/images/willagropastoral-logo.png">
+<body>
 <div class="container">
-    <div th:object="${form}" class="container-fluid">
+    <div th:object="${form}" class="container-fluid write-space">
         <div class="row">
             <h1 class="title form-text">Verification de Proportions Alimentaires pour <span th:text="${form.getType()}"> Type d'alimenation</span>
                 <p class="alert alert-warning" th:if="${form.error()} != null" th:text="${form.error()}">Entrez
