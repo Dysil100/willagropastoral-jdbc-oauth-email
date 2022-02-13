@@ -7,7 +7,7 @@ I - App Starten
         ###############################
         Server zeug
         ##IP-Server: 95.179.219.29
-        ##Gihub-servertoken: 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
+        ##Gihub-servertoken: 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       //token 0
         ################################
 
     1) zum virtuallen machinen des ServerProvider Vultr  mit den Folgenden Commandos login:
