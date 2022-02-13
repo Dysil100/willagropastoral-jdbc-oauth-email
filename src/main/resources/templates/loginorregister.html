@@ -10,26 +10,25 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <style>
-        body {
+        .background {
             background-image: url('http://localhost/images/willagropastoral-logo.png');
-            margin:0;
         }
 
-        .visible-space {
-            margin: 30px;
+        div.transbox {
             background-color: #ffffff;
-            border: 1px solid black;
             opacity: 0.6;
         }
-        .write-space {
-            margin: 5%;
+
+        div.transbox{
+            margin: 10%;
             font-weight: bold;
-            color: #000000;
+            color: black;
+            opacity: 85%;
         }
     </style>
 </head>
-<body>
-<div class="container-fluid visible-space">
+<body class="background">
+<div class="container-fluid">
     <!--h1 class="alert-warning">Inscrivez ou connectez-vous pour acceder a nos ressources</h1>
     <ul class="block-list">
         <li> Ete-vous déjà utilisateur de  <strong class="btn-primary">Willagropastoral.top</strong> ? <a th:href="@{/login}">Connectez vous</a></li>
@@ -37,7 +36,7 @@
         <li> Mot de passe oublié ?<a th:href="@{/maileingabe}"> recuperez-le</a></li>
 
     </ul-->
-    <div class="form-group write-space">
+    <div class="form-group transbox">
         <h1> Bienvenue chez <strong>WillAgropastoral</strong></h1>
         <br>
         <div class="callout-info">
