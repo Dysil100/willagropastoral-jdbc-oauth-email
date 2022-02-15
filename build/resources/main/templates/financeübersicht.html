@@ -35,7 +35,7 @@
         <h1>Appercu de la gestion financiere</h1>
         <div>
             <h2>Le Compteur financier de la Structure s'eleve à: <span class="alert alert-success" th:if="${compteur.summe} > 0.0" th:text="${compteur.getSumme()}"> la somme de</span>
-                <span class="alert alert-warning" th:if="${compteur.getSumme()} <= 0.0" th:text="${compteur.getSumme()}">somme</span> - Depuis la date de <span th:text="${compteur.getStartDate()}">date de départ</span></h2>
+                <span class="alert alert-warning" th:if="${compteur.getSumme()} <= 0.0" th:text="${compteur.getSumme()}">somme</span> - Depuis la date du <span th:text="${compteur.getStartDate()}">date de départ</span></h2>
 
         </div>
         <div class="newfinance transbox">
