@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @Getter
@@ -13,5 +13,5 @@ import java.time.LocalDateTime;
 @ToString
 public class Compteur {
     private Double summe;
-    private LocalDateTime startDate;
+    private LocalDate startDate;
 }

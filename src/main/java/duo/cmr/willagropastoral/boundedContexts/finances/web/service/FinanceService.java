@@ -6,7 +6,7 @@ import duo.cmr.willagropastoral.boundedContexts.finances.web.service.domain.Fina
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
@@ -36,9 +36,9 @@ public class FinanceService {
         return new Compteur(getSumme(), getLocalDateTime());
     }
 
-    private LocalDateTime getLocalDateTime() {
+    private LocalDate getLocalDateTime() {
         List<Finance> alle = alle();
-        return alle.size() == 0 ? LocalDateTime.now() : alle.get(alle.size() - 1).getGeneratedAt();
+        return alle.size() == 0 ? LocalDate.now() : alle.get(alle.size() - 1).getGeneratedAt().toLocalDate();
     }
 
     private double getSumme() {
@@ -46,6 +46,5 @@ public class FinanceService {
         double sumPositive = alle.stream().filter(f -> Objects.equals(f.getBezeichnung(), "Gains !")).mapToDouble(Finance::getSumme).sum();
         double sumNegative = alle.stream().filter(f -> !Objects.equals(f.getBezeichnung(), "Gains !")).mapToDouble(Finance::getSumme).sum();
         return sumPositive - sumNegative;
-
     }
 }
