@@ -19,15 +19,17 @@ public class FinanceController {
     // TODO: 14.02.22 Route zum löschen und aktualiesieren implementieren und ein Root user für die Verwaltungen
 
     @GetMapping("/uebersicht")
-    public String uebersicht(Model model, @ModelAttribute("form") FinanceForm form) {
+    public String uebersicht(Model model, @ModelAttribute("form") FinanceForm form, @ModelAttribute("compteur") Compteur compteur) {
         model.addAttribute("finances", financeService.alle());
         model.addAttribute("financeForm", form);
+        model.addAttribute("compteur", compteur);
         return "financeübersicht";
     }
 
     @PostMapping("/uebersicht")
-    public String uebersichtPost(Model model, @ModelAttribute("financeForm") FinanceForm form) {
+    public String uebersichtPost(Model model, @ModelAttribute("financeForm") FinanceForm form, @ModelAttribute("compteur") Compteur compteur) {
         model.addAttribute("finances", financeService.alle());
+        model.addAttribute("compteur", compteur);
         financeService.save(form.toFinance());
         return "redirect:/finances/uebersicht";
     }
@@ -50,5 +52,10 @@ public class FinanceController {
     @ModelAttribute("form")
     FinanceForm financeForm() {
         return new FinanceForm(null, null, null);
+    }
+
+    @ModelAttribute("compteur")
+    Compteur compteur() {
+        return financeService.getCompteur();
     }
 }

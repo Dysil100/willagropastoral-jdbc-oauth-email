@@ -1,11 +1,14 @@
 package duo.cmr.willagropastoral.boundedContexts.finances.web.service;
 
+import duo.cmr.willagropastoral.boundedContexts.finances.web.controllers.Compteur;
 import duo.cmr.willagropastoral.boundedContexts.finances.web.repositories.FinanceRepository;
 import duo.cmr.willagropastoral.boundedContexts.finances.web.service.domain.Finance;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @AllArgsConstructor
@@ -27,5 +30,22 @@ public class FinanceService {
 
     public void deleteAll() {
         financeRepository.deleteAll();
+    }
+
+    public Compteur getCompteur() {
+        return new Compteur(getSumme(), getLocalDateTime());
+    }
+
+    private LocalDateTime getLocalDateTime() {
+        List<Finance> alle = alle();
+        return alle.size() == 0 ? LocalDateTime.now() : alle.get(alle.size() - 1).getGeneratedAt();
+    }
+
+    private double getSumme() {
+        List<Finance> alle = alle();
+        double sumPositive = alle.stream().filter(f -> Objects.equals(f.getBezeichnung(), "Gains !")).mapToDouble(Finance::getSumme).sum();
+        double sumNegative = alle.stream().filter(f -> !Objects.equals(f.getBezeichnung(), "Gains !")).mapToDouble(Finance::getSumme).sum();
+        return sumPositive - sumNegative;
+
     }
 }
