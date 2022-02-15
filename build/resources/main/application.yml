@@ -2,7 +2,7 @@
 #password: duo.cmr.willagropastoral
 willagropastoral:
   admins: silatsamdylan@gmail.com
-  leaders: dylan, willfried
+  leaders: willagropastoral@gmail.com
 
 spring:
   profiles:

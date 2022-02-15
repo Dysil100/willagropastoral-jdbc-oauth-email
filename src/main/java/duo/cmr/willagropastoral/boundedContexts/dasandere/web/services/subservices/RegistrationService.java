@@ -34,14 +34,19 @@ public class RegistrationService {
     public String register(RegistrationRequest request) {
         if (customEmailValidator.test(request.getEmail())) {
             userArchivRepository.save(request);
-            AppUserRole role = admins.contains(request.getEmail()) ? ROLE_ADMIN :
-                    ((leaders.contains(request.getEmail())) ? ROLE_LEADER : ROLE_USER);
+            AppUserRole role = getRole(request.getEmail());
             AppUser appUser = new AppUser(
                     request.getFirstName(), request.getLastName(), request.getEmail(), request.getPassword(), role);
             return appUserService.signUpUser(appUser); // is equal to:return token
         }
         //throw new IllegalStateException("email not valid");
         return "email not valid";
+    }
+
+    private AppUserRole getRole(String email) {
+        if (admins.contains(email)) return ROLE_ADMIN;
+        if (leaders.contains(email)) return ROLE_LEADER;
+        else return ROLE_USER;
     }
 
     @Transactional

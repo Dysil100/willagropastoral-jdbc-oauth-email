@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Appercu de Finances</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        .background {
+            background-image: url('http://localhost/images/willagropastoral-logo.png');
+        }
+
+        div.transbox {
+            background-color: #ffffff;
+            opacity: 0.9;
+        }
+
+        body, h1, h2 {
+            align-self: center;
+            align-content: center;
+        }
+
+        div.transbox {
+            margin: 10%;
+            font-weight: bold;
+            color: black;
+            opacity: 85%;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid background">
+    <div class="container">
+        <h1>Appercu de la gestion financiere</h1>
+
+        <div class="newfinance transbox">
+            <form th:object="${financeForm}" method="post" th:action="@{/finances/uebersicht}">
+                <div class="form-group">
+                    <h2> Ajoutez une Nouvelle action financiere</h2>
+                    <div class="form-group row ">
+                        <label class="col-sm-2 col-form-label" for="summe">Summe</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required
+                                   placeholder="250 000"
+                                   min="0" type="number" value="0" step="any" id="summe"
+                                   th:field="*{summe}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label" for="description">Description</label>
+                        <div class="col-sm-10">
+                            <input class="form-control is-valid" required
+                                   placeholder="Eincaissement du pret de banque"
+                                   type="text" id="description"
+                                   th:field="*{description}">
+                        </div>
+                    </div>
+                </div>
+                    <div class="form-check">
+                        <input th:checked="*{eingabe}" type="checkbox"
+                               class="btn-check" name="eingabe" id="eingabe">
+                        <label class="btn btn-outline-primary" for="eingabe">Gains ?</label>
+                    </div>
+
+                <div class="ui-button">
+                    <input class="btn btn-primary" type="submit" value="Ajouter"> <br><br>
+                </div>
+            </form>
+        </div>
+
+        <div class="transbox">
+            <table class="table table-hover" th:object="${finances}">
+                <thead>
+                <tr>
+                    <th scope="col">Type</th>
+                    <th scope="col">Somme</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Date de l'action</th>
+                    <th scope="col">IdentificationsNummer</th>
+                    <th scope="col">Suprimé</th>
+                </tr>
+                </thead>
+                <tbody th:remove="all-but-first">
+                <tr th:each="finance: ${finances}" th:object="${finance}">
+                    <td th:text="*{getBezeichnung()}">Type</td>
+                    <td th:text="*{getSumme()}">Somme</td>
+                    <td th:text="*{getDescription()}">description</td>
+                    <td th:text="*{getGeneratedAt()}">description</td>
+                    <td th:text="*{getId()}">IdentificationsNummer</td>
+                    <td>
+                        <form method="post" th:action="@{/finances/delete/{id}(id=*{getId()})}">
+                            <input class="btn btn-outline-danger btn-sm" type="submit" value="Suprimer">
+                        </form>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--form method="post" th:action="@{/finances/deleteall}">
+            <input class="btn btn-outline-danger btn-sm" type="submit" value="Suprimer tout">
+        </form-->
+    </div>
+</div>
+</body>
+</html>

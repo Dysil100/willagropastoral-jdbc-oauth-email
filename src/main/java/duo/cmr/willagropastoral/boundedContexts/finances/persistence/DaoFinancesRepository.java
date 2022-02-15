@@ -6,4 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional(readOnly = true)
 public interface DaoFinancesRepository extends CrudRepository<FinanceEntity, Long> {
 
+    public static void main(String[] args) {
+
+    }
 }

@@ -9,42 +9,6 @@
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!-- responsive sachen-->
     <style>
-        .layout {
-            display: grid;
-            grid-template-areas:
-		"header"
-		"sidebar"
-		"main"
-		"sidebar-right"
-		"footer";
-            grid-template-rows: auto auto 1fr auto auto;
-        }
-        .layout > header {
-            grid-area: header;
-        }
-        .layout > aside:nth-of-type(1) {
-            grid-area: sidebar;
-        }
-        .layout > main {
-            grid-area: main;
-        }
-        .layout > aside:nth-of-type(2) {
-            grid-area: sidebar-right;
-        }
-        .layout > footer {
-            grid-area: footer;
-        }
-
-        @media (min-width: 40rem) { /* Breakpoint Tablet portrait up */
-            .layout {
-                grid-template-areas:
-			"header header header"
-			"sidebar main sidebar-right"
-			"footer footer footer";
-                grid-template-rows: auto 1fr auto;
-                grid-template-columns: 20% 1fr 20%;
-            }
-        }
 
         .container {
             display: flex;
