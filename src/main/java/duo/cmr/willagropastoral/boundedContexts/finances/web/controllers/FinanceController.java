@@ -1,17 +1,16 @@
 package duo.cmr.willagropastoral.boundedContexts.finances.web.controllers;
 
 
-import duo.cmr.willagropastoral.boundedContexts.dasandere.persistence.annotations.AdminOnly;
 import duo.cmr.willagropastoral.boundedContexts.dasandere.persistence.annotations.Leader;
 import duo.cmr.willagropastoral.boundedContexts.finances.web.service.FinanceService;
 import lombok.AllArgsConstructor;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RequestMapping("/finances")
-@AdminOnly
 @Leader
 @Controller
 public class FinanceController {
@@ -33,6 +32,7 @@ public class FinanceController {
         return "redirect:/finances/uebersicht";
     }
 
+    @Secured("ROLE_ADMIN")
     @PostMapping("/delete/{id}")
     public String delete(Model model, @ModelAttribute("financeForm") FinanceForm form, @PathVariable("id") Long id) {
         financeService.deleteById(id);
