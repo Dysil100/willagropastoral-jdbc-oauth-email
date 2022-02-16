@@ -1,6 +1,6 @@
 package duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.analyseconfiguration;
 
-import duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.subservices.CustomAnalyseForm;
+import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services.CustomAnalyseForm;
 import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services.AnalyseAlimentaireService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,6 +1,6 @@
 package duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.controllers;
 
-import duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.subservices.CustomAnalyseForm;
+import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services.CustomAnalyseForm;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

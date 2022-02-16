@@ -1,8 +1,7 @@
-package duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.subservices;
+package duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services;
 
 import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain.apportNutritifs.*;
 import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain.ingredients.Ingredient;
-import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services.AnalyseAlimentaireService;
 import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services.interfaces.domaininterfaces.Resultat;
 import lombok.Getter;
 import lombok.Setter;
