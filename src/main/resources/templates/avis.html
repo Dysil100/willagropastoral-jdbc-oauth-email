@@ -24,32 +24,36 @@
         }
     </style>
 </head>
-<header th:replace="fragments/general.html :: header"></header>
 <body class="background">
 <div class="container-fluid">
-    <h1>Un Bienvenue <span th:text="${text}">[ROLE] - Name</span> Sur Willagropastoral </h1>
+<header th:replace="fragments/general.html :: userheader"></header>
+    <div class="transbox">
+        <h1>Nous nous rejouissons de votre avis</h1>
+    </div>
 
-    <form th:objetct="${formAvis}" th:action="@{/avis}" method="post">
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email">
+    <div class="transbox">
+        <form class=th:objetct="${formavis}" th:action="@{/avis}" method="post">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input placeholder="myname@example.domain" name="email" required type="email" class="form-control" id="email">
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="telephone">Télephone</label>
-            <input type="number" class="form-control" id="telephone" placeholder="Douala Deido">
-        </div>
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="comment">Commentaire</label>
-                <textarea type="text" class="form-control" rows="5" id="comment"></textarea>
+            <div class="form-group">
+                <label for="telephone">Télephone</label>
+                <input required type="tel" class="form-control" name="telephone" id="telephone" placeholder="237693240270">
             </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Confirmer</button>
-    </form>
-    <hr class="featurette-divider">
-    <footer th:replace="fragments/general.html :: footer"> </footer>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="comment">Commentaire</label>
+                    <textarea placeholder="Votre Avis" type="text" name="comment" class="form-control" rows="5"
+                              id="comment"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Confirmer</button>
+        </form>
+    </div>
+    <footer th:replace="fragments/general.html :: footer"></footer>
 </div>
 </body>
 </html>

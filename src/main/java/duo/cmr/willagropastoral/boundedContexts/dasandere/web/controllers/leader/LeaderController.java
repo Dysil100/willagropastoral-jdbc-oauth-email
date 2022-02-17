@@ -1,5 +1,6 @@
 package duo.cmr.willagropastoral.boundedContexts.dasandere.web.controllers.leader;
 
+import duo.cmr.willagropastoral.boundedContexts.avis.web.service.AvisService;
 import duo.cmr.willagropastoral.boundedContexts.dasandere.domain.model.appsuer.AppUser;
 import duo.cmr.willagropastoral.boundedContexts.dasandere.persistence.annotations.Leader;
 import duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.ServiceSupreme;
@@ -17,13 +18,19 @@ import java.security.Principal;
 @RequestMapping("/leaderindex")
 @Leader
 public class LeaderController {
-    ServiceSupreme serviceSupreme;
+    private ServiceSupreme serviceSupreme;
+    private AvisService avisService;
 
     @GetMapping("")
     public String leaderindex(Model model, @ModelAttribute("text") String text){
         model.addAttribute("text", text);
-        model.addAttribute("role", "leader");
-        return "index";
+        return "rootindex";
+    }
+
+    @GetMapping("/avis/liste")
+    public String alle(Model model){
+        model.addAttribute("alle", avisService.alle());
+        return "avisliste";
     }
 
     @GetMapping("/home")

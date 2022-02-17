@@ -24,21 +24,22 @@
         }
     </style>
 </head>
-<header th:replace="fragments/general.html :: header"></header>
 <body class="background">
 <div class="container-fluid">
+    <header th:replace="fragments/general.html :: userheader"></header>
     <div class="callout-info transbox">
         <h2>Contactez nous via</h2>
         <ul class="border-primary">
-            <l> <h3><a href="https://wa.me/message/R4ZBCGLQYHXWA1"> Whatsapp</a></h3></l>
-            <l> <h3><a href="tel:+237 6 99 13 36 54"> Whatsapp</a></h3></l>
-            <l> <h3><a href="tel:+237 6 99 13 36 54"> Téléphone</a></h3></l>
-            <li> <h3><a href="mailto:willagropastoral@gmail.com"> Email</a></h3></li>
+            <li><h3><a href="https://wa.me/message/R4ZBCGLQYHXWA1">Message Whatsapp direct</a></h3></li>
+            <li><h3><a href="tel:+237 6 50 92 79 95">Contact Whatsapp</a></h3></li>
+            <li><h3><a href="tel:+237 6 99 13 36 54"> Téléphone 1</a></h3></li>
+            <li><h3><a href="tel:+237 6 50 92 79 95"> Téléphone 2</a></h3></li>
+            <li><h3><a href="mailto:willagropastoral@gmail.com"> Email</a></h3></li>
         </ul>
-            <h3>Un <a th:href="@{/avis}"> Avis</a> de votre part est bien entendu le Bienvenu</h3>
+        <h3>Un <a th:href="@{/avis}"> Avis</a> de votre part est bien entendu le Bienvenu</h3>
     </div>
     <hr class="featurette-divider">
-    <footer th:replace="fragments/general.html :: footer"> </footer>
+    <footer th:replace="fragments/general.html :: footer"></footer>
 </div>
 </body>
 </html>

@@ -24,5 +24,4 @@ public class FinanceEntity {
         this.generatedAt = generatedAt;
     }
 
-
 }

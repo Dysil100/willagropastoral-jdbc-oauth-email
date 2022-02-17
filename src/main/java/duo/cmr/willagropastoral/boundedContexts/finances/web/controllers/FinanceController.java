@@ -4,13 +4,13 @@ package duo.cmr.willagropastoral.boundedContexts.finances.web.controllers;
 import duo.cmr.willagropastoral.boundedContexts.dasandere.persistence.annotations.Leader;
 import duo.cmr.willagropastoral.boundedContexts.finances.web.service.FinanceService;
 import lombok.AllArgsConstructor;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @AllArgsConstructor
-@RequestMapping("/finances")
 @Leader
 @Controller
 public class FinanceController {
@@ -18,7 +18,7 @@ public class FinanceController {
 
     // TODO: 14.02.22 Route zum löschen und aktualiesieren implementieren und ein Root user für die Verwaltungen
 
-    @GetMapping("/uebersicht")
+    @GetMapping("/finances/uebersicht")
     public String uebersicht(Model model, @ModelAttribute("form") FinanceForm form, @ModelAttribute("compteur") Compteur compteur) {
         model.addAttribute("finances", financeService.alle());
         model.addAttribute("financeForm", form);
@@ -26,19 +26,11 @@ public class FinanceController {
         return "financeübersicht";
     }
 
-    @PostMapping("/uebersicht")
+    @PostMapping("/finances/uebersicht")
     public String uebersichtPost(Model model, @ModelAttribute("financeForm") FinanceForm form, @ModelAttribute("compteur") Compteur compteur) {
         model.addAttribute("finances", financeService.alle());
         model.addAttribute("compteur", compteur);
         financeService.save(form.toFinance());
-        return "redirect:/finances/uebersicht";
-    }
-
-    @Secured("ROLE_ADMIN")
-    @PostMapping("/delete/{id}")
-    public String delete(Model model, @ModelAttribute("financeForm") FinanceForm form, @PathVariable("id") Long id) {
-        financeService.deleteById(id);
-        model.addAttribute("finances", financeService.alle());
         return "redirect:/finances/uebersicht";
     }
 

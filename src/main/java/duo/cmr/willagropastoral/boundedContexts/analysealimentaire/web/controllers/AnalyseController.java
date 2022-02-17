@@ -17,6 +17,7 @@ public class AnalyseController {
     @GetMapping("/analyse")
     public String index(Model model) {
         model.addAttribute("form", customAnalyseForm);
+        model.addAttribute("role", "user");
         return "analyse";
     }
 

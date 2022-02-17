@@ -30,14 +30,17 @@
     </style>
 </head>
 <body>
-<header th:replace="fragments/general.html :: header"> </header>
 <div class="container-fluid background">
+<header th:replace="fragments/general.html :: rootheader"></header>
     <div class="container">
         <h1>Appercu de la gestion financiere</h1>
-        <div>
-            <h2>Le Compteur financier de la Structure s'eleve à: <span class="alert alert-success" th:if="${compteur.summe} > 0.0" th:text="${compteur.getSumme()}"> la somme de</span>
-                <span class="alert alert-warning" th:if="${compteur.getSumme()} <= 0.0" th:text="${compteur.getSumme()}">somme</span> - Depuis la date du <span th:text="${compteur.getStartDate()}">date de départ</span></h2>
-
+        <div class="transbox">
+            <h2>Le Compteur financier de la Structure s'eleve à: <span class="alert alert-success"
+                                                                       th:if="${compteur.summe} > 0.0"
+                                                                       th:text="${compteur.getSumme()}"> la somme de</span>
+                <span class="alert alert-warning" th:if="${compteur.getSumme()} <= 0.0"
+                      th:text="${compteur.getSumme()}">somme</span> - Depuis la date du <span
+                        th:text="${compteur.getStartDate()}">date de départ</span></h2>
         </div>
         <div class="newfinance transbox">
             <form th:object="${financeForm}" method="post" th:action="@{/finances/uebersicht}">
@@ -63,11 +66,11 @@
                         </div>
                     </div>
                 </div>
-                    <div class="form-check">
-                        <input th:checked="*{eingabe}" type="checkbox"
-                               class="btn-check" name="eingabe" id="eingabe">
-                        <label class="btn btn-outline-primary" for="eingabe">Gains ?</label>
-                    </div>
+                <div class="form-check">
+                    <input th:checked="*{eingabe}" type="checkbox"
+                           class="btn-check" name="eingabe" id="eingabe">
+                    <label class="btn btn-outline-primary" for="eingabe">Gains ?</label>
+                </div>
 
                 <div class="ui-button">
                     <input class="btn btn-primary" type="submit" value="Ajouter"> <br><br>
@@ -83,7 +86,7 @@
                     <th scope="col">Somme</th>
                     <th scope="col">Description</th>
                     <th scope="col">Date de l'action</th>
-                    <th scope="col">IdentificationsNummer</th>
+                    <!--th scope="col">IdentificationsNummer</th-->
                     <th scope="col">Supression</th>
                 </tr>
                 </thead>
@@ -93,7 +96,7 @@
                     <td th:text="*{getSumme()}">Somme</td>
                     <td th:text="*{getDescription()}">description</td>
                     <td th:text="*{getGeneratedAt()}">description</td>
-                    <td th:text="*{getId()}">IdentificationsNummer</td>
+                    <!--td th:text="*{getId()}">IdentificationsNummer</td-->
                     <td>
                         <form method="post" th:action="@{/finances/delete/{id}(id=*{getId()})}">
                             <input class="btn btn-outline-danger btn-sm" type="submit" value="Suprimer">
@@ -106,7 +109,7 @@
             <input class="btn btn-outline-danger btn-sm" type="submit" value="Suprimer tout">
         </form-->
     </div>
-    <footer th:replace="fragments/general.html :: footer"> </footer>
+    <footer th:replace="fragments/general.html :: footer"></footer>
 </div>
 </body>
 </html>

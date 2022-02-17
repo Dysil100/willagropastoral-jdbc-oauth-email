@@ -47,9 +47,9 @@
         }
     </style>
 </head>
-<header th:replace="fragments/general.html :: header"> </header>
 <body class="background">
 <div class="container-fluid">
+<header th:replace="fragments/general.html :: userheader"> </header>
     <div th:object="${form}" class="container-fluid transbox">
         <div class="row">
             <h1 class="title form-text">Verification de Proportions Alimentaires pour <span th:text="${form.getType()}"> Type d'alimenation</span>
@@ -121,6 +121,7 @@
                     <h3>Note:</h3>
                     <p>L'appreciation 'OK' admet une marge d'erreur de plus ou moins 10% de la valeur standard</p>
                 </form>
+
             </div>
         </div>
         <h3>Note:</h3>
