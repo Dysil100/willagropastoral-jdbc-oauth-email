@@ -7,7 +7,6 @@ import duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.ServiceSu
 import duo.cmr.willagropastoral.boundedContexts.finances.web.controllers.FinanceForm;
 import duo.cmr.willagropastoral.boundedContexts.finances.web.service.FinanceService;
 import lombok.AllArgsConstructor;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -37,12 +36,11 @@ public class AdminController {
         return "redirect:/leaderindex/avis/liste";
     }
 
-    @Secured("ROLE_ADMIN")
     @PostMapping("/finances/delete/{id}")
     public String delete(Model model, @ModelAttribute("financeForm") FinanceForm form, @PathVariable("id") Long id) {
         financeService.deleteById(id);
         model.addAttribute("finances", financeService.alle());
-        return "redirect:/finances/uebersicht";
+        return "redirect:/leaderindex/finances/uebersicht";
     }
 
     @GetMapping("/home")

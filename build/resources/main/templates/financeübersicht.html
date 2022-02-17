@@ -43,7 +43,7 @@
                         th:text="${compteur.getStartDate()}">date de départ</span></h2>
         </div>
         <div class="newfinance transbox">
-            <form th:object="${financeForm}" method="post" th:action="@{/finances/uebersicht}">
+            <form th:object="${financeForm}" method="post" th:action="@{/leaderindex/finances/uebersicht}">
                 <div class="form-group">
                     <h3> Ajoutez une Nouvelle action financiere</h3>
                     <div class="form-group row ">
@@ -98,7 +98,7 @@
                     <td th:text="*{getGeneratedAt()}">description</td>
                     <!--td th:text="*{getId()}">IdentificationsNummer</td-->
                     <td>
-                        <form method="post" th:action="@{/finances/delete/{id}(id=*{getId()})}">
+                        <form method="post" th:action="@{/adminindex/finances/delete/{id}(id=*{getId()})}">
                             <input class="btn btn-outline-danger btn-sm" type="submit" value="Suprimer">
                         </form>
                 </tr>

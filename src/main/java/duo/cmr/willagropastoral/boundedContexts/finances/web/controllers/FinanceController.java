@@ -9,10 +9,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @AllArgsConstructor
 @Leader
 @Controller
+@RequestMapping("/leaderindex")
 public class FinanceController {
     private FinanceService financeService;
 
@@ -31,10 +33,10 @@ public class FinanceController {
         model.addAttribute("finances", financeService.alle());
         model.addAttribute("compteur", compteur);
         financeService.save(form.toFinance());
-        return "redirect:/finances/uebersicht";
+        return "redirect:/leaderindex/finances/uebersicht";
     }
 
-    /*@PostMapping("/deleteall")
+    /*@PostMapping("/de leteall")
     public String deleteall(Model model, @ModelAttribute("financeForm") FinanceForm form) {
         financeService.deleteAll();
         model.addAttribute("finances", financeService.alle());
