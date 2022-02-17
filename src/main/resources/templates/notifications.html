@@ -10,7 +10,7 @@
 <div class="container-fluid">
     <h1 th:if="${text} != null" th:text="${text}" class="btn-primary">Please check your mails</h1>
     <h1 class="btn-primary"><a th:href="@{/}">Home</a></h1>
-
+    <footer th:replace="fragments/general.html :: footer"> </footer>
 </div>
 </body>
 </html>

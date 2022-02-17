@@ -20,21 +20,20 @@ public class LeaderController {
     ServiceSupreme serviceSupreme;
 
     @GetMapping("")
-    public String leaderindex(Model model, @ModelAttribute("name") String name){
-        model.addAttribute("name", name);
+    public String leaderindex(Model model, @ModelAttribute("text") String text){
+        model.addAttribute("text", text);
         model.addAttribute("role", "leader");
-        return "leaderindex";
+        return "index";
     }
 
     @GetMapping("/home")
-    public String home(Model model, @ModelAttribute("name") String name){
-        model.addAttribute("name", name);
+    public String home(Model model){
         return "home";
     }
 
-    @ModelAttribute("name")
+    @ModelAttribute("text")
     String handle(Principal user) {
         AppUser userByEmail = serviceSupreme.getUserByEmail(user.getName());
         System.out.println(userByEmail.getRole());
-        return userByEmail.getFirstName();    }
+        return "au Leader " +userByEmail.getFirstName();    }
 }

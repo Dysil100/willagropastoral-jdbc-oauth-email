@@ -13,15 +13,10 @@ public class RegistrationController {
 
     private final RegistrationService registrationService;
 
-    @GetMapping("/")
-    public String loginOrResgister(){
-        return "loginorregister";
-    }
-
 // TODO: 02.02.22 Implement password recuperation;
 
     @GetMapping("/registration")
-    public String registerForm(Model model, @ModelAttribute("formular") RegistrationRequest request){
+    public String registerForm(Model model, @ModelAttribute("formular") RegistrationRequest request) {
         model.addAttribute("form", request);
         return "registration";
     }
@@ -40,8 +35,9 @@ public class RegistrationController {
         model.addAttribute("text", notif);
         return "notifications";
     }
+
     @ModelAttribute("formular")
-    RegistrationRequest request(){
+    RegistrationRequest request() {
         return new RegistrationRequest(null, null, null, null);
     }
 }

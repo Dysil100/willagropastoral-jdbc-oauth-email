@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @AllArgsConstructor
-public class WillAgropastoralController {
+public class AnalyseController {
     CustomAnalyseForm customAnalyseForm;
 
     @GetMapping("/analyse")

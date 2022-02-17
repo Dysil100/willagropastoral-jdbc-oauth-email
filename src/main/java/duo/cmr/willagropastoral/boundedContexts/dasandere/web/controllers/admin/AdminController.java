@@ -20,10 +20,10 @@ public class AdminController {
     ServiceSupreme serviceSupreme;
 
     @GetMapping("")
-    public String adminindex(Model model, @ModelAttribute("name") String name) {
-        model.addAttribute("name", name);
+    public String adminindex(Model model, @ModelAttribute("text") String text) {
+        model.addAttribute("text", text);
         model.addAttribute("role", "admin");
-        return "adminindex";
+        return "index";
     }
 
     @GetMapping("/home")
@@ -31,10 +31,9 @@ public class AdminController {
         return "home";
     }
 
-    @ModelAttribute("name")
+    @ModelAttribute("text")
     String handle(Principal user) {
         AppUser userByEmail = serviceSupreme.getUserByEmail(user.getName());
-        System.out.println(userByEmail.getRole());
-        return userByEmail.getFirstName();
+        return "L'administrateur " + userByEmail.getFirstName();
     }
 }

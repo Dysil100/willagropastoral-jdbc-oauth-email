@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amin Index-Willagropastoral</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        .background {
+            background-image: url('http://localhost/images/willagropastoral-logo.png');
+        }
+
+        div.transbox {
+            background-color: #ffffff;
+            opacity: 0.6;
+        }
+
+        div.transbox {
+            margin: 10%;
+            font-weight: bold;
+            color: black;
+            opacity: 85%;
+        }
+    </style>
+</head>
+<header th:replace="fragments/general.html :: header"></header>
+<body class="background">
+<div class="container-fluid">
+    <h1>Un Bienvenue <span th:text="${text}">[ROLE] - Name</span> Sur Willagropastoral </h1>
+
+    <form th:objetct="${formAvis}" th:action="@{/avis}" method="post">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="telephone">Télephone</label>
+            <input type="number" class="form-control" id="telephone" placeholder="Douala Deido">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="comment">Commentaire</label>
+                <textarea type="text" class="form-control" rows="5" id="comment"></textarea>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Confirmer</button>
+    </form>
+    <hr class="featurette-divider">
+    <footer th:replace="fragments/general.html :: footer"> </footer>
+</div>
+</body>
+</html>

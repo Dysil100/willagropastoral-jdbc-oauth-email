@@ -16,7 +16,7 @@
             opacity: 0.6;
         }
 
-        div.transbox{
+        div.transbox {
             margin: 10%;
             font-weight: bold;
             color: black;
@@ -24,16 +24,21 @@
         }
     </style>
 </head>
-<header th:replace="fragments/general.html :: header"> </header>
+<header th:replace="fragments/general.html :: header"></header>
 <body class="background">
 <div class="container-fluid">
-    <h1>Un Bienvenue Mr L'administrateur <span th:text="${name}">Name</span> Sur Willagropastoral </h1>
-
     <div class="callout-info transbox">
-        <h2> Le site est Pour le moment en construction. <br> Notre premier
-        </h2>
+        <h2>Contactez nous via</h2>
+        <ul class="border-primary">
+            <l> <h3><a href="https://wa.me/message/R4ZBCGLQYHXWA1"> Whatsapp</a></h3></l>
+            <l> <h3><a href="tel:+237 6 99 13 36 54"> Whatsapp</a></h3></l>
+            <l> <h3><a href="tel:+237 6 99 13 36 54"> Téléphone</a></h3></l>
+            <li> <h3><a href="mailto:willagropastoral@gmail.com"> Email</a></h3></li>
+        </ul>
+            <h3>Un <a th:href="@{/avis}"> Avis</a> de votre part est bien entendu le Bienvenu</h3>
     </div>
-
+    <hr class="featurette-divider">
+    <footer th:replace="fragments/general.html :: footer"> </footer>
 </div>
 </body>
 </html>

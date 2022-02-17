@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Index-Willagropastoral</title>
+    <title>Amin Index-Willagropastoral</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -27,11 +27,13 @@
 <header th:replace="fragments/general.html :: header"> </header>
 <body class="background">
 <div class="container-fluid">
-    <div class="container-fluid">
-        <div class="callout-info transbox">
-            <h2> Le site est Pour le moment en construction. Merci de votre patience.
-        </div>
+    <h1>Un Bienvenue <span th:text="${text}">[ROLE] - Name</span> Sur Willagropastoral </h1>
 
+    <div class="callout-info transbox">
+        <h2> Le site est Pour le moment en construction. Nous vous remercions de votre Comprehension
+        </h2>
     </div>
+</div>
+<footer th:replace="fragments/general.html :: footer"> </footer>
 </body>
 </html>
