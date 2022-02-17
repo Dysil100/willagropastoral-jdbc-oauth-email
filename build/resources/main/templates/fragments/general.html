@@ -52,52 +52,52 @@
 
 
 <header th:fragment="userheader">
-        <!--nav class="navbar navbar-expand-md navbar-expand-lg navbar-dark fixed-top bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" th:href="@{/}">Will-Agropastoral</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" th:href="@{/}">Acceuil</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" data-toggle="dropdown" th:href="@{#}" role="button"
-                               aria-haspopup="true" aria-expanded="false">Services</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Analyse Alimentaire</a>
-                                <a class="dropdown-item" href="#">Analyse Alimentaire</a>
-                                <a class="dropdown-item" th:href="@{/analyse}">Analyse Alimentaire</a>
-                                <a class="dropdown-item" th:if="${role} != 'user'" th:href="@{/finances/uebersicht}">Finances</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Formations</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" th:href="@{/login}">Connexion</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" th:href="@{/contacts}">Contacts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" th:href="@{/avis}">Avis</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" th:href="@{/logout}">Déconnexion</a>
-                        </li>
-                    </ul>
-                    <form class="form-inline my-2 my-lg-0" disabled-->
-                        <!--todo search from implementieren-->
-                        <!--input disabled name="searchInput" id="searchInput" class="form-control mr-sm-2" type="search"
-                               placeholder="Search">
-                        <button disabled class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
-                </div>
-            </div>
-        </nav-->
+    <!--nav class="navbar navbar-expand-md navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" th:href="@{/}">Will-Agropastoral</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" th:href="@{/}">Acceuil</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" data-toggle="dropdown" th:href="@{#}" role="button"
+                           aria-haspopup="true" aria-expanded="false">Services</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Analyse Alimentaire</a>
+                            <a class="dropdown-item" href="#">Analyse Alimentaire</a>
+                            <a class="dropdown-item" th:href="@{/analyse}">Analyse Alimentaire</a>
+                            <a class="dropdown-item" th:if="${role} != 'user'" th:href="@{/finances/uebersicht}">Finances</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Formations</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/login}">Connexion</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/contacts}">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/avis}">Avis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" th:href="@{/logout}">Déconnexion</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0" disabled-->
+    <!--todo search from implementieren-->
+    <!--input disabled name="searchInput" id="searchInput" class="form-control mr-sm-2" type="search"
+           placeholder="Search">
+    <button disabled class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+</form>
+</div>
+</div>
+</nav-->
 
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -148,7 +148,8 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo0">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link bage badge-info text-center" th:href="@{/leaderindex/avis/liste}">Liste d'avis</a>
+                    <a class="nav-link bage badge-info text-center" th:href="@{/leaderindex/avis/liste}">Liste
+                        d'avis</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link badge-info text-center" th:href="@{/finances/uebersicht}">Finances</a>
@@ -197,9 +198,11 @@
 </div>
 
 <footer th:fragment="footer" class="container">
-    <hr class="featurette-divider">
-    <p class="float-end badge-pill badge badge-info text-center"><a href="#">Début de page</a></p>
-    <p>&copy; 2022 Will-Agropastoral</p>
+    <div class="transbox">
+        <hr class="featurette-divider">
+        <p class="float-end badge-pill badge badge-info text-center"><a href="#">Début de page</a></p>
+        <p>&copy; 2022 Will-Agropastoral</p>
+    </div>
 </footer>
 
 
