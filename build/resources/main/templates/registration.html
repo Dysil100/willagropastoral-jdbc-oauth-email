@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Login Page</title>
 </head>
+<header th:replace="fragments/general.html :: header"> </header>
 <body>
 <div class="container-fluid">
 <form th:object="${form}" th:action="@{/registration}" method="post" style="max-width: 400px; margin: 0 auto;">

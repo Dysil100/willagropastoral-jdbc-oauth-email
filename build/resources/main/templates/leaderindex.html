@@ -17,7 +17,7 @@
             opacity: 0.6;
         }
 
-        div.transbox{
+        div.transbox {
             margin: 10%;
             font-weight: bold;
             color: black;
@@ -25,24 +25,16 @@
         }
     </style>
 </head>
+<header th:replace="fragments/general.html :: header"></header>
 <body class="background">
 <div class="container-fluid">
     <h1>Un Bienvenue au Leader <strong><span th:text="${name}">Name</span></strong> Sur Willagropastoral </h1>
 
     <div class="callout-info transbox">
-        <h2> Le site est Pour le moment en construction. <br>Notre premier
-            <strong><a class="badge badge-pill badge-info text-center" th:href="@{/analyse}">
-                Service Publique gratuit</a></strong> est tout de même disponble
+        <h2> Le site est Pour le moment en construction. <br> Notre premier
         </h2>
     </div>
-
-    <div class="callout-info transbox">
-        <h3> Apercu et gestion de
-            <strong><a class="badge badge-pill badge-info text-center" th:href="@{/finances/uebersicht}">
-                finances</a>
-            </strong>
-        </h3>
-    </div>
- </div>
+</div>
+</div>
 </body>
 </html>

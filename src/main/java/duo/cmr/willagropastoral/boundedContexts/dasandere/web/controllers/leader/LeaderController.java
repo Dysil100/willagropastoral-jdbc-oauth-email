@@ -22,6 +22,7 @@ public class LeaderController {
     @GetMapping("")
     public String leaderindex(Model model, @ModelAttribute("name") String name){
         model.addAttribute("name", name);
+        model.addAttribute("role", "leader");
         return "leaderindex";
     }
 

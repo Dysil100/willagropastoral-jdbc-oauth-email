@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--title>Inscription/Connection</title-->
     <title>WillAgropastoral</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -29,30 +28,9 @@
 </head>
 <body class="background">
 <div class="container-fluid">
-    <!--h1 class="alert-warning">Inscrivez ou connectez-vous pour acceder a nos ressources</h1>
-    <ul class="block-list">
-        <li> Ete-vous déjà utilisateur de  <strong class="btn-primary">Willagropastoral.top</strong> ? <a th:href="@{/login}">Connectez vous</a></li>
-        <li> Vous pouvez vous inscrire ici <a th:href="@{/registration}">ici</a></li>
-        <li> Mot de passe oublié ?<a th:href="@{/maileingabe}"> recuperez-le</a></li>
-
-    </ul-->
+    <header th:replace="fragments/general.html :: header"> </header>
     <div class="form-group transbox">
         <h1> Bienvenue chez <strong>WillAgropastoral</strong></h1>
-        <br>
-        <div class="callout-info">
-            <h2> Notre premier Service gratuit:
-                <strong><a class="badge badge-pill badge-info text-center" th:href="@{/analyse}">
-                    Analyse alimentaire</a>
-                </strong>
-            </h2>
-        </div>
-        <div class="callout-info">
-            <h2> Connectez vous:
-                <strong><a class="badge badge-pill badge-info text-center" th:href="@{/login}">
-                    Connexion :-)</a>
-                </strong>
-            </h2>
-        </div>
     </div>
 </div>
 </body>

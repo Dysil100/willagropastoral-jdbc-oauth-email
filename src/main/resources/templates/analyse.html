@@ -7,16 +7,7 @@
     <title>WillAgropastoral</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <!-- responsive sachen-->
     <style>
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-
-
         p, h4, h3, h2, select, h1, table {
             border: #005cbf;
             margin-left: 10%;
@@ -57,8 +48,8 @@
     </style>
 </head>
 <header th:replace="fragments/general.html :: header"> </header>
-<body class="background container">
-<div class="container">
+<body class="background">
+<div class="container-fluid">
     <div th:object="${form}" class="container-fluid transbox">
         <div class="row">
             <h1 class="title form-text">Verification de Proportions Alimentaires pour <span th:text="${form.getType()}"> Type d'alimenation</span>
