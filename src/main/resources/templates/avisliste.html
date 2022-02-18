@@ -5,6 +5,7 @@
     <title>Amin Index-Willagropastoral</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
         .background {
@@ -30,6 +31,7 @@
     <div>
         <h1>Liste des differents avis et Commentaires</h1>
     </div>
+    <div class="transbox">
     <table class="table table-hover" th:object="${alle}">
         <thead>
         <tr>
@@ -48,11 +50,12 @@
             <td th:text="*{getGeneratedAt()}">description</td>
             <td>
                 <form method="post" th:action="@{/adminindex/avis/delete/{id}(id=*{getId()})}">
-                    <input class="btn btn-outline-danger btn-sm" type="submit" value="Suprimer">
+                    <input class="btn btn-outline-danger btn-sm fa fa-trash" type="submit" value="Suprimer">
                 </form>
         </tr>
         </tbody>
     </table>
+    </div>
     <footer th:replace="fragments/general.html :: footer"></footer>
 </div>
 </body>

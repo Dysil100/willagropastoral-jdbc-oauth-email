@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Amin Index-Willagropastoral</title>
+    <title>Willagropastoral-Avis</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
         .background {
@@ -26,22 +27,17 @@
 </head>
 <body class="background">
 <div class="container-fluid">
-<header th:replace="fragments/general.html :: userheader"></header>
+    <header th:replace="fragments/general.html :: userheader"></header>
     <div class="transbox">
         <h1>Nous nous rejouissons de votre avis</h1>
     </div>
-
     <div class="transbox">
-        <form class=th:objetct="${formavis}" th:action="@{/avis}" method="post">
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="email">Email</label>
-                    <input placeholder="myname@example.domain" name="email" required type="email" class="form-control" id="email">
-                </div>
-            </div>
+        <form class="form-control" th:object="${formavis}" th:action="@{/avis}" method="post">
+            <div th:insert="fragments/general.html :: textinput(field='email', name='Email', placeholder='myname@example.domain')"></div>
             <div class="form-group">
                 <label for="telephone">Télephone</label>
-                <input required type="tel" class="form-control" name="telephone" id="telephone" placeholder="237693240270">
+                <input required type="tel" class="form-control" name="telephone" id="telephone"
+                       placeholder="237693240270">
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
