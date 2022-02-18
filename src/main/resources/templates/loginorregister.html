@@ -7,7 +7,6 @@
     <title>WillAgropastoral</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
     <style>
         .background {
             background-image: url('http://localhost/images/willagropastoral-logo.png');
@@ -35,4 +34,14 @@
     <footer th:replace="fragments/general.html :: footer"> </footer>
 </div>
 </body>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "navbar-expand") {
+            x.className += "navbar-expand-md";
+        } else {
+            x.className = "navbar-expand";
+        }
+    }
+</script>
 </html>

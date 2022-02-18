@@ -36,4 +36,14 @@
 </div>
 <footer th:replace="fragments/general.html :: footer"> </footer>
 </body>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "navbar-expand") {
+            x.className += "navbar-expand-md";
+        } else {
+            x.className = "navbar-expand";
+        }
+    }
+</script>
 </html>

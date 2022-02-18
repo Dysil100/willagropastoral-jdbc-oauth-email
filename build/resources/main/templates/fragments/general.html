@@ -22,14 +22,7 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
 
-    <link href="css/carousel.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link href="css/styles.css" rel="stylesheet">
-
-    <link href="../static/css/carousel.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link href="../static/css/styles.css" rel="stylesheet">
-
     <style>
 
         h1 {
@@ -45,13 +38,12 @@
         p {
             font-size: 100%;
         }
-
     </style>
 </head>
 <body>
 
 
-<header th:fragment="userheader">
+<header th:fragment="userheader" id="myTopnav" class="navbar-expand-md" >
     <!--nav class="navbar navbar-expand-md navbar-expand-lg navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" th:href="@{/}">Will-Agropastoral</a>
@@ -100,9 +92,9 @@
 </nav-->
 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand  badge-info" th:href="@{/}">Willagropastoral</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+    <nav  class="navbar navbar-light bg-light" >
+        <a class="navbar-brand badge-info icon" href="javascript:void(0);" onclick="myFunction()" th:href="@{/}">Willagropastoral</a>
+        <button onclick="myFunction()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                 aria-controls="navbarTogglerDemo02" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -136,11 +128,10 @@
     </nav>
 </header>
 
-
-<header th:fragment="rootheader">
+<header th:fragment="rootheader" id="myTopnav" class="navbar-expand-md">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand  badge-info" th:href="@{/}">Willagropastoral</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        <a class="navbar-brand  badge-info icon" href="javascript:void(0);" onclick="myFunction()" th:href="@{/}">Willagropastoral</a>
+        <button onclick="myFunction()" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                 aria-controls="navbarTogglerDemo0" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -207,4 +198,14 @@
 
 
 </body>
+<script th:fragment="myFunction-js">
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "navbar-expand") {
+            x.className += "navbar-expand-md";
+        } else {
+            x.className = "navbar-expand";
+        }
+    }
+</script>
 </html>
