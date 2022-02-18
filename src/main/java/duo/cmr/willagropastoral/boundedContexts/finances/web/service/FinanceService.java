@@ -1,8 +1,8 @@
 package duo.cmr.willagropastoral.boundedContexts.finances.web.service;
 
-import duo.cmr.willagropastoral.boundedContexts.finances.web.controllers.Compteur;
+import duo.cmr.willagropastoral.boundedContexts.finances.forms.Compteur;
 import duo.cmr.willagropastoral.boundedContexts.finances.web.repositories.FinanceRepository;
-import duo.cmr.willagropastoral.boundedContexts.finances.web.service.domain.Finance;
+import duo.cmr.willagropastoral.boundedContexts.finances.forms.Finance;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

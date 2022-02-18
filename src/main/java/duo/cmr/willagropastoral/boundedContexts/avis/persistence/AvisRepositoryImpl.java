@@ -1,7 +1,7 @@
 package duo.cmr.willagropastoral.boundedContexts.avis.persistence;
 
 import duo.cmr.willagropastoral.boundedContexts.avis.forms.Avis;
-import duo.cmr.willagropastoral.boundedContexts.avis.web.interfaces.AvisRepository;
+import duo.cmr.willagropastoral.boundedContexts.avis.web.repositories.AvisRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 

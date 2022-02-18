@@ -27,12 +27,6 @@ public class LeaderController {
         return "rootindex";
     }
 
-    @GetMapping("/avis/liste")
-    public String alle(Model model){
-        model.addAttribute("alle", avisService.alle());
-        return "avisliste";
-    }
-
     @GetMapping("/home")
     public String home(Model model){
         return "home";

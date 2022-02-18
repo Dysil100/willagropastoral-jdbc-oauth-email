@@ -1,15 +1,14 @@
 package duo.cmr.willagropastoral.boundedContexts.dasandere.web.controllers.admin;
 
-import duo.cmr.willagropastoral.boundedContexts.avis.web.service.AvisService;
 import duo.cmr.willagropastoral.boundedContexts.dasandere.domain.model.appsuer.AppUser;
 import duo.cmr.willagropastoral.boundedContexts.dasandere.persistence.annotations.AdminOnly;
 import duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.ServiceSupreme;
-import duo.cmr.willagropastoral.boundedContexts.finances.web.controllers.FinanceForm;
-import duo.cmr.willagropastoral.boundedContexts.finances.web.service.FinanceService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
 
@@ -20,8 +19,6 @@ import java.security.Principal;
 @AdminOnly
 public class AdminController {
     private ServiceSupreme serviceSupreme;
-    private AvisService avisService;
-    private FinanceService financeService;
 
     @GetMapping("")
     public String adminindex(Model model, @ModelAttribute("text") String text) {
@@ -29,19 +26,6 @@ public class AdminController {
         return "rootindex";
     }
 
-    @PostMapping("/avis/delete/{id}")
-    public String delete(Model model, @PathVariable("id") Long id) {
-        avisService.deleteById(id);
-        model.addAttribute("finances", avisService.alle());
-        return "redirect:/leaderindex/avis/liste";
-    }
-
-    @PostMapping("/finances/delete/{id}")
-    public String delete(Model model, @ModelAttribute("financeForm") FinanceForm form, @PathVariable("id") Long id) {
-        financeService.deleteById(id);
-        model.addAttribute("finances", financeService.alle());
-        return "redirect:/leaderindex/finances/uebersicht";
-    }
 
     @GetMapping("/home")
     public String home() {

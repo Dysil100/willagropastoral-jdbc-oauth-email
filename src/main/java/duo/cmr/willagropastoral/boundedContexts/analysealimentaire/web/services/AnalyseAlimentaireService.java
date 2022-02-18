@@ -2,8 +2,8 @@ package duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services
 
 import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain.apportNutritifs.Standard;
 import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain.ingredients.Ingredient;
-import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services.interfaces.repositories.IngredientRepository;
-import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services.interfaces.repositories.StandardRepository;
+import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services.repositories.IngredientRepository;
+import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services.repositories.StandardRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

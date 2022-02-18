@@ -1,7 +1,7 @@
 package duo.cmr.willagropastoral.boundedContexts.analysealimentaire.persistenz.standard;
 
 import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain.apportNutritifs.*;
-import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services.interfaces.repositories.StandardRepository;
+import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services.repositories.StandardRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 

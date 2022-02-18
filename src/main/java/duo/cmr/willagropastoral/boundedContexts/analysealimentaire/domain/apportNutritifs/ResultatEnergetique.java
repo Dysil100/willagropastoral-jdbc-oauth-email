@@ -1,7 +1,7 @@
 package duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain.apportNutritifs;
 
 
-import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services.interfaces.domaininterfaces.Resultat;
+import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain.interfaces.Resultat;
 import lombok.ToString;
 
 @ToString
@@ -19,7 +19,6 @@ public class ResultatEnergetique implements Resultat {
         this.nom = nom;
         this.appreciation = appreciation;
     }
-
 
     @Override
     public String getNom() {

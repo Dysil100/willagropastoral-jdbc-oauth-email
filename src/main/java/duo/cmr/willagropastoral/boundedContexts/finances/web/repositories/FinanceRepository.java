@@ -1,6 +1,6 @@
 package duo.cmr.willagropastoral.boundedContexts.finances.web.repositories;
 
-import duo.cmr.willagropastoral.boundedContexts.finances.web.service.domain.Finance;
+import duo.cmr.willagropastoral.boundedContexts.finances.forms.Finance;
 
 import java.util.List;
 
