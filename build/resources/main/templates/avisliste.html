@@ -47,11 +47,11 @@
             <td th:text="*{getComment()}">Commentaire</td>
             <td th:text="*{getEmail()}">Email</td>
             <td th:text="*{getTelephone()}">Téléphone</td>
-            <td th:text="*{getGeneratedAt()}">description</td>
+            <td th:text="*{getGeneratedAt().toLocalDate()}">description</td>
             <td>
                 <form method="post" th:action="@{/adminindex/avis/delete/{id}(id=*{getId()})}">
                     <input class="btn btn-outline-danger btn-sm fa fa-trash" type="submit" value="Suprimer">
-                </form>
+                </form></td>
         </tr>
         </tbody>
     </table>

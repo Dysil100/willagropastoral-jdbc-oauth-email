@@ -40,7 +40,6 @@ public class LeaderFinancesController {
         model.addAttribute("finances", financeService.alle());
         model.addAttribute("compteur", compteur);
         financeService.save(form.toFinance());
-        //return "financeübersicht";
         return "redirect:/leaderindex/finances/uebersicht";
     }
 

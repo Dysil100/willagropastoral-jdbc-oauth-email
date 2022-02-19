@@ -79,12 +79,12 @@
                     <td th:text="*{getBezeichnung()}">Type</td>
                     <td th:text="*{getSumme()}">Somme</td>
                     <td th:text="*{getDescription()}">description</td>
-                    <td th:text="*{getGeneratedAt()}">description</td>
+                    <td th:text="*{getGeneratedAt().toLocalDate()}">description</td>
                     <td th:text="*{getId()}">IdentificationsNummer</td>
                     <td>
                         <form method="post" th:action="@{/adminindex/finances/delete/{id}(id=*{getId()})}">
                             <input class="btn btn-outline-danger btn-sm fa fa-trash" type="submit" value="Suprimer">
-                        </form>
+                        </form></td>
                 </tr>
                 </tbody>
             </table>
