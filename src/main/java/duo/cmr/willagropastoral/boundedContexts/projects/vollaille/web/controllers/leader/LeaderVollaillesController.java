@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 
+import static duo.cmr.willagropastoral.boundedContexts.Routen.*;
+
 @Controller
 @AllArgsConstructor
 @RequestMapping("/leaderindex")
@@ -18,7 +20,7 @@ import java.time.LocalDate;
 public class LeaderVollaillesController {
     VollailleService vollailleService;
 
-    @GetMapping("/vollaille")
+    @GetMapping(VOLLAILLEUEBERSICHT)
     public String vollaille(Model model, @ModelAttribute("vollailleForm") VollailleForm form) {
         model.addAttribute("vollailleform", form);
         model.addAttribute("now", LocalDate.now().toString());
@@ -26,15 +28,15 @@ public class LeaderVollaillesController {
         return "vollaille";
     }
 
-    @PostMapping("/vollaille")
+    @PostMapping(VOLLAILLEUEBERSICHT)
     public String uebersichtPost(Model model, @ModelAttribute("vollailleform") VollailleForm form) {
         model.addAttribute("verlaeufe", vollailleService.alle());
         vollailleService.save(form.toVollailleVerlauf());
-        return "redirect:/leaderindex/vollaille";
+        return "redirect:/leaderindex" + VOLLAILLEUEBERSICHT;
     }
 
-    @GetMapping("/vollaille/modifier/{id}")
-    public String delete(Model model, @PathVariable("id") Long id) {
+    @GetMapping(VOLLAILLEMODIFIER)
+    public String modifier(Model model, @PathVariable("id") Long id) {
         model.addAttribute("now", LocalDate.now().toString());
         model.addAttribute("vollailleform", vollailleService.findBId(id));
         vollailleService.deleteById(id);
@@ -42,11 +44,11 @@ public class LeaderVollaillesController {
         return "vollaille";
     }
 
-    @PostMapping("/vollaille/delete/{id}")
+    @PostMapping(VOLLAILLEDELETE)
     public String delete(Model model, @ModelAttribute("financeForm") FinanceForm form, @PathVariable("id") Long id) {
         vollailleService.deleteById(id);
         model.addAttribute("verlaeufe", vollailleService.alle());
-        return "redirect:/leaderindex/vollaille";
+        return "redirect:/leaderindex" + VOLLAILLEUEBERSICHT;
     }
 
 }

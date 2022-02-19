@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import static duo.cmr.willagropastoral.boundedContexts.Routen.REGISTRATION;
+
 @Controller
 @AllArgsConstructor
 public class RegistrationController {
@@ -15,13 +17,13 @@ public class RegistrationController {
 
 // TODO: 02.02.22 Implement password recuperation;
 
-    @GetMapping("/registration")
+    @GetMapping(REGISTRATION)
     public String registerForm(Model model, @ModelAttribute("formular") RegistrationRequest request) {
         model.addAttribute("form", request);
         return "registration";
     }
 
-    @PostMapping("/registration")
+    @PostMapping(REGISTRATION)
     public String register(Model model, @ModelAttribute("form") RegistrationRequest request) {
         String register = registrationService.register(request);
         model.addAttribute("text", register);

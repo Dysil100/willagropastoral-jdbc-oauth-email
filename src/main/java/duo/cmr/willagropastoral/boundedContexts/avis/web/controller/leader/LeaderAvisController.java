@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
 
+import static duo.cmr.willagropastoral.boundedContexts.Routen.AVISLISTE;
+
 @Controller
 @AllArgsConstructor
 @RequestMapping("/leaderindex")
@@ -21,7 +23,7 @@ public class LeaderAvisController {
     private ServiceSupreme serviceSupreme;
     private AvisService avisService;
 
-    @GetMapping("/avis/liste")
+    @GetMapping(AVISLISTE)
     public String alle(Model model){
         model.addAttribute("alle", avisService.alle());
         return "avisliste";

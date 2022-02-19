@@ -9,22 +9,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import static duo.cmr.willagropastoral.boundedContexts.Routen.AVIS;
+
 @AllArgsConstructor
 @Controller
 public class AvisController {
 
     private AvisService avisService;
 
-    @GetMapping("/avis")
+    @GetMapping(AVIS)
     public String avis(Model model, @ModelAttribute("formAvis") FormAvis form){
         model.addAttribute("formavis", form);
         return "avis";
     }
 
-    @PostMapping("/avis")
+    @PostMapping(AVIS)
     public String avisPost(Model model, @ModelAttribute("formavis") FormAvis form){
         avisService.save(form.toAvis());
-        return "redirect:/avis";
+        return "redirect:" + AVIS;
     }
 
     @ModelAttribute("formAvis")

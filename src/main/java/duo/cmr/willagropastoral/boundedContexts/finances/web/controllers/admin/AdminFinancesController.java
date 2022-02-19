@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
 
+import static duo.cmr.willagropastoral.boundedContexts.Routen.FINANCESDELETE;
+import static duo.cmr.willagropastoral.boundedContexts.Routen.FINANCESUEBERSICHT;
+
 
 @Controller
 @AllArgsConstructor
@@ -25,18 +28,18 @@ public class AdminFinancesController {
     private FinanceService financeService;
 
 
-    @PostMapping("/finances/delete/{id}")
+    @PostMapping(FINANCESDELETE)
     public String delete(Model model, @ModelAttribute("financeForm") FinanceForm form, @PathVariable("id") Long id) {
         financeService.deleteById(id);
         model.addAttribute("finances", financeService.alle());
-        return "redirect:/leaderindex/finances/uebersicht";
+        return "redirect:/leaderindex" + FINANCESUEBERSICHT;
     }
 
     /*@PostMapping("/de leteall")
     public String deleteall(Model model, @ModelAttribute("financeForm") FinanceForm form) {
         financeService.deleteAll();
         model.addAttribute("finances", financeService.alle());
-        return "redirect:/finances/uebersicht";
+        return "redirect:" + FINANCESUEBERSICHT;
     }*/
     @ModelAttribute("text")
     String handle(Principal user) {

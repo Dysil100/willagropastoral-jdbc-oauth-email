@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
 
+import static duo.cmr.willagropastoral.boundedContexts.Routen.FINANCESUEBERSICHT;
+
 @Controller
 @AllArgsConstructor
 @RequestMapping("/leaderindex")
@@ -27,7 +29,7 @@ public class LeaderFinancesController {
 
     // TODO: 14.02.22 Route zum löschen und aktualiesieren implementieren und ein Root user für die Verwaltungen
 
-    @GetMapping("/finances/uebersicht")
+    @GetMapping(FINANCESUEBERSICHT)
     public String uebersicht(Model model, @ModelAttribute("form") FinanceForm form, @ModelAttribute("compteur") Compteur compteur) {
         model.addAttribute("finances", financeService.alle());
         model.addAttribute("financeForm", form);
@@ -35,12 +37,12 @@ public class LeaderFinancesController {
         return "financeübersicht";
     }
 
-    @PostMapping("/finances/uebersicht")
+    @PostMapping(FINANCESUEBERSICHT)
     public String uebersichtPost(Model model, @ModelAttribute("financeForm") FinanceForm form, @ModelAttribute("compteur") Compteur compteur) {
         model.addAttribute("finances", financeService.alle());
         model.addAttribute("compteur", compteur);
         financeService.save(form.toFinance());
-        return "redirect:/leaderindex/finances/uebersicht";
+        return "redirect:/leaderindex" + FINANCESUEBERSICHT;
     }
 
     @ModelAttribute("form")

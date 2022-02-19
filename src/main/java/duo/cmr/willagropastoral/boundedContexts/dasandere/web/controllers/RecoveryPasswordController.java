@@ -12,18 +12,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import static duo.cmr.willagropastoral.boundedContexts.Routen.MAILEINGABE;
+import static duo.cmr.willagropastoral.boundedContexts.Routen.PASSWORDEINGABE;
+
 // TODO: 05.02.22 Password recovery implemet endlich fertig machen
 @Controller
 @AllArgsConstructor
 public class RecoveryPasswordController {
     private final RegistrationService registrationService;
     ServiceSupreme serviceSupreme;
-    @GetMapping("/maileingabe")
+    @GetMapping(MAILEINGABE)
     public String maileingabe(){
         return "maileingabe";
     }
 
-    @PostMapping("/maileingabe")
+    @PostMapping(MAILEINGABE)
     public String maileingabePost(Model model, String email){
         model.addAttribute("text", registrationService.recoverPassword(email));
         return "notifications";
@@ -38,13 +41,13 @@ public class RecoveryPasswordController {
         return "passwordeingabe";
     }
 
-    @GetMapping("/passwordeingabe")
+    @GetMapping(PASSWORDEINGABE)
     public String passwordeingabe(Model model, MailPasswordPaar mailPasswordPaar) {
         model.addAttribute("form", mailPasswordPaar);
         return "passwordeingabe";
     }
 
-    @PostMapping("/passwordeingabe")
+    @PostMapping(PASSWORDEINGABE)
     public String passwordeingabePost(Model model, MailPasswordPaar mailPasswordPaar){
         registrationService.updatePassword(mailPasswordPaar.getPassword(), mailPasswordPaar.getEmail());
         model.addAttribute("text", "Okay");
