@@ -41,8 +41,8 @@
             <form th:object="${vollailleform}" method="post" th:action="@{/leaderindex/vollaille}">
                 <div class="form-group">
                     <h3> Ajoutez les Resultats de ce jours</h3>
-                    <div th:insert="fragments/general.html :: inputfield(field='alveole', name='Alveéoles')"></div>
-                    <div th:insert="fragments/general.html :: inputfield(field='consommation', name='Consommation (en sac de 50 Kg)')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='alveole', name='Production')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='consommation', name='Consommation')"></div>
                     <div th:insert="fragments/general.html :: textinput(field='appreciation', name='Brieve Appreciation générale de la journée', placeholder='Brieve Appreciation générale de la journée')"></div>
                 </div>
                 <div class="ui-button">
@@ -53,13 +53,14 @@
 
 
         <div class="transbox">
+            <h3>Activité journalière</h3>
             <table class="table table-hover" th:object="${verlaeufe}">
                 <thead>
                 <tr>
                     <th scope="col">Date</th>
                     <th scope="col">Consommation</th>
-                    <th scope="col">Productionn</th>
-                    <th scope="col">Date de l'action</th>
+                    <th scope="col">Production</th>
+                    <th scope="col">Date du jour</th>
                     <th scope="col">Modification</th>
                     <th scope="col">Supression</th>
                 </tr>
@@ -83,6 +84,9 @@
                 </tr>
                 </tbody>
             </table>
+        </div>
+        <div class="transbox container-fluid">
+            <h3>Note: Consommation mesuré en 'Sac de 50 Kg' et production mésuré en 'alvéoles'</h3>
         </div>
         <!--form method="post" th:action="@{/finances/deleteall}">
             <input class="btn btn-outline-danger btn-sm" type="submit" value="Suprimer tout">
