@@ -43,7 +43,7 @@
                     <h3> Ajoutez les Resultats de ce jours</h3>
                     <div th:insert="fragments/general.html :: inputfield(field='alveole', name='Production')"></div>
                     <div th:insert="fragments/general.html :: inputfield(field='consommation', name='Consommation')"></div>
-                    <div th:insert="fragments/general.html :: textinput(field='appreciation', name='Brieve Appreciation générale de la journée', placeholder='Brieve Appreciation générale de la journée')"></div>
+                    <div th:insert="fragments/general.html :: textinput(field='appreciation', name='Appreciation journaliere', placeholder='Brieve Appreciation générale de la journée')"></div>
                 </div>
                 <div class="ui-button">
                     <input class="btn btn-primary" type="submit" value="Ajouter"> <br><br>
@@ -60,7 +60,7 @@
                     <th scope="col">Date</th>
                     <th scope="col">Consommation</th>
                     <th scope="col">Production</th>
-                    <th scope="col">Date du jour</th>
+                    <th scope="col">Appreciation</th>
                     <th scope="col">Modification</th>
                     <th scope="col">Supression</th>
                 </tr>
