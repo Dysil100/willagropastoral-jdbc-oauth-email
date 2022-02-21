@@ -27,7 +27,7 @@
     <link rel="icon" type="image/png" href="/favicon.png"/>
     <link rel="icon" type="image/png" href="https://example.com/favicon.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
+    <link rel="stylesheet" th:href="@{/css/styles.css}" type="text/css" href="../static/css/styles.css" />
 
 </head>
 <body>
@@ -200,7 +200,7 @@
         <p>&copy; 2022 Will-Agropastoral</p>
     </div>
 </footer>
-<h3 th:fragment="avis">Un <a th:href="@{/avis}"> Avis</a> de votre part est bien entendu le Bienvenu</h3>
+<h3 th:fragment="avis" class="transbox">Un <a th:href="@{/avis}"> Avis</a> de votre part est bien entendu le Bienvenu</h3>
 
 </body>
 <script th:fragment="myFunction-js">
