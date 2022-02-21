@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Check Mails</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
 </head>
 <body>
 <div class="container-fluid">
 <header th:replace="fragments/general.html :: userheader"> </header>
-    <h1 th:if="${text} != null" th:text="${text}" class="btn-primary">Please check your mails</h1>
+    <h1 th:if="${text} != null" th:text="${text}" class="alert-success">Please check your mails</h1>
     <h1 class="btn-primary"><a th:href="@{/}">Home</a></h1>
     <footer th:replace="fragments/general.html :: footer"> </footer>
 </div>

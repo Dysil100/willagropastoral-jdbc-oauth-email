@@ -6,29 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <style>
-        .background {
-            background-image: url('http://localhost/images/willagropastoral-logo.png');
-        }
-
-        div.transbox {
-            background-color: #ffffff;
-            opacity: 0.9;
-        }
-
-        body, h1, h2 {
-            align-self: center;
-            align-content: center;
-        }
-
-        div.transbox {
-            margin: 10%;
-            font-weight: bold;
-            color: black;
-            opacity: 85%;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css" />
 </head>
 <body>
 <div class="container-fluid background">
@@ -38,9 +16,9 @@
         <div class="transbox">
             <h2>Le Compteur financier de la Structure s'eleve à: <span class="alert alert-success"
                                                                        th:if="${compteur.summe} > 0.0"
-                                                                       th:text="${compteur.getSumme()}"> la somme de</span>
+                                                                       th:text="${compteur.getSumme()}"><h3> la somme de </h3></span>
                 <span class="alert alert-warning" th:if="${compteur.getSumme()} <= 0.0"
-                      th:text="${compteur.getSumme()}">somme</span> - Depuis la date du <span
+                      th:text="${compteur.getSumme()}"><h3>somme</h3></span> - Depuis la date du <span
                         th:text="${compteur.getStartDate()}">date de départ</span></h2>
         </div>
         <div class="newfinance transbox">

@@ -21,6 +21,8 @@ import static duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.su
 @AllArgsConstructor
 public class RegistrationService {
 
+    // TODO: 21.02.22 localhot to https://willagropastoral.top change for production
+
     @Value("${willagropastoral.admins}")
     private final List<String> admins;
     @Value("${willagropastoral.leaders}")
