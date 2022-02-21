@@ -10,6 +10,71 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
+
+        /* The switch - the box around the slider */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        /* The slider */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+
         p, h4, h3, h2, select, h1, table {
             border: #005cbf;
             margin-left: 10%;
@@ -51,24 +116,34 @@
 </head>
 <body class="background">
 <div class="container-fluid">
-<header th:replace="fragments/general.html :: userheader"> </header>
-    <div th:object="${form}" class="container-fluid transbox">
-        <div class="row">
-            <h1 class="title form-text">Verification de Proportions Alimentaires pour <span th:text="${form.getType()}"> Type d'alimenation</span>
+    <header th:replace="fragments/general.html :: userheader"></header>
+    <div th:object="${form}" class="container-fluid">
+        <div>
+            <h1 class="title form-text transbox">Verification de Proportions Alimentaires pour <span
+                    th:text="${form.getType()}"> Type d'alimenation</span>
                 <p class="alert alert-warning" th:if="${form.error()} != null" th:text="${form.error()}">Entrez
                     exactement une valeur supperieur ou egal a Zero dans chaque Champ, pour une meilleure experience
                     utilisateur</p>
             </h1>
+
             <br>
-            <div class="block">
+            <div class="transbox">
                 <form method="post" th:action="@{/analyse}">
+                    <div class="container-fluid">
+                        <h2>Choisir le type d'élévage</h2>
+                        <nav class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                            <div th:insert="fragments/general.html :: switchinput(field='porcins', name='_  Porcins  _')"></div>
+                            <div th:insert="fragments/general.html :: switchinput(field='pondeuses', name='_  Pondeuses  _')"></div>
+                            <div th:insert="fragments/general.html :: switchinput(field='chaires', name='_  Chaires  _')"></div>
+                        </nav>
+                    </div>
                     <div class="mb-3">
-                        <h2><label class="form-select" for="type">Choisir le type d'elévage</label></h2>
+                        <h2><label class="form-select" for="type">Choisir le type d'aliment</label></h2>
                         <select class="form-select form-select-lg" aria-label="Default select example" id="type"
                                 name="type" th:field="*{type}" onchange="this.form.submit()">
                             <option selected th:each="typ : ${form.getMapStandards()}" th:text="${typ.getKey()}"
                                     th:value="${typ.getKey()}">Choisir
-                                le type d'elévage
+                                le type d'aliment
                             </option>
                         </select>
                     </div>
@@ -101,17 +176,11 @@
 
                     <br>
                     <input class="btn btn-primary" type="submit" value="Calcul Analytique"> <br><br>
+                    <div th:insert="fragments/general.html :: switchinput(field='zeigen', name='Affichez')"></div>
 
-                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-                        <input type="checkbox" class="btn-check"
-                               id="zeigen" name="zeigen" autocomplete="off"
-                               onchange="this.form.submit()"
-                               th:checked="*{zeigen}">
-                        <label class="btn btn-outline-primary" for="zeigen">Afficher Les Resultats</label>
-                    </div>
                 </form>
             </div>
-            <div class="block" th:if="*{isZeigen()}">
+            <div class="transbox" th:if="*{isZeigen()}">
                 <h2>Resultat du Calcul analytique:</h2>
                 <!-- die 2 tabelle mit thymeleaf fragment lösen -->
                 <form>
@@ -130,7 +199,7 @@
         <p>Un service de la Structure agricole WillAgropastoral.</p>
         <div th:replace="fragments/general.html :: avis"></div>
     </div>
-        <footer th:replace="fragments/general.html :: footer"> </footer>
+    <footer th:replace="fragments/general.html :: footer"></footer>
 </div>
 </body>
 <script>

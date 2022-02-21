@@ -43,6 +43,22 @@ public class CustomAnalyseForm {
     private Double caco3;
     private Double CMAV;
 
+    private Double lysineFinal;
+    private Double methionineFinal;
+    private Double proteineBruteFinal;
+    private Double energieMetabolisableFinal;
+
+    private List<ResultatEnergetique> resultats;
+    private Set<ResultatEnergetique> resultatsStandards;
+
+    boolean zeigen;
+    private boolean pondeuses;
+    private boolean porcins;
+    private boolean chaires;
+
+
+    public String filterParam;
+
     public CustomAnalyseForm(Double mais, Double sonDeBle, Double farineDeSoja, Double farineDePoisson,
                              Double tourteauDePalmiste, Double tourteauDeCoton, Double tourteauDarachide,
                              Double sulfateDeFer, Double belgotox, Double belgofoxs, Double coquilleDeMer,
@@ -73,6 +89,11 @@ public class CustomAnalyseForm {
         this.CMAV = CMAV;
 
         this.zeigen = false;
+        this.pondeuses = false;
+        this.chaires = false;
+        this.porcins = false;
+        this.filterParam = "Porcins";
+
         this.lysineFinal = .0;
         this.methionineFinal = .0;
         this.proteineBruteFinal = .0;
@@ -80,14 +101,6 @@ public class CustomAnalyseForm {
         this.type = "Porcins: Prédémarrage Porc (de 5 à 10 Jours)";
     }
 
-    Double lysineFinal;
-    Double methionineFinal;
-    Double proteineBruteFinal;
-    Double energieMetabolisableFinal;
-
-    private List<ResultatEnergetique> resultats;
-    private Set<ResultatEnergetique> resultatsStandards;
-    boolean zeigen;
 
     public CustomAnalyseForm() {
         this(0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
@@ -96,11 +109,31 @@ public class CustomAnalyseForm {
     }
 
 
+    public List<String> getTypesDelevage() {
+        return List.of("Porcins", "Pondeuses", "Chaires");
+    }
+
     public HashMap<String, Standard> getMapStandards() {
         HashMap<String, Standard> mapStandards = new HashMap<>();
-        analyseAlimentaireService.alleStandards().forEach(s -> mapStandards.put(s.description(), s));
+        analyseAlimentaireService.alleStandards().forEach(s -> {
+            getFilterParams().forEach(p -> {
+                if (s.description().contains(p)) {
+                    mapStandards.put(s.description(), s);
+                }
+            });
+        });
         return mapStandards;
     }
+
+    private List<String> getFilterParams() {
+        List<String> params = new ArrayList<>();
+        Map<String, Boolean> booleanToString = Map.of("Porcins", porcins, "Pondeuses", porcins, "Chaires", chaires);
+        booleanToString.forEach((k, v) -> {
+            if (v) params.add(k);
+        });
+        return params;
+    }
+
 
     public Standard getStandard() {
         return getMapStandards().get(getType());
