@@ -190,8 +190,13 @@ a[href$=".jpg"]{
 
 
 *{
-  font-family: fantasy;
+  font-family: font;
 }
+
+h1{
+  font-family: "Apple Braille";
+}
+
 .align-content-md-start {
   color: deepskyblue;
   font-family: fantasy;

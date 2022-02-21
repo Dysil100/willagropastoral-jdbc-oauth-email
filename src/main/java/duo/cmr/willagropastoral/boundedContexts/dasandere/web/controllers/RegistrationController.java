@@ -25,6 +25,7 @@ public class RegistrationController {
 
     @PostMapping(REGISTRATION)
     public String register(Model model, @ModelAttribute("form") RegistrationRequest request) {
+        request.setEmail(request.getEmail());
         String register = registrationService.register(request);
         model.addAttribute("text", register);
         return "notifications";

@@ -16,7 +16,7 @@
     <header th:replace="fragments/general.html :: userheader"></header>
     <div th:object="${form}" class="container-fluid">
         <div>
-            <h1 class="title form-text transbox">Verification de Proportions Alimentaires pour <span
+            <h1 class="title transbox">Verification de Proportions Alimentaires pour <span
                     th:text="${form.getType()}"> Type d'alimenation</span>
                 <p class="alert alert-warning" th:if="${form.error()} != null" th:text="${form.error()}">Entrez
                     exactement une valeur supperieur ou egal a Zero dans chaque Champ, pour une meilleure experience
@@ -35,7 +35,7 @@
                         </nav>
                     </div>
                     <div class="mb-3">
-                        <h2><label class="form-select" for="type">Choisir le type d'aliment</label></h2>
+                        <h2><label class="form-control" for="type">Choisir le type d'aliment</label></h2>
                         <select class="form-select form-select-lg" aria-label="Default select example" id="type"
                                 name="type" th:field="*{type}" onchange="this.form.submit()">
                             <option selected th:each="typ : ${form.getMapStandards()}" th:text="${typ.getKey()}"
