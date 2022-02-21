@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import static duo.cmr.willagropastoral.boundedContexts.Routen.REGISTRATION;
+import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.REGISTRATION;
 
 @Controller
 @AllArgsConstructor

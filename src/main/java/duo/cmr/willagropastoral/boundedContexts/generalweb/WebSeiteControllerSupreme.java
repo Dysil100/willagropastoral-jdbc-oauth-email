@@ -4,8 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import static duo.cmr.willagropastoral.boundedContexts.Routen.CONTACTS;
-import static duo.cmr.willagropastoral.boundedContexts.Routen.TELECHARGER;
+import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.CONTACTS;
+import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.TELECHARGER;
 
 @Controller
 public class WebSeiteControllerSupreme {

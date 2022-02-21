@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import static duo.cmr.willagropastoral.boundedContexts.Routen.AVIS;
+import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.AVIS;
 
 @AllArgsConstructor
 @Controller

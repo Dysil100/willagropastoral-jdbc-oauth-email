@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import static duo.cmr.willagropastoral.boundedContexts.Routen.MAILEINGABE;
-import static duo.cmr.willagropastoral.boundedContexts.Routen.PASSWORDEINGABE;
+import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.MAILEINGABE;
+import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.PASSWORDEINGABE;
 
 // TODO: 05.02.22 Password recovery implemet endlich fertig machen
 @Controller

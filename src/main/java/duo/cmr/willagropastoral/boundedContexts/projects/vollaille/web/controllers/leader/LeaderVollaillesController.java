@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 
-import static duo.cmr.willagropastoral.boundedContexts.Routen.*;
+import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.*;
 
 @Controller
 @AllArgsConstructor

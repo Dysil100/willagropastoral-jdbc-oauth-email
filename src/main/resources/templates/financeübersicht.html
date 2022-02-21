@@ -28,11 +28,7 @@
                     <div th:insert="fragments/general.html :: inputfield(field='summe', name='Somme')"></div>
                     <div th:insert="fragments/general.html :: textinput(field='description', name='Description', placeholder='Description de l\'action finaciere')"></div>
                 </div>
-                <div class="form-check">
-                    <input th:checked="*{eingabe}" type="checkbox"
-                           class="btn-check" name="eingabe" id="eingabe">
-                    <label class="btn btn-outline-primary" for="eingabe">Gains ?</label>
-                </div>
+                <div th:insert="fragments/general.html :: switchinput0(field='eingabe', name='Gains ?')"></div>
 
                 <div class="ui-button">
                     <input class="btn btn-primary" type="submit" value="Ajouter"> <br><br>

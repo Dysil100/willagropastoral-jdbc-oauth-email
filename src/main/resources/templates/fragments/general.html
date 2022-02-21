@@ -168,6 +168,17 @@
     <label class="btn btn-outline-primary" th:for="${field}" th:text="${name}">Gains ?</label>
 </div>
 
+<div th:fragment="switchinput0(field, name)">
+    <label th:for="${field}" th:text="${name}" >Affichez les resultats</label>
+    <div th:id="${field}">
+        <label class="switch">
+            <input type="checkbox"
+                   th:id="${field}" th:name="${field}" autocomplete="off"
+                   th:checked="*{__${field}__}">
+            <span class="slider round"></span>
+        </label>
+    </div>
+</div>
 <div th:fragment="switchinput(field, name)">
     <label th:for="${field}" th:text="${name}" >Affichez les resultats</label>
     <div th:id="${field}">

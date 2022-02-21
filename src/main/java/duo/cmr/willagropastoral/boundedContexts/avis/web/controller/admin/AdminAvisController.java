@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
 
-import static duo.cmr.willagropastoral.boundedContexts.Routen.AVISLISTE;
-import static duo.cmr.willagropastoral.boundedContexts.Routen.DELETEAVIS;
+import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.AVISLISTE;
+import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.DELETEAVIS;
 
 
 @Controller
