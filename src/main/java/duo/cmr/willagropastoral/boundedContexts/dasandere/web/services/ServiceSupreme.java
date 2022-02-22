@@ -6,6 +6,8 @@ import duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.subservic
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class ServiceSupreme {
@@ -23,5 +25,9 @@ public class ServiceSupreme {
 
     public boolean tokenExist(String token) {
         return confirmationTokenService.getToken(token).isPresent();
+    }
+
+    public List<AppUser> alleAppUsers() {
+        return appUserService.alleUsers();
     }
 }

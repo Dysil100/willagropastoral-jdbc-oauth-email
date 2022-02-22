@@ -161,6 +161,10 @@
                         <a class="nav-link badge-info text-center"
                            th:href="@{/leaderindex/finances/uebersicht}">Finances</a>
                     </li>
+                    <li th:if="${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'" class="nav-item">
+                        <a class="nav-link badge-info text-center"
+                           th:href="@{/adminindex/userliste}">UserListe</a>
+                    </li>
                 </span>
             </ul>
             <form class="form-inline my-2 my-lg-0" disabled>

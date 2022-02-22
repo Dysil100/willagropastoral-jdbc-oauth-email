@@ -13,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -113,7 +114,7 @@ public class AppUserService implements UserDetailsService {
                         Click on the below link to activate the password recover.
                         """;
                 emailSender.buildAndSend(name, getLinkDeleteWith(token), email, "Password recovery", bodyMsg);
-                return "ready for reset the password of " + email;
+                return "ready for reset the password of " + email + "<br> Check your mails";
             } else {
                 return "No token exist for " + email;
             }
@@ -153,4 +154,7 @@ public class AppUserService implements UserDetailsService {
         confirmationTokenService.updateByUsername(entity.getUsername());
     }
 
+    public List<AppUser> alleUsers() {
+        return appUserRepository.alle();
+    }
 }

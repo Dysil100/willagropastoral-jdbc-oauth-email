@@ -5,7 +5,11 @@ import duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.interface
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Repository
 @AllArgsConstructor
@@ -40,6 +44,13 @@ public class AppUserRepositoryImpl implements AppUserRepository {
     @Override
     public void updatePassword(String encode, String email) {
         daoAppUserRepository.updatePassword(encode, email);
+    }
+
+    @Override
+    public List<AppUser> alle() {
+        List<AppUser> alle = new ArrayList<>();
+        daoAppUserRepository.findAll().forEach(e -> alle.add(toAppUser(e)));
+        return alle.stream().sorted(Comparator.comparing(AppUser::getEmail, Comparator.naturalOrder())).collect(Collectors.toList());
     }
 
     public AppUser toAppUser(AppUserEntity entity) {

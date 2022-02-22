@@ -2,6 +2,7 @@ package duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.interfac
 
 import duo.cmr.willagropastoral.boundedContexts.dasandere.domain.model.appsuer.AppUser;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -17,4 +18,6 @@ public interface AppUserRepository {
     void disableAppUser(String email);
 
     void updatePassword(String encode, String email);
+
+    List<AppUser> alle();
 }
