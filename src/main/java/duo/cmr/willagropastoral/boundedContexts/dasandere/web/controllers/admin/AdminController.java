@@ -23,7 +23,8 @@ public class AdminController {
     @GetMapping("")
     public String adminindex(Model model, @ModelAttribute("text") String text) {
         model.addAttribute("text", text);
-        return "rootindex";
+        return "index";
+        //return "rootindex";
     }
 
 

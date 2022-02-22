@@ -22,13 +22,14 @@ public class LeaderController {
     private AvisService avisService;
 
     @GetMapping("")
-    public String leaderindex(Model model, @ModelAttribute("text") String text){
+    public String leaderindex(Model model, @ModelAttribute("text") String text) {
         model.addAttribute("text", text);
-        return "rootindex";
+        return "index";
+        //return "rootindex";
     }
 
     @GetMapping("/home")
-    public String home(Model model){
+    public String home(Model model) {
         return "home";
     }
 
@@ -36,5 +37,6 @@ public class LeaderController {
     String handle(Principal user) {
         AppUser userByEmail = serviceSupreme.getUserByEmail(user.getName());
         System.out.println(userByEmail.getRole());
-        return "au Leader " +userByEmail.getFirstName();    }
+        return "au Leader " + userByEmail.getFirstName();
+    }
 }
