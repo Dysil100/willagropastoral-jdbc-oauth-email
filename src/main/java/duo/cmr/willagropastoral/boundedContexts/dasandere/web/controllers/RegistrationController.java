@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Locale;
+
 import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.REGISTRATION;
 
 @Controller
@@ -25,16 +27,15 @@ public class RegistrationController {
 
     @PostMapping(REGISTRATION)
     public String register(Model model, @ModelAttribute("form") RegistrationRequest request) {
-        request.setEmail(request.getEmail());
-        String register = registrationService.register(request);
+        request.setEmail(request.getEmail().toLowerCase(Locale.ROOT));
+        String register = "Notifications: " +  registrationService.register(request);
         model.addAttribute("text", register);
         return "notifications";
     }
 
     @GetMapping("/registration/confirm")
     public String confirm(Model model, @RequestParam("token") String token) {
-        String notif = registrationService.confirmToken(token);
-        System.out.println(notif);
+        String notif = "Notifications: " + registrationService.confirmToken(token);
         model.addAttribute("text", notif);
         return "notifications";
     }

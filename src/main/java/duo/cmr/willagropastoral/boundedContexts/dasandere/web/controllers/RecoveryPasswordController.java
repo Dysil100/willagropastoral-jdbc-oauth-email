@@ -20,25 +20,31 @@ import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.PASSWORDEIN
 @AllArgsConstructor
 public class RecoveryPasswordController {
     private final RegistrationService registrationService;
-    ServiceSupreme serviceSupreme;
+    private ServiceSupreme serviceSupreme;
+
     @GetMapping(MAILEINGABE)
-    public String maileingabe(){
+    public String maileingabe() {
         return "maileingabe";
     }
 
     @PostMapping(MAILEINGABE)
-    public String maileingabePost(Model model, String email){
-        model.addAttribute("text", registrationService.recoverPassword(email));
+    public String maileingabePost(Model model, String email) {
+        model.addAttribute("text", "Notifications: " + registrationService.recoverPassword(email));
         return "notifications";
     }
 
     @GetMapping("/delete/confirm")
     public String resetpasword(Model model, @RequestParam("token") String token) {
-        //registrationService.confirmToken(token);
         MailPasswordPaar mailPasswordPaar = new MailPasswordPaar();
-        mailPasswordPaar.setEmail(serviceSupreme.getUserByToken(token).getUsername());
-        model.addAttribute("form", mailPasswordPaar);
-        return "passwordeingabe";
+        // TODO: 22.02.22 diese Logik im service supreme verstecken und die restliche routen in er Klasse route als statish verstecken für dry-prinzip
+        if (serviceSupreme.tokenExist(token)) {
+            mailPasswordPaar.setEmail(serviceSupreme.getUserByToken(token).getUsername()); // hidden inpu
+            model.addAttribute("form", mailPasswordPaar);
+            return "passwordeingabe";
+        } else {
+            model.addAttribute("text", "Link expired");
+            return "notifications";
+        }
     }
 
     @GetMapping(PASSWORDEINGABE)
@@ -48,9 +54,9 @@ public class RecoveryPasswordController {
     }
 
     @PostMapping(PASSWORDEINGABE)
-    public String passwordeingabePost(Model model, MailPasswordPaar mailPasswordPaar){
+    public String passwordeingabePost(Model model, MailPasswordPaar mailPasswordPaar) {
         registrationService.updatePassword(mailPasswordPaar.getPassword(), mailPasswordPaar.getEmail());
-        model.addAttribute("text", "Okay");
+        model.addAttribute("text", "Notifications: Password updated with succes");
         return "notifications";
     }
 

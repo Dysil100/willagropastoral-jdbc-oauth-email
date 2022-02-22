@@ -20,4 +20,8 @@ public class ServiceSupreme {
     public AppUser getUserByToken(String token) {
        return (AppUser) appUserService.loadUserByUsername(confirmationTokenService.getToken(token).get().getUsername());
     }
+
+    public boolean tokenExist(String token) {
+        return confirmationTokenService.getToken(token).isPresent();
+    }
 }

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WillAgropastoral-Analyse-ALimentaire</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" type="text/css" href="../static/css/styles.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body class="background">
+<div class="container-fluid">
+    <header th:replace="fragments/general.html :: indexheader"></header>
+    <div th:object="${form}" class="container-fluid">
+        <div>
+            <h1 class="title transbox">Verification de Proportions Alimentaires pour <span
+                    th:text="${form.getType()}"> Type d'alimenation</span>
+                <p class="alert alert-warning" th:if="${form.error()} != null" th:text="${form.error()}">Entrez
+                    exactement une valeur supperieur ou egal a Zero dans chaque Champ, pour une meilleure experience
+                    utilisateur</p>
+            </h1>
+
+            <br>
+            <div class="transbox">
+                <form method="post" th:action="@{/analyse}">
+                    <div class="container-fluid">
+                        <h2>Choisir le type d'élévage</h2>
+                        <nav class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                            <div th:insert="fragments/general.html :: switchinput(field='porcins', name='_  Porcins  _')"></div>
+                            <div th:insert="fragments/general.html :: switchinput(field='pondeuses', name='_  Pondeuses  _')"></div>
+                            <div th:insert="fragments/general.html :: switchinput(field='chaires', name='_  Chaires  _')"></div>
+                        </nav>
+                    </div>
+                    <div class="mb-3">
+                        <h2><label class="form-control" for="type">Choisir le type d'aliment</label></h2>
+                        <select class="form-select form-select-lg" aria-label="Default select example" id="type"
+                                name="type" th:field="*{type}" onchange="this.form.submit()">
+                            <option selected th:each="typ : ${form.getMapStandards()}" th:text="${typ.getKey()}"
+                                    th:value="${typ.getKey()}">Choisir
+                                le type d'aliment
+                            </option>
+                        </select>
+                    </div>
+
+                    <h2>entrer les valeurs alimentaire disposnible (en Kg)</h2>
+
+                    <div th:insert="fragments/general.html :: inputfield(field='mais', name='Maïs')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='sonDeBle', name='Son de blé')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='farineDeSoja', name='Farine de soja 49%')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='farineDePoisson', name='Farine de poisson 65%')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='tourteauDePalmiste', name='Tourteau de palmiste ')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='tourteauDeCoton', name='Tourteau de coton')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='tourteauDarachide', name='Tourteau d\'rachide')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='sulfateDeFer', name='Sulfate de fer')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='belgotox', name='Belgotoxs')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='belgofoxs', name='Belgofoxs')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='belgoPorcs', name='Belgo-Porcs 10%')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='coquilleDeMer', name='Coquille de mer')"></div>
+                    <!-- neuen werten-->
+                    <div th:insert="fragments/general.html :: inputfield(field='sorgho', name='Sorgho')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='millet', name='Millet')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='tourteauDeCoprah', name='Tourteau de Coprah')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='sonDeRiz', name='Son de Riz')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='farineDos', name='Farine d\'os')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='farineDeSang', name='Farine de Sang')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='drecheBrasserie', name='Dréches de Brasseries')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='premix', name='Premix')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='caco3', name='Caco3')"></div>
+                    <div th:insert="fragments/general.html :: inputfield(field='CMAV', name='CMAV')"></div>
+
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="Calcul Analytique"> <br><br>
+                    <div th:insert="fragments/general.html :: switchinput(field='zeigen', name='Affichez')"></div>
+
+                </form>
+            </div>
+            <div class="transbox" th:if="*{isZeigen()}">
+                <h2>Resultat du Calcul analytique:</h2>
+                <!-- die 2 tabelle mit thymeleaf fragment lösen -->
+                <form>
+                    <div th:replace="fragments/general.html :: tableBody(tableData=${form.getResultats()})"></div>
+                    <br>
+                    <h4>Resultat Standard Pour :<span th:text="${form.getType()}"> type d'élévage</span></h4>
+                    <div th:replace="fragments/general.html :: tableBody(tableData=${form.getResultatsStandards()})"></div>
+                    <br>
+                    <h3>Note:</h3>
+                    <p>L'appreciation 'OK' admet une marge d'erreur de plus ou moins 10% de la valeur standard</p>
+                </form>
+
+            </div>
+        </div>
+        <h3>Note:</h3>
+        <p class="transbox">Un service de la Structure agricole WillAgropastoral.</p>
+        <div th:replace="fragments/general.html :: avis"></div>
+    </div>
+    <footer th:replace="fragments/general.html :: footer"></footer>
+</div>
+</body>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "navbar-expand") {
+            x.className += "navbar-expand-md";
+        } else {
+            x.className = "navbar-expand";
+        }
+    }
+</script>
+</html>

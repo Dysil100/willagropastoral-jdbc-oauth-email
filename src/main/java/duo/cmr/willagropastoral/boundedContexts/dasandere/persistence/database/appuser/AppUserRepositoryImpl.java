@@ -38,8 +38,8 @@ public class AppUserRepositoryImpl implements AppUserRepository {
     }
 
     @Override
-    public void setPassword(String encode, String email) {
-        daoAppUserRepository.setPassword(encode, email);
+    public void updatePassword(String encode, String email) {
+        daoAppUserRepository.updatePassword(encode, email);
     }
 
     public AppUser toAppUser(AppUserEntity entity) {

@@ -18,19 +18,22 @@ public class AvisController {
     private AvisService avisService;
 
     @GetMapping(AVIS)
-    public String avis(Model model, @ModelAttribute("formAvis") FormAvis form){
+    public String avis(Model model, @ModelAttribute("formAvis") FormAvis form) {
         model.addAttribute("formavis", form);
         return "avis";
     }
 
     @PostMapping(AVIS)
-    public String avisPost(Model model, @ModelAttribute("formavis") FormAvis form){
+    public String avisPost(Model model, @ModelAttribute("formavis") FormAvis form, @ModelAttribute("email") String email) {
+        System.out.println(form);
+        form.setEmail(email);
         avisService.save(form.toAvis());
         return "redirect:" + AVIS;
     }
 
     @ModelAttribute("formAvis")
-    FormAvis formavis(){
+    FormAvis formavis() {
         return new FormAvis(null, null, null);
     }
+
 }

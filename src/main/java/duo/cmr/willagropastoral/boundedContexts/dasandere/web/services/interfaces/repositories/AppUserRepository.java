@@ -16,5 +16,5 @@ public interface AppUserRepository {
 
     void disableAppUser(String email);
 
-    void setPassword(String encode, String email);
+    void updatePassword(String encode, String email);
 }

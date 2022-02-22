@@ -38,16 +38,23 @@ public class ConfirmationTokenService {
         confirmationTokenRepository.deleteByUsername(email);
     }
 
-    public void resetTokenFor(String email) {
+
+    /**
+     * @param email : generat a new token
+     */
+    public void updateTokenFor(String email) {
         deleteByUsername(email);
-        saveConfirmationToken(
-                new ConfirmationTokenEntity(
-                        UUID.randomUUID().toString(), dateToString(LocalDateTime.now()),
-                        dateToString(LocalDateTime.now().plusMinutes(15)), email
-                )
+        ConfirmationTokenEntity token = new ConfirmationTokenEntity(
+                UUID.randomUUID().toString(), dateToString(LocalDateTime.now()),
+                dateToString(LocalDateTime.now().plusMinutes(15)), email
         );
+        saveConfirmationToken(token);
     }
 
+
+    /**
+     * @param email update the value of a token with username :email
+     */
     public void updateByUsername(String email) {
         confirmationTokenRepository.updateByUsername(UUID.randomUUID().toString(), email);
     }
