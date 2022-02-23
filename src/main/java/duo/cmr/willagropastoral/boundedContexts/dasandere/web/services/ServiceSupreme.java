@@ -1,6 +1,9 @@
 package duo.cmr.willagropastoral.boundedContexts.dasandere.web.services;
 
 import duo.cmr.willagropastoral.boundedContexts.dasandere.domain.model.appsuer.AppUser;
+import duo.cmr.willagropastoral.boundedContexts.dasandere.persistence.database.appuser.AppUserEntity;
+import duo.cmr.willagropastoral.boundedContexts.dasandere.persistence.database.archiv.UserArchivEntity;
+import duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.interfaces.repositories.UserArchivRepository;
 import duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.subservices.AppUserService;
 import duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.subservices.ConfirmationTokenService;
 import lombok.AllArgsConstructor;
@@ -29,5 +32,9 @@ public class ServiceSupreme {
 
     public List<AppUser> alleAppUsers() {
         return appUserService.alleUsers();
+    }
+
+    public List<UserArchivEntity> alleUsersArchiv() {
+        return appUserService.alleUsersArchiv();
     }
 }

@@ -29,9 +29,8 @@ public class AdminController {
 
     @GetMapping("/userliste")
     public String userliste(Model model, @ModelAttribute("text") String text) {
-        model.addAttribute("alle", serviceSupreme.alleAppUsers());
+        model.addAttribute("alle", serviceSupreme.alleUsersArchiv());
         return "userliste";
-        //return "rootindex";
     }
 
 

@@ -1,6 +1,7 @@
 package duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.subservices;
 
 import duo.cmr.willagropastoral.boundedContexts.dasandere.domain.model.appsuer.AppUser;
+import duo.cmr.willagropastoral.boundedContexts.dasandere.persistence.database.archiv.UserArchivEntity;
 import duo.cmr.willagropastoral.boundedContexts.dasandere.persistence.database.token.ConfirmationTokenEntity;
 import duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.interfaces.domaininterfaces.EmailSender;
 import duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.interfaces.repositories.AppUserRepository;
@@ -156,5 +157,9 @@ public class AppUserService implements UserDetailsService {
 
     public List<AppUser> alleUsers() {
         return appUserRepository.alle();
+    }
+
+    public List<UserArchivEntity> alleUsersArchiv() {
+        return userArchivRepository.findAll();
     }
 }

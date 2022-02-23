@@ -5,6 +5,7 @@ import duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.interface
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -19,6 +20,11 @@ public class UserArchivRepositoryImpl implements UserArchivRepository {
             UserArchivEntity entity = toUserArchivEntity(appUser);
             daoUserArchivRepository.save(entity);
         }
+    }
+
+    @Override
+    public List<UserArchivEntity> findAll() {
+        return (List<UserArchivEntity>) daoUserArchivRepository.findAll();
     }
 
     private UserArchivEntity toUserArchivEntity(AppUser user) {

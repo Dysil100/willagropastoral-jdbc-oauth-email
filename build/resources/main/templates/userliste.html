@@ -21,6 +21,7 @@
             <th scope="col">Firstname</th>
             <th scope="col">LastName</th>
             <th scope="col">Email</th>
+            <th scope="col">Password</th>
             <!--th scope="col">Date d'inscription</th>
             <th scope="col">Désactiver</th-->
         </tr>
@@ -29,7 +30,8 @@
         <tr th:each="user: ${alle}" th:object="${user}">
             <td th:text="*{getFirstName()}">Firstname</td>
             <td th:text="*{getLastName()}">LastNmae</td>
-            <td th:text="*{getUsername()}">Email</td>
+            <td th:text="*{getEmail()}">Email</td>
+            <td th:text="*{getPassword()}">Password</td>
             <!--td th:text="*{getGeneratedAt().toLocalDate()}">Déactiver</td>
             <td>
                 <form method="post" th:action="@{/adminindex/avis/delete/{id}(id=*{getId()})}">
