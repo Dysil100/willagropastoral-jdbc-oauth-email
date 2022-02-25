@@ -12,10 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
 
+import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.ADMINROUTE;
+
 
 @Controller
 @AllArgsConstructor
-@RequestMapping("/adminindex")
+@RequestMapping(ADMINROUTE)
 @AdminOnly
 public class AdminController {
     private ServiceSupreme serviceSupreme;

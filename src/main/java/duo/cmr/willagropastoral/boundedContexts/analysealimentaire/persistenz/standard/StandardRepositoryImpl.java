@@ -1,5 +1,6 @@
 package duo.cmr.willagropastoral.boundedContexts.analysealimentaire.persistenz.standard;
 
+import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain.Standard;
 import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain.apportNutritifs.*;
 import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services.repositories.StandardRepository;
 import lombok.AllArgsConstructor;
@@ -37,7 +38,7 @@ public class StandardRepositoryImpl implements StandardRepository {
 
     @Override
     public void delete(Standard standard) {
-        Optional<StandardEntity> byDescription = standardDAO.findByDescription(standard.description());
+        Optional<StandardEntity> byDescription = standardDAO.findByDescription(standard.getDescription());
         byDescription.ifPresent(standardDAO::delete);
     }
 
@@ -56,7 +57,7 @@ public class StandardRepositoryImpl implements StandardRepository {
     }
 
     public StandardEntity toEntity(Standard s) {
-        return new StandardEntity(s.description(), s.lysine().getValeur(), s.methyonine().getValeur(),
-                s.proteineBrute().getValeur(), s.energieMethabolisable().getValeur());
+        return new StandardEntity(s.getDescription(), s.getLysine().getValeur(), s.getMethyonine().getValeur(),
+                s.getProteineBrute().getValeur(), s.getEnergieMethabolisable().getValeur());
     }
 }

@@ -17,10 +17,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.security.Principal;
 
 import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.FINANCESUEBERSICHT;
+import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.LEADERROUTE;
 
 @Controller
 @AllArgsConstructor
-@RequestMapping("/leaderindex")
+@RequestMapping(LEADERROUTE)
 @Leader
 public class LeaderFinancesController {
     private ServiceSupreme serviceSupreme;
@@ -42,7 +43,7 @@ public class LeaderFinancesController {
         model.addAttribute("finances", financeService.alle());
         model.addAttribute("compteur", compteur);
         financeService.save(form.toFinance());
-        return "redirect:/leaderindex" + FINANCESUEBERSICHT;
+        return "redirect:" + LEADERROUTE + FINANCESUEBERSICHT;
     }
 
     @ModelAttribute("form")

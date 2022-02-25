@@ -3,7 +3,11 @@ package duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain.appor
 public class EnergieMethabolisable extends ResultatEnergetique {
 
     public EnergieMethabolisable(Double valeur, String appreciation) {
-        super(valeur, "Energie Metabolique", appreciation);
+        super(valeur, "Energie Metabolisable", appreciation);
+    }
+
+    public EnergieMethabolisable(Double energieMathabolisable) {
+        super(energieMathabolisable, "Energie Metabolisable");
     }
 
     @Override

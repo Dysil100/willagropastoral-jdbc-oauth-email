@@ -15,7 +15,7 @@ import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.*;
 
 @Controller
 @AllArgsConstructor
-@RequestMapping("/leaderindex")
+@RequestMapping(LEADERROUTE)
 @Leader
 public class LeaderVollaillesController {
     VollailleService vollailleService;
@@ -32,7 +32,7 @@ public class LeaderVollaillesController {
     public String uebersichtPost(Model model, @ModelAttribute("vollailleform") VollailleForm form) {
         model.addAttribute("verlaeufe", vollailleService.alle());
         vollailleService.save(form.toVollailleVerlauf());
-        return "redirect:/leaderindex" + VOLLAILLEUEBERSICHT;
+        return "redirect:" + LEADERROUTE + VOLLAILLEUEBERSICHT;
     }
 
     @GetMapping(VOLLAILLEMODIFIER)
@@ -48,7 +48,7 @@ public class LeaderVollaillesController {
     public String delete(Model model, @ModelAttribute("financeForm") FinanceForm form, @PathVariable("id") Long id) {
         vollailleService.deleteById(id);
         model.addAttribute("verlaeufe", vollailleService.alle());
-        return "redirect:/leaderindex" + VOLLAILLEUEBERSICHT;
+        return "redirect:" + LEADERROUTE + VOLLAILLEUEBERSICHT;
     }
 
 }

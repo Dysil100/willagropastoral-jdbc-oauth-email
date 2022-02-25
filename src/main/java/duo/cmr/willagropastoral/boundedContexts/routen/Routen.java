@@ -2,6 +2,8 @@ package duo.cmr.willagropastoral.boundedContexts.routen;
 
 public class Routen {
 
+    public static final String  ADMINROUTE = "/adminindex";
+    public static final String  LEADERROUTE = "/leaderindex";
     public static final String  ANALYSE = "/analyse";
 
     public static final String  AVIS = "/avis";
@@ -23,4 +25,5 @@ public class Routen {
     public static final String  VOLLAILLEDELETE = "/vollaille/delete/{id}";
 
     public static final String  TELECHARGER = "telecharger";
+    public static final String ADDSTANDARD = "/addsandards";
 }

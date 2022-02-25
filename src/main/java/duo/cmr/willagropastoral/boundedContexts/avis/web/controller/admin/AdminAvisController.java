@@ -14,13 +14,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
 
-import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.AVISLISTE;
-import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.DELETEAVIS;
+import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.*;
 
 
 @Controller
 @AllArgsConstructor
-@RequestMapping("/adminindex")
+@RequestMapping(ADMINROUTE)
 @AdminOnly
 public class AdminAvisController {
     private ServiceSupreme serviceSupreme;
@@ -30,7 +29,7 @@ public class AdminAvisController {
     public String delete(Model model, @PathVariable("id") Long id) {
         avisService.deleteById(id);
         model.addAttribute("finances", avisService.alle());
-        return "redirect:/leaderindex" + AVISLISTE;
+        return "redirect:" + LEADERROUTE + AVISLISTE;
     }
 
     @ModelAttribute("text")

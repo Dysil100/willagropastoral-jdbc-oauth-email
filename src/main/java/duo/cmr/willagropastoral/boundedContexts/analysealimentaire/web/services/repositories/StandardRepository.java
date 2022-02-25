@@ -1,7 +1,7 @@
 package duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services.repositories;
 
 
-import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain.apportNutritifs.Standard;
+import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain.Standard;
 
 import java.util.List;
 

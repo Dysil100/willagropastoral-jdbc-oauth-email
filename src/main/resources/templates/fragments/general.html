@@ -163,6 +163,10 @@
                     </li>
                     <li th:if="${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'" class="nav-item">
                         <a class="nav-link badge-info text-center"
+                           th:href="@{/adminindex/addsandards}">Add new Standards</a>
+                    </li>
+                    <li th:if="${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'" class="nav-item">
+                        <a class="nav-link badge-info text-center"
                            th:href="@{/adminindex/userliste}">UserListe</a>
                     </li>
                 </span>

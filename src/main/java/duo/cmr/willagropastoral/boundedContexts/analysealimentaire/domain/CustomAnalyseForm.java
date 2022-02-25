@@ -2,7 +2,6 @@ package duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain;
 
 import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain.apportNutritifs.*;
 import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain.ingredients.Ingredient;
-import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.domain.interfaces.Resultat;
 import duo.cmr.willagropastoral.boundedContexts.analysealimentaire.web.services.AnalyseAlimentaireService;
 import lombok.Getter;
 import lombok.Setter;
@@ -117,8 +116,8 @@ public class CustomAnalyseForm {
         HashMap<String, Standard> mapStandards = new HashMap<>();
         analyseAlimentaireService.alleStandards().forEach(s -> {
             getFilterParams().forEach(p -> {
-                if (s.description().contains(p)) {
-                    mapStandards.put(s.description(), s);
+                if (s.getDescription().contains(p)) {
+                    mapStandards.put(s.getDescription(), s);
                 }
             });
         });
@@ -127,7 +126,7 @@ public class CustomAnalyseForm {
 
     private List<String> getFilterParams() {
         List<String> params = new ArrayList<>();
-        Map<String, Boolean> booleanToString = Map.of("Porcins", porcins, "Pondeuses", porcins, "Chaires", chaires);
+        Map<String, Boolean> booleanToString = Map.of("Porcins", porcins, "Pondeuses", pondeuses, "Chaires", chaires);
         booleanToString.forEach((k, v) -> {
             if (v) params.add(k);
         });
@@ -145,7 +144,7 @@ public class CustomAnalyseForm {
 
     public Set<ResultatEnergetique> getResultatsStandards() {
         Standard s = getStandard();
-        return Set.of(s.lysine(), s.methyonine(), s.proteineBrute(), s.energieMethabolisable());
+        return Set.of(s.getLysine(), s.getMethyonine(), s.getProteineBrute(), s.getEnergieMethabolisable());
     }
 
     public Boolean hasValeurNull() {
@@ -169,7 +168,7 @@ public class CustomAnalyseForm {
         return !"".equals(errorText) ? "Entrez une Valeur " + errorText + "dans chaque champ" : null;
     }
 
-    public List<Resultat> getResultats() {
+    public List<ResultatEnergetique> getResultats() {
         Double summe1 = summe();
         double summe = summe1 <= 0 ? 1 : summe1; //afin que le denominateur ne soit jamais null (pour eviter tout operation illegal)
         List<Ingredient> ingredientswhithValues = getIngredientswhithValues();
@@ -178,10 +177,10 @@ public class CustomAnalyseForm {
         Double proteineBruteFinal = ingredientswhithValues.stream().map(ing -> ing.getQuantite() * ing.getProteineBrute() / (summe)).reduce(Double::sum).orElse(.0);
         Double energieMetabolisableFinal = ingredientswhithValues.stream().map(ing -> ing.getQuantite() * ing.getEnergieMetabolisable() / (summe)).reduce(Double::sum).orElse(.0);
 
-        return new ArrayList<>(List.of(new Lysine(lysineFinal, getAppreciation(lysineFinal, getStandard().lysine().getValeur())),
-                new Methyonine(methionineFinal, getAppreciation(methionineFinal, getStandard().methyonine().getValeur())),
-                new ProteineBrute(proteineBruteFinal, getAppreciation(proteineBruteFinal, getStandard().proteineBrute().getValeur())),
-                new EnergieMethabolisable(energieMetabolisableFinal, getAppreciation(energieMetabolisableFinal, getStandard().energieMethabolisable().getValeur()))));
+        return new ArrayList<>(List.of(new Lysine(lysineFinal, getAppreciation(lysineFinal, getStandard().getLysine().getValeur())),
+                new Methyonine(methionineFinal, getAppreciation(methionineFinal, getStandard().getMethyonine().getValeur())),
+                new ProteineBrute(proteineBruteFinal, getAppreciation(proteineBruteFinal, getStandard().getProteineBrute().getValeur())),
+                new EnergieMethabolisable(energieMetabolisableFinal, getAppreciation(energieMetabolisableFinal, getStandard().getEnergieMethabolisable().getValeur()))));
     }
 
     private String getAppreciation(Double actuel, Double standard) {
