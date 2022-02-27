@@ -88,9 +88,11 @@ public class CustomAnalyseForm {
         this.CMAV = CMAV;
 
         this.zeigen = false;
-        this.pondeuses = false;
+
+        this.pondeuses = true;
         this.chaires = false;
         this.porcins = false;
+
         this.filterParam = "Porcins";
 
         this.lysineFinal = .0;

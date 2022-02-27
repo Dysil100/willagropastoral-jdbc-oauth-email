@@ -34,7 +34,7 @@ public class AdminFinancesController {
         return "redirect:" + LEADERROUTE + FINANCESUEBERSICHT;
     }
 
-    /*@PostMapping("/de leteall")
+    /*@PostMapping("/deleteall")
     public String deleteall(Model model, @ModelAttribute("financeForm") FinanceForm form) {
         financeService.deleteAll();
         model.addAttribute("finances", financeService.alle());

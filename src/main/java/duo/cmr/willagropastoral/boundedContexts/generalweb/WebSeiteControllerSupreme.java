@@ -4,13 +4,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.CONTACTS;
-import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.TELECHARGER;
+import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.*;
 
 @Controller
 public class WebSeiteControllerSupreme {
     // TODO: 06.02.22 definiere ein Supreme Service für this.class
-    @GetMapping("/")
+    @GetMapping(EMPTYROUTE)
     public String index(Model model){
         return "loginorregister";
     }

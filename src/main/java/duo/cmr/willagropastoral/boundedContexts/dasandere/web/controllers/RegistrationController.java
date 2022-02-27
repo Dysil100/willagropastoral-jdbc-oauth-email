@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Locale;
 
+import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.CONFRIMREGISTRATION;
 import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.REGISTRATION;
 
 @Controller
@@ -33,7 +34,7 @@ public class RegistrationController {
         return "notifications";
     }
 
-    @GetMapping("/registration/confirm")
+    @GetMapping(CONFRIMREGISTRATION)
     public String confirm(Model model, @RequestParam("token") String token) {
         String notif = "Notifications: " + registrationService.confirmToken(token);
         model.addAttribute("text", notif);

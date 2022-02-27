@@ -48,6 +48,7 @@ public class AppUserService implements UserDetailsService {
         String returnValue;
         Optional<AppUser> byEmail = appUserRepository.findByEmail(appUser.getUsername());
         boolean userExists = byEmail.isPresent();
+        String confirm_your_email_title = "Confirm your Email";
         if (userExists) {
             ConfirmationTokenEntity tokenEntity = confirmationTokenService.findByUsername(appUser.getUsername())
                     .orElseThrow(() -> new IllegalStateException("Token for email" + appUser.getUsername()
@@ -59,14 +60,14 @@ public class AppUserService implements UserDetailsService {
 
                     confirmationTokenService.updateTokenFor(appUser.getUsername());
                     emailSender.buildAndSend(
-                            appUser.getFirstName(), getLinkConfirmRegistration(newtoken), appUser.getUsername(), "Confirm your Email", bodyMsg
+                            appUser.getFirstName(), getLinkConfirmRegistration(newtoken), appUser.getUsername(), confirm_your_email_title, bodyMsg
                     );
                     returnValue = "New token for user " + appUser.getFirstName()
                                   + " with email " + appUser.getEmail() + " created please confirms your email to enable your account";
                 } else {
                     String token = tokenEntity.getToken();
                     emailSender.buildAndSend(appUser.getFirstName(), getLinkConfirmRegistration(token), appUser.getUsername(),
-                            "Confirm your Email", bodyMsg);
+                            confirm_your_email_title, bodyMsg);
                     returnValue = "Please confirms your email to enable your account before the link expire";
                 }
             } else {
@@ -85,7 +86,7 @@ public class AppUserService implements UserDetailsService {
 
             String bodyMsg = "Thank you for registering. Please click on the below link to activate your account:";
             emailSender.buildAndSend(appUser.getFirstName(), getLinkConfirmRegistration(token), appUser.getUsername(),
-                    "Confirm your Email", bodyMsg);
+                    confirm_your_email_title, bodyMsg);
             //TODO: SEND EMAIL
             // TODO if email not confirmed send confirmation email.
             returnValue = "Please confirms your email to enable your account";
@@ -111,7 +112,7 @@ public class AppUserService implements UserDetailsService {
 
                 String name = byEmail.get().getFirstName();
                 String bodyMsg = """
-                        Are you sure you want to create a new password.<br> 
+                        Are you sure you want to create a new password.
                         Click on the below link to activate the password recover.
                         """;
                 emailSender.buildAndSend(name, getLinkDeleteWith(token), email, "Password recovery", bodyMsg);

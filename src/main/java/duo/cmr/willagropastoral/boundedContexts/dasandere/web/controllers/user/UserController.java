@@ -11,13 +11,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.security.Principal;
 
+import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.USERINDEX;
+
 @Controller
 @AllArgsConstructor
 @User
 public class UserController {
     ServiceSupreme serviceSupreme;
 
-    @GetMapping("/index")
+    @GetMapping(USERINDEX)
     public String userindex(Model model, @ModelAttribute("text") String text) {
         model.addAttribute("text", text);
         model.addAttribute("role", "user");

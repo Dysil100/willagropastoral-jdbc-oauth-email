@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.security.Principal;
 
-import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.ADMINROUTE;
+import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.*;
 
 
 @Controller
@@ -22,14 +22,14 @@ import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.ADMINROUTE;
 public class AdminController {
     private ServiceSupreme serviceSupreme;
 
-    @GetMapping("")
+    @GetMapping(EMPTYROUTE)
     public String adminindex(Model model, @ModelAttribute("text") String text) {
         model.addAttribute("text", text);
         return "index";
         //return "rootindex";
     }
 
-    @GetMapping("/userliste")
+    @GetMapping(USERLISTE)
     public String userliste(Model model, @ModelAttribute("text") String text) {
         model.addAttribute("alle", serviceSupreme.alleUsersArchiv());
         return "userliste";

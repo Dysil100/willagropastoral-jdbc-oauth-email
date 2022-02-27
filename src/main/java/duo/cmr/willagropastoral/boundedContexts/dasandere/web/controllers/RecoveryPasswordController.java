@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.MAILEINGABE;
-import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.PASSWORDEINGABE;
+import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.*;
 
 // TODO: 05.02.22 Password recovery implemet endlich fertig machen
 @Controller
@@ -33,7 +32,7 @@ public class RecoveryPasswordController {
         return "notifications";
     }
 
-    @GetMapping("/delete/confirm")
+    @GetMapping(CONFIRMPASSWORDRECOVER)
     public String resetpasword(Model model, @RequestParam("token") String token) {
         MailPasswordPaar mailPasswordPaar = new MailPasswordPaar();
         // TODO: 22.02.22 diese Logik im service supreme verstecken und die restliche routen in er Klasse route als statish verstecken für dry-prinzip
