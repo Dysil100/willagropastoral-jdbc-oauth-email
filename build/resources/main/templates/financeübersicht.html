@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
           integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" th:href="@{/css/styles.css}" type="text/css" href="../static/css/styles.css" />
+    <link rel="stylesheet" th:href="@{/css/styles.css}" type="text/css" href="../static/css/styles.css"/>
 </head>
 <body>
 <div class="container-fluid background">
@@ -22,11 +22,12 @@
                         th:text="${compteur.getStartDate()}">date de départ</span></h2>
         </div>
         <div class="newfinance transbox">
-            <form th:object="${financeForm}" method="post" th:action="@{/leaderindex/finances/uebersicht}">
+            <form th:object="${financeForm}" method="post" th:action="@{/leaderindex/financesuebersicht}">
                 <div class="form-group">
                     <h3> Ajoutez une Nouvelle action financiere</h3>
                     <div th:insert="fragments/general.html :: inputfield(field='summe', name='Somme')"></div>
                     <div th:insert="fragments/general.html :: textinput(field='description', name='Description', placeholder='Description de l\'action finaciere')"></div>
+                    <div th:insert="fragments/general.html :: textinput(field='projectName', name='Nom du project', placeholder='Pondeuses ou Porcins')"></div>
                 </div>
                 <div th:insert="fragments/general.html :: switchinput0(field='eingabe', name='Gains ?')"></div>
 
@@ -45,7 +46,9 @@
                     <th scope="col">Description</th>
                     <th scope="col">Date de l'action</th>
                     <th scope="col">IdentificationsNummer</th>
-                    <th th:if="${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'" scope="col">Supression</th>
+                    <th th:if="${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'" scope="col">
+                        Supression
+                    </th>
                 </tr>
                 </thead>
                 <tbody th:remove="all-but-first">
@@ -58,7 +61,8 @@
                     <td th:if="${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'">
                         <form method="post" th:action="@{/adminindex/finances/delete/{id}(id=*{getId()})}">
                             <input class="btn btn-outline-danger btn-sm fa fa-trash" type="submit" value="Suprimer">
-                        </form></td>
+                        </form>
+                    </td>
                 </tr>
                 </tbody>
             </table>

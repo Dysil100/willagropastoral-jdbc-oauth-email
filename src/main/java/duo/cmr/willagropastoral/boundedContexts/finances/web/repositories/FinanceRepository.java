@@ -12,4 +12,6 @@ public interface FinanceRepository {
     void deleteById(Long id);
 
     void deleteAll();
+
+    List<Finance> alleByProjectName(String projectName);
 }

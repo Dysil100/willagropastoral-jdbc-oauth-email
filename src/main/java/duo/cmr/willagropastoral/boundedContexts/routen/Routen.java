@@ -20,9 +20,13 @@ public class Routen {
 
     public static final String  CONTACTS = "/contacts";
 
-    public static final String  VOLLAILLEUEBERSICHT = "/vollaille";
-    public static final String  VOLLAILLEMODIFIER = "/vollaille/modifier/{id}";
-    public static final String  VOLLAILLEDELETE = "/vollaille/delete/{id}";
+    public static final String PONDEUSESUEBERSICHT = "/pondeuses";
+    public static final String PONDEUSESMODIFIER = "/pondeuses/modifier/{id}";
+    public static final String PONDEUSESDELETE = "/pondeuses/delete/{id}";
+
+    public static final String  PORCINSUEBERSICHT = "/porcins";
+    public static final String  PRORCINSMODIFIER = "/porcins/modifier/{id}";
+    public static final String  PORCINSDELETE = "/porcins/delete/{id}";
 
     public static final String  TELECHARGER = "telecharger";
     public static final String ADDSTANDARD = "/addsandards";

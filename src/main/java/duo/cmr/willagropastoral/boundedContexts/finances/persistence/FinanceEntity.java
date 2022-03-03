@@ -16,8 +16,9 @@ public class FinanceEntity {
     private Double summe;
     private String description;
     private String generatedAt;
+    private String projectName;
 
-    public FinanceEntity(String bezeichnung, Double summe, String description, String generatedAt) {
+    public FinanceEntity(String bezeichnung, Double summe, String description, String generatedAt, String projectName) {
         this.bezeichnung = bezeichnung;
         this.summe = summe;
         this.description = description;

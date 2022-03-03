@@ -48,7 +48,7 @@ public class LeaderFinancesController {
 
     @ModelAttribute("form")
     FinanceForm financeForm() {
-        return new FinanceForm(null, null, null);
+        return new FinanceForm(null, null, null, null);
     }
 
     @ModelAttribute("compteur")

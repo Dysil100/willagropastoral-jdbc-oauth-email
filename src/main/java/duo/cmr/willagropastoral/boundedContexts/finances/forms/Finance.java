@@ -17,11 +17,13 @@ public class Finance {
     private Double summe;
     private String description;
     private LocalDateTime generatedAt;
+    private String projectName;
 
-    public Finance(String bezeichnung, Double summe, String description, LocalDateTime generatedAt) {
+    public Finance(String bezeichnung, Double summe, String description, LocalDateTime generatedAt, String projectName) {
         this.bezeichnung = bezeichnung;
         this.summe = summe;
         this.description = description;
         this.generatedAt = generatedAt;
+        this.projectName = projectName;
     }
 }

@@ -20,8 +20,17 @@ public class FinanceRepositoryImpl implements FinanceRepository {
 
     @Override
     public List<Finance> findAll() {
+        return getFinances(daoFinancesRepository.findAll());
+    }
+
+    @Override
+    public List<Finance> alleByProjectName(String projectName) {
+        return getFinances(daoFinancesRepository.findAllByProjectName(projectName));
+    }
+
+    private List<Finance> getFinances(Iterable<FinanceEntity> all) {
         List<Finance> finances = new ArrayList<>();
-        daoFinancesRepository.findAll().forEach(financeEntity -> finances.add(toFinance(financeEntity)));
+        all.forEach(financeEntity -> finances.add(toFinance(financeEntity)));
         return finances.stream().sorted(Comparator.comparing(Finance::getGeneratedAt, Comparator.reverseOrder())).collect(Collectors.toList());
     }
 
@@ -41,10 +50,10 @@ public class FinanceRepositoryImpl implements FinanceRepository {
     }
 
     private FinanceEntity toEntity(Finance f) {
-        return new FinanceEntity(f.getBezeichnung(), f.getSumme(), f.getDescription(), dateToString(f.getGeneratedAt()));
+        return new FinanceEntity(f.getBezeichnung(), f.getSumme(), f.getDescription(), dateToString(f.getGeneratedAt()), f.getProjectName());
     }
 
     private Finance toFinance(FinanceEntity e) {
-        return new Finance(e.getId(), e.getBezeichnung(), e.getSumme(), e.getDescription(), stringToDate(e.getGeneratedAt()));
+        return new Finance(e.getId(), e.getBezeichnung(), e.getSumme(), e.getDescription(), stringToDate(e.getGeneratedAt()), e.getProjectName());
     }
 }

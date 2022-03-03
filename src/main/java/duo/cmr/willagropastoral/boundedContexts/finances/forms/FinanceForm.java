@@ -15,8 +15,9 @@ public class FinanceForm {
     private Double summe;
     private String description;
     private Boolean eingabe;
+    private String projectName;
 
     public Finance toFinance( ) {
-        return new Finance((eingabe == null ? "Dépencse !" : "Gains !"), summe, description, LocalDateTime.now());
+        return new Finance((eingabe == null ? "Dépencse !" : "Gains !"), summe, description, LocalDateTime.now(), projectName);
     }
 }
