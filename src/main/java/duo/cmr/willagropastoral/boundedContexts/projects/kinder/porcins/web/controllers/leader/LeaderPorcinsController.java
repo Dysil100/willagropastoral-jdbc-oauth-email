@@ -1,6 +1,9 @@
 package duo.cmr.willagropastoral.boundedContexts.projects.kinder.porcins.web.controllers.leader;
 
 import duo.cmr.willagropastoral.boundedContexts.dasandere.persistence.annotations.Leader;
+import duo.cmr.willagropastoral.boundedContexts.finances.forms.Compteur;
+import duo.cmr.willagropastoral.boundedContexts.finances.forms.Finance;
+import duo.cmr.willagropastoral.boundedContexts.finances.forms.FinanceForm;
 import duo.cmr.willagropastoral.boundedContexts.finances.web.service.FinanceService;
 import duo.cmr.willagropastoral.boundedContexts.projects.muster.projectsForms.TagesVerlaufForm;
 import duo.cmr.willagropastoral.boundedContexts.projects.muster.service.TagesVerlaufService;
@@ -10,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.*;
 
@@ -37,9 +41,20 @@ public class LeaderPorcinsController {
         return "verlaufuebersicht";
     }
 
+    @GetMapping(PORCINSFINANCESUEBERSICHT)
+    public String uebersicht(Model model, @ModelAttribute("form") FinanceForm form, @ModelAttribute("compteur") Compteur compteur, @ModelAttribute("projectName") String projectName) {
+        List<Finance> attributeValue = financeService.alleByProjectName(projectName);
+        model.addAttribute("finances", attributeValue);
+        model.addAttribute("financeForm", form);
+        model.addAttribute("financeForm", form);
+        model.addAttribute("compteur", compteur);
+        return "financeübersicht";
+    }
+
     @PostMapping(PORCINSUEBERSICHT)
     public String uebersichtPost(Model model, @ModelAttribute("verlaufForm") TagesVerlaufForm form, @ModelAttribute("projectName") String projectName) {
         model.addAttribute("verlaeufe", tagesVerlaufService.alleByProjectName(projectName));
+
         tagesVerlaufService.save(form.toPondeusesVerlauf());
         return "redirect:" + LEADERROUTE + PORCINSUEBERSICHT;
     }
@@ -69,5 +84,15 @@ public class LeaderPorcinsController {
     @ModelAttribute("projectName")
     String projectName() {
         return "Porcins";
+    }
+
+    @ModelAttribute("form")
+    FinanceForm financeForm() {
+        return new FinanceForm(null, null, null, null);
+    }
+
+    @ModelAttribute("compteur")
+    Compteur compteur() {
+        return financeService.getCompteur();
     }
 }

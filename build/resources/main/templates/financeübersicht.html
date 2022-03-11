@@ -12,7 +12,7 @@
 <div class="container-fluid background">
     <header th:replace="fragments/general.html :: indexheader"></header>
     <div class="container">
-        <h1>Appercu de la gestion financiere</h1>
+        <h1>Appercu de la gestion financiere <span th:if="${projectName != null}"> pour <span th:text="${projectName}">Nom du Project</span></span></h1>
         <div class="transbox">
             <h2>Le Compteur financier de la Structure s'eleve à: <span class="alert alert-success"
                                                                        th:if="${compteur.summe} > 0.0"
@@ -28,6 +28,7 @@
                     <div th:insert="fragments/general.html :: inputfield(field='summe', name='Somme')"></div>
                     <div th:insert="fragments/general.html :: textinput(field='description', name='Description', placeholder='Description de l\'action finaciere')"></div>
                     <div th:insert="fragments/general.html :: textinput(field='projectName', name='Nom du project', placeholder='Pondeuses ou Porcins')"></div>
+
                 </div>
                 <div th:insert="fragments/general.html :: switchinput0(field='eingabe', name='Gains ?')"></div>
 

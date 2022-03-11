@@ -20,10 +20,12 @@ public class Routen {
 
     public static final String  CONTACTS = "/contacts";
 
+    public static final String PONDEUSESFINANCESUEBERSICHT = "/pondeusesfinancesuebersicht";
     public static final String PONDEUSESUEBERSICHT = "/pondeuses";
     public static final String PONDEUSESMODIFIER = "/pondeuses/modifier/{id}";
     public static final String PONDEUSESDELETE = "/pondeuses/delete/{id}";
 
+    public static final String  PORCINSFINANCESUEBERSICHT = "/porcinsfinancesuebersicht";
     public static final String  PORCINSUEBERSICHT = "/porcins";
     public static final String  PRORCINSMODIFIER = "/porcins/modifier/{id}";
     public static final String  PORCINSDELETE = "/porcins/delete/{id}";

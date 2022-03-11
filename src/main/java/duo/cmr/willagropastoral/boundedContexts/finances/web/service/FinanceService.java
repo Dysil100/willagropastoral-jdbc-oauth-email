@@ -21,6 +21,7 @@ public class FinanceService {
     }
 
     public void save(Finance finance) {
+        System.out.println(finance);
         financeRepository.save(finance);
     }
 
@@ -46,5 +47,9 @@ public class FinanceService {
         double sumPositive = alle.stream().filter(f -> Objects.equals(f.getBezeichnung(), "Gains !")).mapToDouble(Finance::getSumme).sum();
         double sumNegative = alle.stream().filter(f -> !Objects.equals(f.getBezeichnung(), "Gains !")).mapToDouble(Finance::getSumme).sum();
         return sumPositive - sumNegative;
+    }
+
+    public List<Finance> alleByProjectName(String projectName) {
+        return financeRepository.alleByProjectName(projectName);
     }
 }

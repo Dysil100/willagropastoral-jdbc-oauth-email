@@ -164,6 +164,14 @@
                         <a class="nav-link badge-info text-center"
                            th:href="@{/leaderindex/financesuebersicht}">Finances</a>
                     </li>
+                    <li th:if="${#request.userPrincipal.principal.role.toString()} == 'ROLE_LEADER' or ${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'" class="nav-item">
+                        <a class="nav-link badge-info text-center"
+                           th:href="@{/leaderindex/pondeusesfinancesuebersicht}">Pondeuses Finances</a>
+                    </li>
+                    <li th:if="${#request.userPrincipal.principal.role.toString()} == 'ROLE_LEADER' or ${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'" class="nav-item">
+                        <a class="nav-link badge-info text-center"
+                           th:href="@{/leaderindex/porcinsfinancesuebersicht}"> Porcins Finances</a>
+                    </li>
                     <li th:if="${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'" class="nav-item">
                         <a class="nav-link badge-info text-center"
                            th:href="@{/adminindex/addsandards}">Add new Standards</a>

@@ -36,7 +36,9 @@ public class FinanceRepositoryImpl implements FinanceRepository {
 
     @Override
     public void save(Finance finance) {
-        daoFinancesRepository.save(toEntity(finance));
+        FinanceEntity entity = toEntity(finance);
+        System.out.println(entity);
+        daoFinancesRepository.save(entity);
     }
 
     @Override

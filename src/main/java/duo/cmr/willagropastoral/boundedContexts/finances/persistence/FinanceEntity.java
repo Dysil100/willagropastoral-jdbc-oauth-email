@@ -8,6 +8,7 @@ import org.springframework.data.relational.core.mapping.Table;
 @Getter
 @Setter
 @EqualsAndHashCode
+@ToString
 @NoArgsConstructor
 public class FinanceEntity {
     @Id
@@ -23,6 +24,7 @@ public class FinanceEntity {
         this.summe = summe;
         this.description = description;
         this.generatedAt = generatedAt;
+        this.projectName = projectName;
     }
 
 }
