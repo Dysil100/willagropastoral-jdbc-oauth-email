@@ -64,7 +64,7 @@
                     <td th:text="*{getProjectName()}">Nom du Project</td>
                     <td th:if="${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'">
                         <form method="get" th:action="@{/adminindex/finances/modifier/{id}(id=*{getId()})}">
-                            <input class="btn btn-outline-danger btn-sm fa fa-trash" type="submit" value="Modifier">
+                            <input class="btn btn-outline-primary btn-sm fa fa-trash" type="submit" value="Modifier">
                         </form>
                     </td>
                     <td th:if="${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'">
