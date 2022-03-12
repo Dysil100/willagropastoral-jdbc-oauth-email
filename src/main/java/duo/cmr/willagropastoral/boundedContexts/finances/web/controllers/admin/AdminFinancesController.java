@@ -3,15 +3,13 @@ package duo.cmr.willagropastoral.boundedContexts.finances.web.controllers.admin;
 import duo.cmr.willagropastoral.boundedContexts.dasandere.domain.model.appsuer.AppUser;
 import duo.cmr.willagropastoral.boundedContexts.dasandere.persistence.annotations.AdminOnly;
 import duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.ServiceSupreme;
+import duo.cmr.willagropastoral.boundedContexts.finances.forms.Finance;
 import duo.cmr.willagropastoral.boundedContexts.finances.forms.FinanceForm;
 import duo.cmr.willagropastoral.boundedContexts.finances.web.service.FinanceService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 
@@ -33,6 +31,26 @@ public class AdminFinancesController {
         model.addAttribute("finances", financeService.alle());
         return "redirect:" + LEADERROUTE + FINANCESUEBERSICHT;
     }
+
+
+    @GetMapping(MODIFIERFINANCES)
+    public String modifier(Model model, @PathVariable("id") Long id) {
+        System.out.println(id);
+        Finance byId = financeService.findById(id);
+        FinanceForm financeForm = new FinanceForm(byId.getSumme(), byId.getDescription(), null, byId.getDescription());
+        model.addAttribute("financeForm", financeForm);
+        return "financesModifier";
+    }
+
+    @PostMapping(MODIFIERFINANCES)
+    public String modifier(Model model,  @PathVariable("id") Long id, @ModelAttribute("financeForm") FinanceForm form) {
+        Finance finance = form.toFinance();
+        finance.setId(id);
+        financeService.update(finance);
+        model.addAttribute("finances", financeService.alle());
+        return "financeübersicht";
+    }
+
 
     /*@PostMapping("/deleteall")
     public String deleteall(Model model, @ModelAttribute("financeForm") FinanceForm form) {

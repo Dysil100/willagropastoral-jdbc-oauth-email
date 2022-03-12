@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Willagropastoral Modifier une entrée financiere</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" th:href="@{/css/styles.css}" type="text/css" href="../static/css/styles.css"/>
+</head>
+<body>
+<div class="container-fluid background">
+    <header th:replace="fragments/general.html :: indexheader"></header>
+    <div class="container">
+        <h1>Modifier une entré financiere</h1>
+        <div class="newfinance transbox">
+            <form th:object="${financeForm}" method="post" th:action="@{/leaderindex/financesuebersicht}">
+                <div class="form-group">
+                    <h3> Ajoutez une Nouvelle action financiere</h3>
+                    <div th:insert="fragments/general.html :: inputfield(field='summe', name='Somme')"></div>
+                    <div th:insert="fragments/general.html :: textinput(field='description', name='Description', placeholder='Description de l\'action finaciere')"></div>
+                    <div th:insert="fragments/general.html :: textinput(field='projectName', name='Nom du project', placeholder='Pondeuses ou Porcins')"></div>
+
+                </div>
+                <div th:insert="fragments/general.html :: switchinput0(field='eingabe', name='Gains ?')"></div>
+
+                <div class="ui-button">
+                    <input class="btn btn-primary" type="submit" value="Modifier"> <br><br>
+                </div>
+            </form>
+        </div>
+
+
+        <!--form method="post" th:action="@{/finances/deleteall}">
+            <input class="btn btn-outline-danger btn-sm" type="submit" value="Suprimer tout">
+        </form-->
+    </div>
+    <footer th:replace="fragments/general.html :: footer"></footer>
+</div>
+</body>
+<script>
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "navbar-expand") {
+            x.className += "navbar-expand-md";
+        } else {
+            x.className = "navbar-expand";
+        }
+    }
+</script>
+</html>

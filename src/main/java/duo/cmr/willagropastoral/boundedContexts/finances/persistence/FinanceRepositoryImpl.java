@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import static duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.subservices.DateTimeHelper.dateToString;
@@ -26,6 +27,21 @@ public class FinanceRepositoryImpl implements FinanceRepository {
     @Override
     public List<Finance> alleByProjectName(String projectName) {
         return getFinances(daoFinancesRepository.findAllByProjectName(projectName));
+    }
+
+    @Override
+    public void update(Finance finance) {
+        FinanceEntity financeEntity = toEntity(finance);
+        System.out.println(finance);
+        String generatedAt = Objects.requireNonNull(daoFinancesRepository.findById(finance.getId()).orElse(null)).getGeneratedAt();
+        financeEntity.setGeneratedAt(generatedAt);
+        daoFinancesRepository.deleteById(finance.getId());
+        daoFinancesRepository.save(financeEntity);
+    }
+
+    @Override
+    public Finance findById(Long id) {
+        return toFinance(Objects.requireNonNull(daoFinancesRepository.findById(id).orElse(null)));
     }
 
     private List<Finance> getFinances(Iterable<FinanceEntity> all) {

@@ -1,8 +1,8 @@
 package duo.cmr.willagropastoral.boundedContexts.finances.web.service;
 
 import duo.cmr.willagropastoral.boundedContexts.finances.forms.Compteur;
-import duo.cmr.willagropastoral.boundedContexts.finances.web.repositories.FinanceRepository;
 import duo.cmr.willagropastoral.boundedContexts.finances.forms.Finance;
+import duo.cmr.willagropastoral.boundedContexts.finances.web.repositories.FinanceRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -51,5 +51,13 @@ public class FinanceService {
 
     public List<Finance> alleByProjectName(String projectName) {
         return financeRepository.alleByProjectName(projectName);
+    }
+
+    public void update(Finance finance) {
+        financeRepository.update(finance);
+    }
+
+    public Finance findById(Long id) {
+        return financeRepository.findById(id);
     }
 }
