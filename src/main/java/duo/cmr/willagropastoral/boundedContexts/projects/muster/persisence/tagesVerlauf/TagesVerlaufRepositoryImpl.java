@@ -59,6 +59,6 @@ daoTagesVerlaufRepository.deleteAll();
     public List<TagesVerlauf> findAllByProjectName(String projectName) {
         List<TagesVerlauf> alleByName = new ArrayList<>();
          daoTagesVerlaufRepository.findAllByProjectName(projectName).forEach(e -> alleByName.add(toVerlauf(e)));
-         return alleByName;
+         return alleByName.stream().sorted(Comparator.comparing(TagesVerlauf::getDateTime, Comparator.reverseOrder())).collect(Collectors.toList());
     }
 }
