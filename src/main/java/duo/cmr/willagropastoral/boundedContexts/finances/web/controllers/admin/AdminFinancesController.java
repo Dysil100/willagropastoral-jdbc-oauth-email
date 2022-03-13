@@ -51,7 +51,7 @@ public class AdminFinancesController {
         financeService.update(finance);
         model.addAttribute("compteur", compteur);
         model.addAttribute("finances", financeService.alle());
-        return "financeübersicht";
+        return  "redirect:" + LEADERROUTE + FINANCESUEBERSICHT;
     }
 
 
