@@ -63,6 +63,7 @@ public class LeaderPondeusesController {
     @PostMapping(PONDEUSESDELETE)
     public String delete(Model model, @PathVariable("id") Long id, @ModelAttribute("projectName") String projectName) {
         tagesVerlaufService.deleteById(id);
+        // TODO: 13.03.22 auskommentieren wenn die Methode update Project Verfügbar ist
         model.addAttribute("verlaeufe", tagesVerlaufService.alleByProjectName(projectName));
         return "redirect:" + LEADERROUTE + PONDEUSESUEBERSICHT;
     }

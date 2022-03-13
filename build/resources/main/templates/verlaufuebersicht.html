@@ -61,12 +61,12 @@
                     <td th:text="*{getConsommation()}">Consommation</td>
                     <td th:text="*{getProduction()}">Productionn</td>
                     <td th:text="*{getAppreciation()}">Commentaire</td>
-                    <td th:if="${verlauf.getDateTime().toLocalDate().toString()} == __${now}__">
+                    <td th:if="${verlauf.getDateTime().toLocalDate().toString()} == __${now}__ or ${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'">
                         <form method="get" th:action="@{/leaderindex/pondeuses/modifier/{id}(id=*{getId()})}">
                             <input class="btn btn-outline-primary btn-sm fa fa-trash" type="submit" value="Modifier">
                         </form>
                     </td>
-                    <td th:if="${verlauf.getDateTime().toLocalDate().toString()} == __${now}__">
+                    <td th:if="${verlauf.getDateTime().toLocalDate().toString()} == __${now}__ or ${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'">
                         <form method="post" th:action="@{/leaderindex/pondeuses/delete/{id}(id=*{getId()})}">
                             <input class="btn btn-outline-danger btn-sm fa fa-trash" type="submit" value="Suprimer">
                         </form>
