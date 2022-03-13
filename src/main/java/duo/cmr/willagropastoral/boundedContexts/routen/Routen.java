@@ -17,6 +17,7 @@ public class Routen {
 
     public static final String  FINANCESUEBERSICHT = "/financesuebersicht";
     public static final String  MODIFIERFINANCES = "/finances/modifier/{id}";
+    public static final String  MODIFIERFINANCESPOST = "/financesmodifier";
     public static final String  FINANCESDELETE = "/finances/delete/{id}";
 
     public static final String  CONTACTS = "/contacts";

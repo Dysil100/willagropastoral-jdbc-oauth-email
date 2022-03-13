@@ -14,16 +14,16 @@
     <div class="container">
         <h1>Modifier une entré financiere</h1>
         <div class="newfinance transbox">
-            <form th:object="${financeForm}" method="post" th:action="@{/leaderindex/financesuebersicht}">
+            <form th:object="${financeForm}" method="post" th:action="@{/adminindex/financesmodifier}">
                 <div class="form-group">
                     <h3> Ajoutez une Nouvelle action financiere</h3>
                     <div th:insert="fragments/general.html :: inputfield(field='summe', name='Somme')"></div>
                     <div th:insert="fragments/general.html :: textinput(field='description', name='Description', placeholder='Description de l\'action finaciere')"></div>
                     <div th:insert="fragments/general.html :: textinput(field='projectName', name='Nom du project', placeholder='Pondeuses ou Porcins')"></div>
-
                 </div>
                 <div th:insert="fragments/general.html :: switchinput0(field='eingabe', name='Gains ?')"></div>
 
+                    <input name="id" th:value="${id}" type="hidden">
                 <div class="ui-button">
                     <input class="btn btn-primary" type="submit" value="Modifier"> <br><br>
                 </div>

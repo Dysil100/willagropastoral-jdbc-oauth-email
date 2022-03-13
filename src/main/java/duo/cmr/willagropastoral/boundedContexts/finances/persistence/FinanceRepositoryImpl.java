@@ -31,12 +31,10 @@ public class FinanceRepositoryImpl implements FinanceRepository {
 
     @Override
     public void update(Finance finance) {
+        System.out.println("FinanceRepositoryImpl update");
         FinanceEntity financeEntity = toEntity(finance);
-        System.out.println(finance);
-        String generatedAt = Objects.requireNonNull(daoFinancesRepository.findById(finance.getId()).orElse(null)).getGeneratedAt();
-        financeEntity.setGeneratedAt(generatedAt);
-        daoFinancesRepository.deleteById(finance.getId());
-        daoFinancesRepository.save(financeEntity);
+        System.out.println(financeEntity);
+        daoFinancesRepository.updateById(finance.getId(), financeEntity.getSumme(), financeEntity.getDescription(), financeEntity.getProjectName());
     }
 
     @Override
@@ -53,7 +51,6 @@ public class FinanceRepositoryImpl implements FinanceRepository {
     @Override
     public void save(Finance finance) {
         FinanceEntity entity = toEntity(finance);
-        System.out.println(entity);
         daoFinancesRepository.save(entity);
     }
 

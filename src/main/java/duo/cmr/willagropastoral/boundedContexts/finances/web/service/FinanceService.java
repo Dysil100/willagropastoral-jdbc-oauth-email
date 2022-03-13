@@ -21,7 +21,6 @@ public class FinanceService {
     }
 
     public void save(Finance finance) {
-        System.out.println(finance);
         financeRepository.save(finance);
     }
 
