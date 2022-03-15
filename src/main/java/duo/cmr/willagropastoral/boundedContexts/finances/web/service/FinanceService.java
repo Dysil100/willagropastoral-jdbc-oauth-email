@@ -33,16 +33,15 @@ public class FinanceService {
     }
 
     public Compteur getCompteur() {
-        return new Compteur(getSumme(), getLocalDateTime());
+        List<Finance> alle = alle();
+        return new Compteur(getSumme(alle), getLocalDateTime(alle));
     }
 
-    private LocalDate getLocalDateTime() {
-        List<Finance> alle = alle();
+    private LocalDate getLocalDateTime(List<Finance> alle) {
         return alle.size() == 0 ? LocalDate.now() : alle.get(alle.size() - 1).getGeneratedAt().toLocalDate();
     }
 
-    private double getSumme() {
-        List<Finance> alle = alle();
+    private double getSumme(List<Finance> alle) {
         double sumPositive = alle.stream().filter(f -> Objects.equals(f.getBezeichnung(), "Gains !")).mapToDouble(Finance::getSumme).sum();
         double sumNegative = alle.stream().filter(f -> !Objects.equals(f.getBezeichnung(), "Gains !")).mapToDouble(Finance::getSumme).sum();
         return sumPositive - sumNegative;
@@ -58,5 +57,10 @@ public class FinanceService {
 
     public Finance findById(Long id) {
         return financeRepository.findById(id);
+    }
+
+    public Compteur getCompteurForProject(String projectName) {
+        List<Finance> alleByProjectName = alleByProjectName(projectName);
+        return new Compteur(getSumme(alleByProjectName), getLocalDateTime(alleByProjectName));
     }
 }

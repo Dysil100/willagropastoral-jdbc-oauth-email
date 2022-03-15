@@ -42,7 +42,7 @@ public class LeaderPorcinsController {
     }
 
     @GetMapping(PORCINSFINANCESUEBERSICHT)
-    public String uebersicht(Model model, @ModelAttribute("form") FinanceForm form, @ModelAttribute("compteur") Compteur compteur, @ModelAttribute("projectName") String projectName) {
+    public String uebersicht(Model model, @ModelAttribute("form") FinanceForm form, @ModelAttribute("compteurPorcins") Compteur compteur, @ModelAttribute("projectName") String projectName) {
         List<Finance> attributeValue = financeService.alleByProjectName(projectName);
         model.addAttribute("finances", attributeValue);
         model.addAttribute("financeForm", form);
@@ -91,8 +91,8 @@ public class LeaderPorcinsController {
         return new FinanceForm(null, null, null, null);
     }
 
-    @ModelAttribute("compteur")
-    Compteur compteur() {
-        return financeService.getCompteur();
+    @ModelAttribute("compteurPorcins")
+    Compteur compteur(@ModelAttribute("projectName") String projectName) {
+        return financeService.getCompteurForProject(projectName);
     }
 }

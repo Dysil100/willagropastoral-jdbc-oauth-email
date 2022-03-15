@@ -62,7 +62,7 @@ public class AdminFinancesController {
         return "redirect:" + FINANCESUEBERSICHT;
     }*/
     @ModelAttribute("text")
-    String handle(Principal user) {
+    String text(Principal user) {
         AppUser userByEmail = serviceSupreme.getUserByEmail(user.getName());
         return "L'administrateur " + userByEmail.getFirstName();
     }

@@ -35,7 +35,7 @@ public class LeaderPondeusesController {
     }
 
     @GetMapping(PONDEUSESFINANCESUEBERSICHT)
-    public String uebersicht(Model model, @ModelAttribute("form") FinanceForm form, @ModelAttribute("compteur") Compteur compteur, @ModelAttribute("projectName") String projectName) {
+    public String uebersicht(Model model, @ModelAttribute("form") FinanceForm form, @ModelAttribute("compteurPondeuses") Compteur compteur, @ModelAttribute("projectName") String projectName) {
         List<Finance> attributeValue = financeService.alleByProjectName(projectName);
         model.addAttribute("finances", attributeValue);
         System.out.println(attributeValue);
@@ -78,15 +78,14 @@ public class LeaderPondeusesController {
         return "Pondeuses";
     }
 
-
     @ModelAttribute("form")
     FinanceForm financeForm() {
         return new FinanceForm(null, null, null, null);
     }
 
-    @ModelAttribute("compteur")
-    Compteur compteur() {
-        return financeService.getCompteur();
+    @ModelAttribute("compteurPondeuses")
+    Compteur compteur(@ModelAttribute("projectName") String projectName) {
+        return financeService.getCompteurForProject(projectName);
     }
 
 }
