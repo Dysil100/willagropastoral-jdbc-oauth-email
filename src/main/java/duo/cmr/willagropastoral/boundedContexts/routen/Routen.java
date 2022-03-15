@@ -23,9 +23,9 @@ public class Routen {
     public static final String  CONTACTS = "/contacts";
 
     public static final String PONDEUSESFINANCESUEBERSICHT = "/pondeusesfinancesuebersicht";
-    public static final String PONDEUSESUEBERSICHT = "/pondeuses";
-    public static final String PONDEUSESMODIFIER = "/pondeuses/modifier/{id}";
-    public static final String PONDEUSESDELETE = "/pondeuses/delete/{id}";
+    public static final String PROJECTVERLAUFUEBERSICHT = "/project/verlauf/{projectName}";
+    public static final String VERLAUFMODIFIER = "/project/verlauf/modifier/{id}";
+    public static final String PROJECTDELETE = "/project/delete/{id}";
 
     public static final String  PORCINSFINANCESUEBERSICHT = "/porcinsfinancesuebersicht";
     public static final String  PORCINSUEBERSICHT = "/porcins";

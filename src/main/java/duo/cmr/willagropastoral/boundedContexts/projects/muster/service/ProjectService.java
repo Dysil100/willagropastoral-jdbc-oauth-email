@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -23,6 +24,10 @@ public class ProjectService {
 
     public  void create(String projectName){
         save(new Project(projectName, LocalDateTime.now(), null));
+    }
+
+    public List<Project> alle() {
+        return projectRepository.alle();
     }
 }
 
