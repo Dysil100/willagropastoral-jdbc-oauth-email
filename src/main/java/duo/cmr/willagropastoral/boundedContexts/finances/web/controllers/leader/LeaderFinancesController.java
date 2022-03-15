@@ -59,5 +59,6 @@ public class LeaderFinancesController {
     @ModelAttribute("text")
     String handle(Principal user) {
         AppUser userByEmail = serviceSupreme.getUserByEmail(user.getName());
-        return "au Leader " +userByEmail.getFirstName();    }
+        return "au Leader " + userByEmail.getFirstName();
+    }
 }

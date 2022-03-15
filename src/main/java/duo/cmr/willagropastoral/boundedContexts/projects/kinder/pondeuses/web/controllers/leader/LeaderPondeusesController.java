@@ -38,8 +38,7 @@ public class LeaderPondeusesController {
     public String uebersicht(Model model, @ModelAttribute("form") FinanceForm form, @ModelAttribute("compteurPondeuses") Compteur compteur, @ModelAttribute("projectName") String projectName) {
         List<Finance> attributeValue = financeService.alleByProjectName(projectName);
         model.addAttribute("finances", attributeValue);
-        System.out.println(attributeValue);
-        model.addAttribute("financeForm", form);
+        //model.addAttribute("financeForm", form);
         model.addAttribute("compteur", compteur);
         return "financeübersicht";
     }

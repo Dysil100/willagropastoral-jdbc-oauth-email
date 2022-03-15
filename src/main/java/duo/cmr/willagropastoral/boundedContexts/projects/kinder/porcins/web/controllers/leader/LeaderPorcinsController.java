@@ -36,8 +36,7 @@ public class LeaderPorcinsController {
     public String pondeuses(Model model, @ModelAttribute("porcinsVerlaufForm") TagesVerlaufForm form) {
         model.addAttribute("verlaufForm", form);
         model.addAttribute("now", LocalDate.now().toString());
-        model.addAttribute("verlaeufe", tagesVerlaufService.alleByProjectName(form.getProjectName())); // test
-        // model.addAttribute("verlaeufe", tagesVerlaufService.alleByProjectName(projectName));
+        model.addAttribute("verlaeufe", tagesVerlaufService.alleByProjectName(form.getProjectName())); //
         return "verlaufuebersicht";
     }
 
@@ -45,8 +44,7 @@ public class LeaderPorcinsController {
     public String uebersicht(Model model, @ModelAttribute("form") FinanceForm form, @ModelAttribute("compteurPorcins") Compteur compteur, @ModelAttribute("projectName") String projectName) {
         List<Finance> attributeValue = financeService.alleByProjectName(projectName);
         model.addAttribute("finances", attributeValue);
-        model.addAttribute("financeForm", form);
-        model.addAttribute("financeForm", form);
+        //model.addAttribute("financeForm", form);
         model.addAttribute("compteur", compteur);
         return "financeübersicht";
     }
@@ -54,7 +52,6 @@ public class LeaderPorcinsController {
     @PostMapping(PORCINSUEBERSICHT)
     public String uebersichtPost(Model model, @ModelAttribute("verlaufForm") TagesVerlaufForm form, @ModelAttribute("projectName") String projectName) {
         model.addAttribute("verlaeufe", tagesVerlaufService.alleByProjectName(projectName));
-
         tagesVerlaufService.save(form.toPondeusesVerlauf());
         return "redirect:" + LEADERROUTE + PORCINSUEBERSICHT;
     }
@@ -65,7 +62,6 @@ public class LeaderPorcinsController {
         model.addAttribute("verlaufForm", tagesVerlaufService.findBId(id));
         tagesVerlaufService.deleteById(id);
         model.addAttribute("verlaeufe", tagesVerlaufService.alleByProjectName(projectName));
-        //return "verlaufuebersicht";
         return "verlaufuebersicht";
     }
 
