@@ -14,7 +14,7 @@
                       th:text="${compteur.getSumme()}"><h3>somme</h3></span> - Depuis la date du <span
                         th:text="${compteur.getStartDate()}">date de départ</span><span th:if="${projectName != null}"> Concernant le Project <span th:text="${projectName}">Nom du Project</span></span></h2>
         </div>
-        <div class="newfinance transbox">
+        <div th:if="${projectName == null}" class="newfinance transbox">
             <form th:object="${financeForm}" method="post" th:action="@{/leaderindex/financesuebersicht}">
                 <div class="form-group">
                     <h3> Ajoutez une Nouvelle action financiere</h3>
