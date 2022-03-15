@@ -28,9 +28,9 @@ public class FinanceService {
         financeRepository.deleteById(id);
     }
 
-    public void deleteAll() {
+    /*public void deleteAll() {
         financeRepository.deleteAll();
-    }
+    }*/
 
     public Compteur getCompteur() {
         List<Finance> alle = alle();
