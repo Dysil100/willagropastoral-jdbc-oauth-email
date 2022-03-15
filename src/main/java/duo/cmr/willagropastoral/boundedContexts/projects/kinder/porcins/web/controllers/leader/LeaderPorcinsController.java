@@ -22,7 +22,6 @@ import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.*;
 @RequestMapping(LEADERROUTE)
 @Leader
 public class LeaderPorcinsController {
-    private final String projectName = "Porcins";
     TagesVerlaufService tagesVerlaufService;
     // TODO: 28.02.22     Set hidden value = project name auf die entsprechende seite damit es automatish im Formular gerendert wird;
     // TODO: 28.02.22 Implement a page for finance übersicht for separate projate financesService.alleBProjectName(projectname)
