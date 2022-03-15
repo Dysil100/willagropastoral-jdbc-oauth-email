@@ -39,9 +39,7 @@ public class LeaderFinancesController {
     }
 
     @PostMapping(FINANCESUEBERSICHT)
-    public String uebersichtPost(Model model, @ModelAttribute("financeForm") FinanceForm form, @ModelAttribute("compteur") Compteur compteur) {
-        model.addAttribute("finances", financeService.alle());
-        model.addAttribute("compteur", compteur);
+    public String uebersichtPost(@ModelAttribute("financeForm") FinanceForm form, @ModelAttribute("compteur") Compteur compteur) {
         financeService.save(form.toFinance());
         return "redirect:" + LEADERROUTE + FINANCESUEBERSICHT;
     }

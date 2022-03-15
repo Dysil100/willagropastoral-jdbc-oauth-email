@@ -9,7 +9,7 @@
         <h3>(Brief Rapport de production et de consommation)</h3>
 
         <div class="newfinance transbox">
-            <form th:object="${verlaufForm}" method="post" th:action="@{/leaderindex/__${projectName.toLowerCase()}__}">
+            <form th:object="${verlaufForm}" method="post" th:action="@{/leaderindex/project/verlauf}">
                 <div class="form-group">
                     <h3> Ajoutez les Resultats de ce jours</h3>
                     <div th:insert="fragments/general.html :: inputfield(field='production', name='Production')"></div>
@@ -22,7 +22,7 @@
                             <input type="hidden" class="form-control is-valid" required
                                    placeholder="Nom du project"
                                    name="projectName" id="projectName"
-                                   th:field="*{projectName}">
+                                   th:field="*{projectName}" th:value="${projectName}">
                         </div>
                     </div>
                 </div>
@@ -53,12 +53,12 @@
                     <td th:text="*{getProduction()}">Productionn</td>
                     <td th:text="*{getAppreciation()}">Commentaire</td>
                     <td th:if="${verlauf.getDateTime().toLocalDate().toString()} == __${now}__ or ${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'">
-                        <form method="get" th:action="@{/leaderindex/pondeuses/modifier/{id}(id=*{getId()})}">
+                        <form method="get" th:action="@{/leaderindex/project/verlauf/modifier/{id}(id=*{getId()})}">
                             <input class="btn btn-outline-primary btn-sm fa fa-trash" type="submit" value="Modifier">
                         </form>
                     </td>
                     <td th:if="${verlauf.getDateTime().toLocalDate().toString()} == __${now}__ or ${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'">
-                        <form method="post" th:action="@{/leaderindex/pondeuses/delete/{id}(id=*{getId()})}">
+                        <form method="post" th:action="@{/leaderindex/project/delete/{id}(id=*{getId()})}">
                             <input class="btn btn-outline-danger btn-sm fa fa-trash" type="submit" value="Suprimer">
                         </form>
                     </td>
@@ -69,9 +69,6 @@
         <div class="transbox container-fluid">
             <h3>Note: Consommation mesuré en 'Sac de 50 Kg' et production mésuré en 'alvéoles'</h3>
         </div>
-        <!--form method="post" th:action="@{/finances/deleteall}">
-            <input class="btn btn-outline-danger btn-sm" type="submit" value="Suprimer tout">
-        </form-->
     </div>
     <footer th:replace="fragments/general.html :: footer"></footer>
 </div>

@@ -70,7 +70,6 @@
             </div>
             <div class="transbox" th:if="*{isZeigen()}">
                 <h2>Resultat du Calcul analytique:</h2>
-                <!-- die 2 tabelle mit thymeleaf fragment lösen -->
                 <form>
                     <div th:replace="fragments/general.html :: tableBody(tableData=${form.getResultats()})"></div>
                     <br>

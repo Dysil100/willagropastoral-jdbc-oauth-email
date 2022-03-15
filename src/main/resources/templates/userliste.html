@@ -15,8 +15,6 @@
             <th scope="col">LastName</th>
             <th scope="col">Email</th>
             <th scope="col">Password</th>
-            <!--th scope="col">Date d'inscription</th>
-            <th scope="col">Désactiver</th-->
         </tr>
         </thead>
         <tbody th:remove="all-but-first">
@@ -25,11 +23,6 @@
             <td th:text="*{getLastName()}">LastNmae</td>
             <td th:text="*{getEmail()}">Email</td>
             <td th:text="*{getPassword()}">Password</td>
-            <!--td th:text="*{getGeneratedAt().toLocalDate()}">Déactiver</td>
-            <td>
-                <form method="post" th:action="@{/adminindex/avis/delete/{id}(id=*{getId()})}">
-                    <input class="btn btn-outline-danger btn-sm fa fa-trash" type="submit" value="Suprimer">
-                </form></td-->
         </tr>
         </tbody>
     </table>
