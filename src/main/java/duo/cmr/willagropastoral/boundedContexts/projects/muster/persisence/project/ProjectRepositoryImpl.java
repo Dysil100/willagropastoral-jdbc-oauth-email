@@ -41,7 +41,6 @@ public class ProjectRepositoryImpl implements ProjectRepository {
         daoProjectRepository.findAll().forEach(e ->
                 projects.add(toProject(e, financeRepository.alleByProjectName(e.getName())))
         );
-
         return projects;
     }
 

@@ -25,13 +25,11 @@ import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.LEADERROUTE
 @Leader
 public class LeaderFinancesController {
     private ServiceSupreme serviceSupreme;
-
     private FinanceService financeService;
-
     // TODO: 14.02.22 Route zum löschen und aktualiesieren implementieren und ein Root user für die Verwaltungen
 
     @GetMapping(FINANCESUEBERSICHT)
-    public String uebersicht(Model model, @ModelAttribute("form") FinanceForm form, @ModelAttribute("compteur") Compteur compteur) {
+    public String uebersicht(Model model, @ModelAttribute("financeform") FinanceForm form, @ModelAttribute("compteur") Compteur compteur) {
         model.addAttribute("finances", financeService.alle());
         model.addAttribute("financeForm", form);
         model.addAttribute("compteur", compteur);

@@ -2,7 +2,6 @@ package duo.cmr.willagropastoral.boundedContexts.projects.muster.controllers.lea
 
 import duo.cmr.willagropastoral.boundedContexts.dasandere.persistence.annotations.Leader;
 import duo.cmr.willagropastoral.boundedContexts.finances.forms.Compteur;
-import duo.cmr.willagropastoral.boundedContexts.finances.forms.Finance;
 import duo.cmr.willagropastoral.boundedContexts.finances.forms.FinanceForm;
 import duo.cmr.willagropastoral.boundedContexts.finances.web.service.FinanceService;
 import duo.cmr.willagropastoral.boundedContexts.projects.muster.projectsForms.TagesVerlaufForm;
@@ -14,7 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.util.List;
 
 import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.*;
 
@@ -50,7 +48,7 @@ public class LeaderProjectsController {
     }
 
     @PostMapping("/project/verlauf")
-    public String uebersichtPost(Model model, @ModelAttribute("verlaufForm") TagesVerlaufForm form) {
+    public String projectVerlaufUebersichtPost(@ModelAttribute("verlaufForm") TagesVerlaufForm form) {
         tagesVerlaufService.save(form.toPondeusesVerlauf());
         return "redirect:" + LEADERROUTE + "/project/verlauf/" + form.getProjectName();
     }
@@ -58,18 +56,17 @@ public class LeaderProjectsController {
     @GetMapping("/project/finances/{projectName}")
     public String projectFinancesUebersicht(Model model, @ModelAttribute("compteur") Compteur compteur, @PathVariable("projectName") String projectName, @ModelAttribute("form") FinanceForm form) {
         model.addAttribute("projectName", projectName);
-        List<Finance> attributeValue = financeService.alleByProjectName(projectName);
         model.addAttribute("financeForm", form);
-        model.addAttribute("finances", attributeValue);
+        model.addAttribute("finances", financeService.alleByProjectName(projectName));
         model.addAttribute("compteur", compteur);
         return "financeübersicht";
     }
 
-    @PostMapping(PROJECTDELETE)
-    public String delete(Model model, @PathVariable("id") Long id, @ModelAttribute("projectName") String projectName) {
+    @PostMapping(PROJECTVERLAUFDELETE)
+    public String delete( @PathVariable("id") Long id, @ModelAttribute("projectName") String projectName) {
         tagesVerlaufService.deleteById(id);
         // TODO: 13.03.22 auskommentieren wenn die Methode update Project Verfügbar ist
-        return "redirect:" + LEADERROUTE + PROJECTVERLAUFUEBERSICHT;
+        return "redirect:" + LEADERROUTE + "/project/verlauf/" + projectName;
     }
 
 
@@ -90,7 +87,7 @@ public class LeaderProjectsController {
     }
 
 
-    @ModelAttribute("form")
+    @ModelAttribute("financeform")
     FinanceForm financeForm() {
         return new FinanceForm(null, null, null, null);
     }

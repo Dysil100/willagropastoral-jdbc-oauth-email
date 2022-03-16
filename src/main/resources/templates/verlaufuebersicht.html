@@ -58,7 +58,7 @@
                         </form>
                     </td>
                     <td th:if="${verlauf.getDateTime().toLocalDate().toString()} == __${now}__ or ${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'">
-                        <form method="post" th:action="@{/leaderindex/project/delete/{id}(id=*{getId()})}">
+                        <form method="post" th:action="@{/leaderindex/project/verlauf/delete/{id}(id=*{getId()})}">
                             <input class="btn btn-outline-danger btn-sm fa fa-trash" type="submit" value="Suprimer">
                         </form>
                     </td>
