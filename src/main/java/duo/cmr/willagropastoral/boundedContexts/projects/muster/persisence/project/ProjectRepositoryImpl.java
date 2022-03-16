@@ -52,17 +52,16 @@ public class ProjectRepositoryImpl implements ProjectRepository {
 
     private Project toProject(ProjectEntity e, List<Finance> finances) {
         String endDate = e.getEndDate();
-
         //return new Project(e.getId(), e.getName(), stringToDate(e.getStartDate()), (endDate != null ? stringToDate(endDate) : LocalDateTime.now()), finances.stream().map(Finance::getId).collect(Collectors.toSet()), verlaufsIds, getEingabe(finances), getAusgabe(finances));
         return new Project(e.getId(), e.getName(), stringToDate(e.getStartDate()), (endDate != null ? stringToDate(endDate) : LocalDateTime.now()), getEingabe(finances), getAusgabe(finances));
     }
 
     private Double getAusgabe(List<Finance> finances) {
-        return finances.stream().filter(f -> !Objects.equals(f.getBezeichnung(), "Gains")).mapToDouble(Finance::getSumme).sum();
+        return finances.stream().filter(f -> !Objects.equals(f.getBezeichnung(), "Gains !")).mapToDouble(Finance::getSumme).sum();
     }
 
     private Double getEingabe(List<Finance> finances) {
-        return finances.stream().filter(f -> Objects.equals(f.getBezeichnung(), "Gains")).mapToDouble(Finance::getSumme).sum();
+        return finances.stream().filter(f -> Objects.equals(f.getBezeichnung(), "Gains !")).mapToDouble(Finance::getSumme).sum();
     }
 
     private ProjectEntity getByName(String projectName) {
