@@ -3,6 +3,7 @@ package duo.cmr.willagropastoral.boundedContexts.projects.muster.persisence.proj
 import duo.cmr.willagropastoral.boundedContexts.finances.forms.Finance;
 import duo.cmr.willagropastoral.boundedContexts.finances.web.repositories.FinanceRepository;
 import duo.cmr.willagropastoral.boundedContexts.projects.muster.projectsForms.Project;
+import duo.cmr.willagropastoral.boundedContexts.projects.muster.projectsForms.TagesVerlauf;
 import duo.cmr.willagropastoral.boundedContexts.projects.muster.repositories.ProjectRepository;
 import duo.cmr.willagropastoral.boundedContexts.projects.muster.repositories.TagesVerlaufRepository;
 import lombok.AllArgsConstructor;
@@ -26,8 +27,9 @@ public class ProjectRepositoryImpl implements ProjectRepository {
     @Override
     public Project findByName(String projectName) {
         List<Finance> finances = financeRepository.alleByProjectName(projectName);
+        List<TagesVerlauf> verlaufs = tagesVerlaufRepository.findAllByProjectName(projectName);
         ProjectEntity byName = getByName(projectName);
-        return toProject(byName, finances);
+        return toProject(byName, finances, verlaufs);
     }
 
     @Override
@@ -39,7 +41,11 @@ public class ProjectRepositoryImpl implements ProjectRepository {
     public List<Project> alle() {
         List<Project> projects = new ArrayList<>();
         daoProjectRepository.findAll().forEach(e ->
-                projects.add(toProject(e, financeRepository.alleByProjectName(e.getName())))
+                {
+                    List<Finance> finances = financeRepository.alleByProjectName(e.getName());
+                    List<TagesVerlauf> verlaufs = tagesVerlaufRepository.findAllByProjectName(e.getName());
+                    projects.add(toProject(e, finances, verlaufs));
+                }
         );
         return projects;
     }
@@ -49,10 +55,18 @@ public class ProjectRepositoryImpl implements ProjectRepository {
         return new ProjectEntity(p.getName(), dateToString(p.getStartDate()), (endDate != null ? dateToString(endDate) : null));
     }
 
-    private Project toProject(ProjectEntity e, List<Finance> finances) {
+    private Project toProject(ProjectEntity e, List<Finance> finances, List<TagesVerlauf> verlaufs) {
         String endDate = e.getEndDate();
         //return new Project(e.getId(), e.getName(), stringToDate(e.getStartDate()), (endDate != null ? stringToDate(endDate) : LocalDateTime.now()), finances.stream().map(Finance::getId).collect(Collectors.toSet()), verlaufsIds, getEingabe(finances), getAusgabe(finances));
-        return new Project(e.getId(), e.getName(), stringToDate(e.getStartDate()), (endDate != null ? stringToDate(endDate) : LocalDateTime.now()), getEingabe(finances), getAusgabe(finances));
+        return new Project(e.getId(), e.getName(), stringToDate(e.getStartDate()), (endDate != null ? stringToDate(endDate) : LocalDateTime.now()), getEingabe(finances), getAusgabe(finances), getProduction(verlaufs), getConsommation(verlaufs));
+    }
+
+    private Double getProduction(List<TagesVerlauf> verlaufs) {
+        return verlaufs.stream().mapToDouble(TagesVerlauf::getProduction).sum();
+    }
+
+    private Double getConsommation(List<TagesVerlauf> verlaufs) {
+        return verlaufs.stream().mapToDouble(TagesVerlauf::getConsommation).sum();
     }
 
     private Double getAusgabe(List<Finance> finances) {
