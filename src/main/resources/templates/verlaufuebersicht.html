@@ -8,7 +8,7 @@
         <h1>Rapport journalier pour le projects <span th:text="${projectName}">Nom du Project</span></h1>
         <h3>(Brief Rapport de production et de consommation)</h3>
 
-        <div class="newfinance transbox">
+        <div class="transbox">
             <form th:object="${verlaufForm}" method="post" th:action="@{/leaderindex/project/verlauf}">
                 <div class="form-group">
                     <h3> Ajoutez les Resultats de ce jours</h3>

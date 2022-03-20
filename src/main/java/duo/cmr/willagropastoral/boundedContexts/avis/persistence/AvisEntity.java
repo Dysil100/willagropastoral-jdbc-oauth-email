@@ -17,7 +17,7 @@ public class AvisEntity {
     private String telephone;
     private String email;
     private String comment;
-    private String generatedAt; // es immer ein LocaldateTime String passed
+    private String generatedAt; // es immer ein LocaldateTime String parsen
 
     public AvisEntity(String telephone, String email, String comment, String generatedAt) {
         this.telephone = telephone;
@@ -25,4 +25,7 @@ public class AvisEntity {
         this.comment = comment;
         this.generatedAt = generatedAt;
     }
+
+
+
 }
