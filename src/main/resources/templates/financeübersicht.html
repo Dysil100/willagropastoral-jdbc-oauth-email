@@ -21,7 +21,7 @@
                     <div th:insert="fragments/general.html :: inputfield(field='summe', name='Somme')"></div>
                     <div th:insert="fragments/general.html :: textinput(field='description', name='Description', placeholder='Description de l\'action finaciere')"></div>
                     <div th:if="${projectName == null}" class="form-group row">
-                        <label class="col-sm-2 col-form-label" for="projectName"></label>
+                        <label class="col-sm-2 col-form-label" for="projectName">Project</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control is-valid" required
                                    placeholder="Nom du project"
