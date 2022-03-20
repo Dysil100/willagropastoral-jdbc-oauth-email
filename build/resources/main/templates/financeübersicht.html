@@ -56,7 +56,7 @@
                     <th scope="col">Somme</th>
                     <th scope="col">Description</th>
                     <th scope="col">Date de l'action</th>
-                    <th scope="col">Nom du Project</th>
+                    <th th:if="${projectName == null}" scope="col">Nom du Project</th>
                     <th th:if="${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'" scope="col">
                         Modifier
                     </th>
@@ -71,7 +71,7 @@
                     <td th:text="*{getSumme()}">Somme</td>
                     <td th:text="*{getDescription()}">description</td>
                     <td th:text="*{getGeneratedAt().toLocalDate()}">description</td>
-                    <td th:text="*{getProjectName()}">Nom du Project</td>
+                    <td th:if="${projectName == null}"><span th:text="*{getProjectName()}">Nom du Project</span></td>
                     <td th:if="${#request.userPrincipal.principal.role.toString()} == 'ROLE_ADMIN'">
                         <form method="get" th:action="@{/adminindex/finances/modifier/{id}(id=*{getId()})}">
                             <input class="btn btn-outline-primary btn-sm fa fa-trash" type="submit" value="Modifier">
