@@ -4,6 +4,7 @@ import duo.cmr.willagropastoral.boundedContexts.dasandere.persistence.annotation
 import duo.cmr.willagropastoral.boundedContexts.finances.forms.Compteur;
 import duo.cmr.willagropastoral.boundedContexts.finances.forms.FinanceForm;
 import duo.cmr.willagropastoral.boundedContexts.finances.web.service.FinanceService;
+import duo.cmr.willagropastoral.boundedContexts.projects.muster.projectsForms.TagesVerlauf;
 import duo.cmr.willagropastoral.boundedContexts.projects.muster.projectsForms.TagesVerlaufForm;
 import duo.cmr.willagropastoral.boundedContexts.projects.muster.service.ProjectService;
 import duo.cmr.willagropastoral.boundedContexts.projects.muster.service.TagesVerlaufService;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 
+import static duo.cmr.willagropastoral.boundedContexts.dasandere.web.services.subservices.DateTimeHelper.stringToDate;
 import static duo.cmr.willagropastoral.boundedContexts.routen.Routen.*;
 
 @AllArgsConstructor
@@ -49,7 +51,7 @@ public class LeaderProjectsController {
 
     @PostMapping("/project/verlauf")
     public String projectVerlaufUebersichtPost(@ModelAttribute("verlaufForm") TagesVerlaufForm form) {
-        tagesVerlaufService.save(form.toPondeusesVerlauf());
+        tagesVerlaufService.save(form.toVerlauf());
         return "redirect:" + LEADERROUTE + "/project/verlauf/" + form.getProjectName();
     }
 
@@ -73,11 +75,25 @@ public class LeaderProjectsController {
     @GetMapping(VERLAUFMODIFIER)
     public String modifier(Model model, @PathVariable("id") Long id, @ModelAttribute("projectName") String projectName) {
         model.addAttribute("now", LocalDate.now().toString());
-        model.addAttribute("verlaufForm", tagesVerlaufService.findBId(id));
+        TagesVerlauf bId = tagesVerlaufService.findBId(id);
+        model.addAttribute("verlaufForm", bId);
         model.addAttribute("projectName", projectName);
+        model.addAttribute("datum", bId.getDateTime());
+        model.addAttribute("id", id);
+//        tagesVerlaufService.deleteById(id);
+        return "verlaufmodifier";
+    }
+
+    @PostMapping(VERLAUFMODIFIER)
+    public String modifierPost(Model model, @PathVariable("id") Long id, @ModelAttribute("projectName") String projectName, @ModelAttribute("datum") String datum, @ModelAttribute("verlaufForm") TagesVerlaufForm form) {
+        model.addAttribute("now", LocalDate.now().toString());
+
+        // TODO: 21.03.22 Die untere zeilen in In service oder repositorie verwalten
         tagesVerlaufService.deleteById(id);
-        model.addAttribute("verlaeufe", tagesVerlaufService.alleByProjectName(projectName));
-        return "verlaufuebersicht";
+        TagesVerlauf tagesVerlauf = form.toVerlauf();
+        tagesVerlauf.setDateTime(stringToDate(datum));
+        tagesVerlaufService.save(tagesVerlauf);
+        return "redirect:"+ LEADERROUTE+"/project/verlauf/" + projectName;
     }
 
 

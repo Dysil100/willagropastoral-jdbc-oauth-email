@@ -17,7 +17,7 @@ public class TagesVerlaufForm {
     private String appreciation;
     private String projectName;
 
-    public TagesVerlauf toPondeusesVerlauf() {
+    public TagesVerlauf toVerlauf() {
         return new TagesVerlauf(production, consommation, appreciation, LocalDateTime.now(), projectName);
     }
 }
